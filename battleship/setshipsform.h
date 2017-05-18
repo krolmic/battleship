@@ -2,7 +2,6 @@
 #define DIALOG_H
 
 #include <QDialog>
-#include <QtCharts/QChartView>
 #include <coordinatesystem.h>
 
 class QAction;
@@ -26,6 +25,8 @@ private:
     void createPlayerInformationGroupBox();
     void createCoordinateSystemGroupBox();
     void createFormGroupBox();
+
+    void accept();
 
     QMenuBar *menuBar;
     QMenu *gameMenu;

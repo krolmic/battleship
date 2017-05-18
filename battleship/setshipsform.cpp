@@ -1,5 +1,6 @@
 #include <QtWidgets>
 #include "setshipsform.h"
+#include "gameform.h"
 
 SetShipsForm::SetShipsForm(QString *name)
     :playerName(name), size(QSize(500, 700))
@@ -54,3 +55,11 @@ void SetShipsForm::createCoordinateSystemGroupBox()
     coordinateSystemGroupBox->setLayout(layout);
 }
 
+void SetShipsForm::accept()
+{
+    // TODO: zum spaeteren Zeitpunkt Ueberpruefung
+    // TODO: zum spaeteren Zeitpunk Uebergabe des Spieler Objekts
+    close();
+    GameForm *setShipsForm = new GameForm();
+    setShipsForm->exec();
+}
