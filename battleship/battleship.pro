@@ -6,6 +6,7 @@
 
 QT       += core gui
 
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = battleship
@@ -26,11 +27,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp \
     playerform.cpp \
     setshipsform.cpp \
-    coordinatesystem.cpp
+    coordinatesystem.cpp \
+    gameform.cpp
 
 HEADERS  += \
     playerform.h \
     setshipsform.h \
-    coordinatesystem.h
+    coordinatesystem.h \
+    gameform.h
 
 FORMS    += mainwindow.ui
