@@ -1,9 +1,11 @@
 #include <QtWidgets>
 #include "setshipsform.h"
 #include "gameform.h"
+#include "player.h"
+#include <QString>
 
-SetShipsForm::SetShipsForm(QString *name)
-    :playerName(name), size(QSize(500, 700))
+SetShipsForm::SetShipsForm(Player *player)
+    :player(player), size(QSize(500, 700))
 {
     createMenu();
     createPlayerInformationGroupBox();
@@ -40,9 +42,19 @@ void SetShipsForm::createPlayerInformationGroupBox()
 {
     playerInformationGroupBox = new QGroupBox(tr("Player"));
     QVBoxLayout *layout = new QVBoxLayout;
-    // Unschoen
-    QLabel *nameLabel = new QLabel(tr(playerName->toStdString().c_str()));
-    layout->addWidget(nameLabel);
+
+    QList<QString> listOfLastOponents = player->getLastOponents();
+    QString lastOponentsNames;
+    for(int i = 0; i < listOfLastOponents.count(); i++)
+    {
+        lastOponentsNames += (i != listOfLastOponents.count()-1) ? listOfLastOponents.at(i) + QString(", ") : listOfLastOponents.at(i) + QString(". ");
+    }
+
+    QString info = player->getName() + QString("\n") + QString(QString::number(player->getAge())) + QString("\n") + player->getStats() + QString("\n") + QString(lastOponentsNames);
+
+    QString* playerInfo = new QString(info);
+    QLabel *playerInfoLabel = new QLabel(playerInfo->toStdString().c_str());
+    layout->addWidget(playerInfoLabel);
     playerInformationGroupBox->setLayout(layout);
 }
 

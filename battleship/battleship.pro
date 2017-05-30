@@ -28,12 +28,14 @@ SOURCES += main.cpp \
     playerform.cpp \
     setshipsform.cpp \
     coordinatesystem.cpp \
-    gameform.cpp
+    gameform.cpp \
+    player.cpp
 
 HEADERS  += \
     playerform.h \
     setshipsform.h \
     coordinatesystem.h \
-    gameform.h
+    gameform.h \
+    player.h
 
 FORMS    += mainwindow.ui
