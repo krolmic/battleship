@@ -33,8 +33,14 @@ void PlayerForm::createPlayerInputFieldsGroup()
     // Inputfelder
     QLabel *nameLabel = new QLabel(tr("Name:"));
     nameLine = new QLineEdit;
+
+    QLabel *ageLabel = new QLabel(tr("Alter:"));
+    ageLine = new QLineEdit;
+
     layout->addWidget(nameLabel);
     layout->addWidget(nameLine);
+    layout->addWidget(ageLabel);
+    layout->addWidget(ageLine);
 
     // Setzen des Layouts
     horizontalGroupBox->setLayout(layout);
@@ -56,9 +62,12 @@ void PlayerForm::accept()
     {
         // GUI für Schiffe Setzen anzeigen
         // Player Form schliessen
-        QString *name = new QString(nameLine->text());
+        int ageNumber = (ageLine->text()).toInt();
+
+        //QString* name = new QString(nameLine->text());
+        player = new Player(new QString(nameLine->text()), ageNumber);
         close();
-        SetShipsForm *setShipsForm = new SetShipsForm(name);
+        SetShipsForm *setShipsForm = new SetShipsForm(player);
         setShipsForm->exec();
     }
 }

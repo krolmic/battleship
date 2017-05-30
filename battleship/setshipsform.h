@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <coordinatesystem.h>
+#include "player.h"
 
 class QAction;
 class QDialogButtonBox;
@@ -18,7 +19,7 @@ class SetShipsForm : public QDialog
 {
 public:
     // TODO: Player Klasse statt QString benutzen, falls die Klasse notwendig
-    SetShipsForm(QString *name);
+    SetShipsForm(Player *player);
 
 private:
     void createMenu();
@@ -39,7 +40,7 @@ private:
 
     CoordinateSystem *field;
 
-    QString *playerName;
+    Player *player;
     QLabel *nameLabel;
 
     const QSize size;
