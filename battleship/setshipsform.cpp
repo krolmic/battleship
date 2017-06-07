@@ -3,14 +3,25 @@
 #include "gameform.h"
 #include "player.h"
 #include <QString>
+#include <QtNetwork>
 
 SetShipsForm::SetShipsForm(Player *player)
-    :player(player), size(QSize(500, 700))
+    :player(player)
+    ,size(QSize(500, 700))
+    ,tcpSocket(new QTcpSocket(this))
+    ,networkSession(Q_NULLPTR)
 {
     createMenu();
     createPlayerInformationGroupBox();
     createCoordinateSystemGroupBox();
 
+    //! [1]
+    in.setDevice(tcpSocket);
+    in.setVersion(QDataStream::Qt_4_0);
+    //! [1]
+    connectToServer();
+
+    connect(tcpSocket, &QIODevice::readyRead, this, &SetShipsForm::read);
     buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
                                      | QDialogButtonBox::Cancel);
 
@@ -74,4 +85,22 @@ void SetShipsForm::accept()
     close();
     GameForm *setShipsForm = new GameForm();
     setShipsForm->exec();
+}
+
+void SetShipsForm::connectToServer()
+{
+    tcpSocket->abort();
+    tcpSocket->connectToHost("127.0.0.1",44452);
+}
+
+void SetShipsForm::read()
+{
+    in.startTransaction();
+
+    QString testString;
+    in >> testString;
+
+    if (!in.commitTransaction())
+        return;
+    qDebug()<<testString;
 }
