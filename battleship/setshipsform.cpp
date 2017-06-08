@@ -50,10 +50,9 @@ void SetShipsForm::createPlayerInformationGroupBox()
         lastOponentsNames += (i != listOfLastOponents.count()-1) ? listOfLastOponents.at(i) + QString(", ") : listOfLastOponents.at(i) + QString(". ");
     }
 
-    QString info = player->getName() + QString("\n") + QString(QString::number(player->getAge())) + QString("\n") + player->getStats() + QString("\n") + QString(lastOponentsNames);
+    QString info = *player->getName() + "\n" + QString::number(player->getAge()) + "\n" + *player->getStats() + "\n" + lastOponentsNames;
 
-    QString* playerInfo = new QString(info);
-    QLabel *playerInfoLabel = new QLabel(playerInfo->toStdString().c_str());
+    QLabel *playerInfoLabel = new QLabel(info);
     layout->addWidget(playerInfoLabel);
     playerInformationGroupBox->setLayout(layout);
 }
