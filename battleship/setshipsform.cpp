@@ -5,7 +5,7 @@
 #include <QString>
 
 SetShipsForm::SetShipsForm(Player *player)
-    :player(player), size(QSize(500, 700))
+    :player(player), size(QSize(450, 660))
 {
     createMenu();
     createPlayerInformationGroupBox();
@@ -20,29 +20,33 @@ SetShipsForm::SetShipsForm(Player *player)
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setMenuBar(menuBar);
     mainLayout->addWidget(coordinateSystemGroupBox);
+    mainLayout->setStretch(0, 1);
     mainLayout->addWidget(playerInformationGroupBox);
     mainLayout->addWidget(buttonBox);
     setLayout(mainLayout);
 
     setWindowTitle(tr("Battleship 0.0.1"));
-    resize(size);
+    // TODO: scalable, vorerst feste Größe
+    //resize(size);
+    this->setFixedSize(size);
+
 }
 
 void SetShipsForm::createMenu()
 {
     menuBar = new QMenuBar;
     gameMenu = new QMenu(tr("&Game"), this);
-    deleteShips = gameMenu->addAction(tr("Delete Ships"));
+    deleteShipsAction = gameMenu->addAction(tr("Delete Ships"));
     exitAction = gameMenu->addAction(tr("E&xit"));
     menuBar->addMenu(gameMenu);
-    connect(exitAction, SIGNAL(triggered()), this, SLOT(accept()));
+    connect(exitAction, SIGNAL(triggered()), this, SLOT(reject()));
+    connect(deleteShipsAction, SIGNAL(triggered()), this, SLOT(deleteShips()));
 }
 
 void SetShipsForm::createPlayerInformationGroupBox()
 {
     playerInformationGroupBox = new QGroupBox(tr("Player"));
     QVBoxLayout *layout = new QVBoxLayout;
-
     QList<QString> listOfLastOponents = player->getLastOponents();
     QString lastOponentsNames;
     for(int i = 0; i < listOfLastOponents.count(); i++)
@@ -50,8 +54,7 @@ void SetShipsForm::createPlayerInformationGroupBox()
         lastOponentsNames += (i != listOfLastOponents.count()-1) ? listOfLastOponents.at(i) + QString(", ") : listOfLastOponents.at(i) + QString(". ");
     }
 
-    QString info = *player->getName() + "\n" + QString::number(player->getAge()) + "\n" + *player->getStats() + "\n" + lastOponentsNames;
-
+    QString info = "Name:\t\t" + *player->getName() + "\nAge:\t\t" + QString::number(player->getAge()) + "\n" + *player->getStats() + "\n" + lastOponentsNames;
     QLabel *playerInfoLabel = new QLabel(info);
     layout->addWidget(playerInfoLabel);
     playerInformationGroupBox->setLayout(layout);
@@ -73,4 +76,9 @@ void SetShipsForm::accept()
     close();
     GameForm *setShipsForm = new GameForm();
     setShipsForm->exec();
+}
+
+void SetShipsForm::deleteShips()
+{
+    field->clearField();
 }

@@ -84,7 +84,7 @@ QString* Player::getStats()
     QString grade = QString::number(getGrade());
     QString wins = QString::number(getNumberWins());
 
-    QString str = QString("Verloren: ") + failures +  QString("\nGewonnen: ") + wins + QString("\nSpielanzahl: ") + games + QString("\nNiveau: ") + grade + "";
+    QString str = QString("Losses:\t\t") + failures +  QString("\nWins:\t\t") + wins + QString("\nGames:\t\t") + games + QString("\nLevel:\t\t") + grade;
     QString *stats = new QString(str);
     return stats;
 }

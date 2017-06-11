@@ -18,6 +18,7 @@ public:
     // Aktualisieren des Koordinatensystems
     void paintAxis();
     void paintShips();
+    void clearField();
 
     // Events
     void mousePressEvent(QMouseEvent* event);
@@ -25,14 +26,8 @@ public:
     void paintEvent(QPaintEvent *e);
     void mouseMoveEvent(QMouseEvent *event);
 
-private:
-    // TODO: Namen verbessern
-    QWidget *parent;
-    //QPainter *pixmap_painter;
     std::vector<QLine> ships;
-    std::vector<QPoint> points; // Alle punkte des Koordinatensystems
-    std::vector<QPoint> possible_points; // Moegliche Punkte bei mouseReleaseEvent
-
+    QPixmap *target_pixmap;
     // Farben
     Qt::GlobalColor lines_color = Qt::gray;
     Qt::GlobalColor x_y_axis_color = Qt::black;
@@ -40,18 +35,31 @@ private:
     Qt::GlobalColor bg_color = Qt::white;
 
 
+private:
+    // TODO: Namen verbessern
+    QWidget *parent;
+    //QPainter *pixmap_painter;
+
+    std::vector<QPoint> points; // Alle punkte des Koordinatensystems
+    std::vector<QPoint> possible_points; // Moegliche Punkte bei mouseReleaseEvent
+
+
+
+
+
     // TODO: ein Wert statt width und length, da das Spielfeld immer ein Quadrat bleibt
-    int width = 450;
-    int length = 450;
-    int space_to_next_line = 10;
+    int width = 400;
+    int length = 400;
+    int space_to_next_line = 20;
     int ship_length = (length/space_to_next_line)*2;
     int initial_x = 0;
     int initial_y = 0;
     int final_x = 0;
     int final_y = 0;
 
-    QPixmap *target_pixmap;
+
     bool mouse_pressed = false;
+
 };
 
 #endif // COORDINATESYSTEM_H
