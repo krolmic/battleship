@@ -12,12 +12,10 @@ CoordinateSystem::CoordinateSystem(QWidget *parent)
     target_pixmap = new QPixmap(this->width,this->length);
     target_pixmap->fill();
     paintAxis();
-
     initial_x = 0;
     initial_y = 0;
     final_x = 0;
     final_y = 0;
-
     mouse_pressed = false;
     fillPointsList();
 }
@@ -63,8 +61,8 @@ void CoordinateSystem::clearInvalidPossiblePoints()
 
 void CoordinateSystem::fillPointsList()
 {
-    for(int y=0; y<length; y+= length/space_to_next_line)
-        for(int x=0; x<width; x += width/space_to_next_line)
+    for(int y=0; y<=length; y+= length/space_to_next_line)
+        for(int x=0; x<=width; x += width/space_to_next_line)
         {
             points.push_back(QPoint(x, y));
         }
@@ -79,7 +77,7 @@ void CoordinateSystem::paintAxis()
     pen1.setWidth(2);
     pixmap_painter.setPen(pen2);
 
-    for(int i=0; i<width; i+= width/space_to_next_line)
+    for(int i=space_to_next_line; i<width; i+= width/space_to_next_line)
     {
         pixmap_painter.drawLine(i, 0, i, length);
         if(i == (width/space_to_next_line) * space_to_next_line/2)
@@ -90,7 +88,7 @@ void CoordinateSystem::paintAxis()
         }
     }
 
-    for(int i=0; i<length; i+= length/space_to_next_line)
+    for(int i=space_to_next_line; i<length; i+= length/space_to_next_line)
     {
         pixmap_painter.drawLine(0, i, length, i);
         if(i == (width/space_to_next_line) * space_to_next_line/2)
@@ -139,7 +137,7 @@ void CoordinateSystem::paintEvent(QPaintEvent *e)
     {
         QPainter pixmap_painter(target_pixmap);
         QPen pen(ships_color);
-        pen.setWidth(2);
+        pen.setWidth(3);
         pixmap_painter.setPen(pen);
         pixmap_painter.drawLine(initial_x, initial_y, final_x, final_y);
     }
@@ -154,7 +152,7 @@ void CoordinateSystem::mouseMoveEvent(QMouseEvent *event)
     {
         QPainter pixmap_painter(target_pixmap);
         QPen pen(bg_color);
-        pen.setWidth(2);
+        pen.setWidth(3);
         pixmap_painter.setPen(pen);
         pixmap_painter.drawLine(initial_x, initial_y, final_x, final_y);
         update();
@@ -186,3 +184,24 @@ void CoordinateSystem::mouseMoveEvent(QMouseEvent *event)
     paintAxis();
     paintShips();
 }
+
+void CoordinateSystem::clearField()
+{
+    if(!ships.empty())
+    {
+        qDebug() << Q_FUNC_INFO << "ships ist nicht leer";
+        QPainter pixmap_painter(target_pixmap);
+        QPen pen(bg_color);
+        pen.setWidth(3);
+        pixmap_painter.setPen(pen);
+
+        for(auto s : ships)
+        {
+            pixmap_painter.drawLine(s);
+        }
+    }
+    update();
+    paintAxis();
+    ships.clear();
+}
+
