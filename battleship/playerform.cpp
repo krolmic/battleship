@@ -34,7 +34,7 @@ void PlayerForm::createPlayerInputFieldsGroup()
     QLabel *nameLabel = new QLabel(tr("Name:"));
     nameLine = new QLineEdit;
 
-    QLabel *ageLabel = new QLabel(tr("Alter:"));
+    QLabel *ageLabel = new QLabel(tr("Age:"));
     ageLine = new QLineEdit;
 
     layout->addWidget(nameLabel);
