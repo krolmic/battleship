@@ -15,8 +15,12 @@ class QMenuBar;
 class QPushButton;
 class QTextEdit;
 
+
+
 class SetShipsForm : public QDialog
 {
+    Q_OBJECT
+
 public:
     // TODO: Player Klasse statt QString benutzen, falls die Klasse notwendig
     SetShipsForm(Player *player);
@@ -32,7 +36,7 @@ private:
     QMenuBar *menuBar;
     QMenu *gameMenu;
     QAction *exitAction;
-    QAction *deleteShips;
+    QAction *deleteShipsAction;
 
     QGroupBox *playerInformationGroupBox;
     QGroupBox *coordinateSystemGroupBox;
@@ -44,6 +48,10 @@ private:
     QLabel *nameLabel;
 
     const QSize size;
+
+private slots:
+
+    void deleteShips();
 };
 
 #endif // DIALOG_H
