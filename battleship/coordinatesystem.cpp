@@ -116,6 +116,42 @@ void CoordinateSystem::paintShips()
     }
 }
 
+bool CoordinateSystem::isValidPlacement(int x, int y, int end_x, int end_y)
+{
+    qDebug() << "Check Game Area:";
+    // Wird außerhalb des Spielfeldes gesetzt?
+    if(x > gamearea || x < 0)
+        return false;
+    if(y > gamearea || y < 0)
+        return false;
+
+    // Wird die Linie außerhalb des Spielfeldes gezogen?
+    if(end_x > gamearea || end_x < 0)
+        return false;
+    if(end_y > gamearea || end_y < 0)
+        return false;
+
+    qDebug() << "Check for other Ships:";
+    // Behindert ein anderes Schiff die Platzierung?
+    if(!ships.empty())
+    {
+        for(auto s : ships)
+        {
+            qDebug() << "Ship";
+            if(s.x1() == x || s.x1() == end_x)
+                return false;
+            if(s.x2() == x || s.x2() == end_x)
+                return false;
+            qDebug() << s.x2() + " - " + s.x1();
+            if(s.y1() == y || s.y1() == end_y)
+                return false;
+            if(s.y2() == y || s.y2() == end_y)
+                return false;
+        }
+    }
+    return true;
+}
+
 void CoordinateSystem::mousePressEvent(QMouseEvent* event)
 {
       mouse_pressed = true;
@@ -126,9 +162,13 @@ void CoordinateSystem::mousePressEvent(QMouseEvent* event)
 
 void CoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
 {
-    mouse_pressed = false;
-    QLine l(initial_x, initial_y, final_x, final_y);
-    ships.push_back(l);
+    if(isValidPlacement(initial_x, initial_y, final_x, final_y))
+    {
+        mouse_pressed = false;
+        qDebug() << "is VALID!";
+        QLine l(initial_x, initial_y, final_x, final_y);
+        ships.push_back(l);
+    }
 }
 
 void CoordinateSystem::paintEvent(QPaintEvent *e)

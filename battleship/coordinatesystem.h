@@ -14,6 +14,7 @@ public:
     void fillPointsList();
     QPoint getNextPointFromVector(int, int, std::vector<QPoint>&);
     void clearInvalidPossiblePoints();
+    bool isValidPlacement(int x, int y, int end_x, int end_y);
 
     // Aktualisieren des Koordinatensystems
     void paintAxis();
@@ -48,6 +49,7 @@ private:
 
 
     // TODO: ein Wert statt width und length, da das Spielfeld immer ein Quadrat bleibt
+    int gamearea = 400;
     int width = 400;
     int length = 400;
     int space_to_next_line = 20;
