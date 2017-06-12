@@ -1,5 +1,6 @@
 #include "gameform.h"
 #include <QtWidgets>
+#include "digitalclock.h"
 
 GameForm::GameForm()
 {
@@ -103,6 +104,8 @@ void GameForm::createGridGroupBoxLeft()
     straightFunctionLayout->addWidget(checkStraightButton, 0, 4, 1, 1);
     connect(checkStraightButton, SIGNAL(clicked(bool)), this, SLOT(checkStraight()));
     // Der Button sollte was tun
+    DigitalClock *digitalClock = new DigitalClock();
+    straightFunctionLayout->addWidget(digitalClock, 0, 6, 1, 1);
     layoutLeft->addLayout(straightFunctionLayout, 6,0,2,4);
 
     gridGroupBoxEnemy->setLayout(layoutLeft);
