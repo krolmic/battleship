@@ -7,6 +7,7 @@
 SetShipsForm::SetShipsForm(Player *player)
     :player(player), size(QSize(450, 660))
 {
+
     createMenu();
     createPlayerInformationGroupBox();
     createCoordinateSystemGroupBox();
@@ -30,6 +31,11 @@ SetShipsForm::SetShipsForm(Player *player)
     //resize(size);
     this->setFixedSize(size);
 
+    QMessageBox mBox;
+    mBox.setWindowTitle( "Message" );
+    // TODO: Genauere Spielanweisungen
+    mBox.setText( "Welcome " + *player->getName() + "!\nPlease place your ships!" );
+    mBox.exec();
 }
 
 void SetShipsForm::createMenu()
