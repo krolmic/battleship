@@ -15,6 +15,10 @@ public:
     QPoint getNextPointFromVector(int, int, std::vector<QPoint>&);
     void clearInvalidPossiblePoints();
 
+    void nextShipPoint(int&, int&, int, int);
+    bool isValidDistance(int, int, int, int);
+    bool isValidPlacement(int, int, int, int);
+
     // Aktualisieren des Koordinatensystems
     void paintAxis();
     void paintShips();
@@ -48,6 +52,7 @@ private:
 
 
     // TODO: ein Wert statt width und length, da das Spielfeld immer ein Quadrat bleibt
+    int gamearea = 400;
     int width = 400;
     int length = 400;
     int space_to_next_line = 20;
