@@ -14,7 +14,10 @@ public:
     void fillPointsList();
     QPoint getNextPointFromVector(int, int, std::vector<QPoint>&);
     void clearInvalidPossiblePoints();
-    bool isValidPlacement(int x, int y, int end_x, int end_y);
+
+    void nextShipPoint(int&, int&, int, int);
+    bool isValidDistance(int, int, int, int);
+    bool isValidPlacement(int, int, int, int);
 
     // Aktualisieren des Koordinatensystems
     void paintAxis();
