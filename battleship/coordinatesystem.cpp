@@ -9,7 +9,7 @@
 CoordinateSystem::CoordinateSystem(QWidget *parent)
 : QWidget(parent)
 {
-    target_pixmap = new QPixmap(this->width,this->length);
+    target_pixmap = new QPixmap(this->gamearea,this->gamearea);
     target_pixmap->fill();
     paintAxis();
     initial_x = 0;
@@ -48,7 +48,7 @@ void CoordinateSystem::clearInvalidPossiblePoints()
 {
     for(std::vector<QPoint>::iterator it = possible_points.begin(); it != possible_points.end();)
     {
-        if(it->x() < 0 || it->y() < 0 || it->x() > width || it->y() > width)
+        if(it->x() < 0 || it->y() < 0 || it->x() > gamearea || it->y() > gamearea)
         {
             qWarning() << Q_FUNC_INFO << "ein Punkt ausserhalb des Spielfelds wurde gefunden";
             qWarning() << Q_FUNC_INFO << "Punkt: (x:" << it->x() << "y:" << it->y() << ")";
@@ -61,8 +61,8 @@ void CoordinateSystem::clearInvalidPossiblePoints()
 
 void CoordinateSystem::fillPointsList()
 {
-    for(int y=0; y<=length; y+= length/space_to_next_line)
-        for(int x=0; x<=width; x += width/space_to_next_line)
+    for(int y=0; y<=gamearea; y+= gamearea/space_to_next_line)
+        for(int x=0; x<=gamearea; x += gamearea/space_to_next_line)
         {
             points.push_back(QPoint(x, y));
         }
@@ -77,24 +77,24 @@ void CoordinateSystem::paintAxis()
     pen1.setWidth(2);
     pixmap_painter.setPen(pen2);
 
-    for(int i=space_to_next_line; i<width; i+= width/space_to_next_line)
+    for(int i=space_to_next_line; i<gamearea; i+= gamearea/space_to_next_line)
     {
-        pixmap_painter.drawLine(i, 0, i, length);
-        if(i == (width/space_to_next_line) * space_to_next_line/2)
+        pixmap_painter.drawLine(i, 0, i, gamearea);
+        if(i == (gamearea/space_to_next_line) * space_to_next_line/2)
         {
             pixmap_painter.setPen(pen1);
-            pixmap_painter.drawLine(i, 0, i, length);
+            pixmap_painter.drawLine(i, 0, i, gamearea);
             pixmap_painter.setPen(pen2);
         }
     }
 
-    for(int i=space_to_next_line; i<length; i+= length/space_to_next_line)
+    for(int i=space_to_next_line; i<gamearea; i+= gamearea/space_to_next_line)
     {
-        pixmap_painter.drawLine(0, i, length, i);
-        if(i == (width/space_to_next_line) * space_to_next_line/2)
+        pixmap_painter.drawLine(0, i, gamearea, i);
+        if(i == (gamearea/space_to_next_line) * space_to_next_line/2)
         {
             pixmap_painter.setPen(pen1);
-            pixmap_painter.drawLine(0, i, length, i);
+            pixmap_painter.drawLine(0, i, gamearea, i);
             pixmap_painter.setPen(pen2);
         }
     }
@@ -106,7 +106,7 @@ void CoordinateSystem::paintShips()
     {
         QPainter pixmap_painter(target_pixmap);
         QPen pen(ships_color);
-        pen.setWidth(2);
+        pen.setWidth(3);
         pixmap_painter.setPen(pen);
 
         for(auto s : ships)
@@ -116,24 +116,132 @@ void CoordinateSystem::paintShips()
     }
 }
 
+bool CoordinateSystem::isValidDistance(int x, int y, int x2, int y2)
+{
+        int valid_diatance_to_next_ship = space_to_next_line/2;
+        if(x == x2 && y == y2)
+            return false;
+        if(x + valid_diatance_to_next_ship == x2 && y == y2)
+            return false;
+        if(x - valid_diatance_to_next_ship == x2 && y == y2)
+            return false;
+        if(x == x2 && y + valid_diatance_to_next_ship == y2)
+            return false;
+        if(x == x2 && y - valid_diatance_to_next_ship == y2)
+            return false;
+        if(x + valid_diatance_to_next_ship == x2 && y + valid_diatance_to_next_ship == y2)
+            return false;
+        if(x + valid_diatance_to_next_ship == x2 && y - valid_diatance_to_next_ship == y2)
+            return false;
+        if(x - valid_diatance_to_next_ship == x2 && y + valid_diatance_to_next_ship == y2)
+            return false;
+        if(x - valid_diatance_to_next_ship == x2 && y - valid_diatance_to_next_ship == y2)
+            return false;
+
+    return true;
+}
+
+// Diese Funktion aktualisiert die ersten beiden uebergebenen Werte (x/y) und berechnet diese um eine halbe
+// Kaestchenlaenge zu den anderen uebergebenen x/y Werten. Diese Funktion aendert somit die ersten beiden Variablen
+// und erhoeht/verringert diese Werte, sodass sie den naechstbesten Punkt des Schiffes wiederspiegeln(halbe Kaestchenlaenge)
+void CoordinateSystem::nextShipPoint(int &x, int &y, int x2, int y2)
+{
+    if(x2 > x)
+        x += space_to_next_line/2;
+
+    if(x2 < x)
+        x -= space_to_next_line/2;
+
+    if(y2 > y)
+        y += space_to_next_line/2;
+
+    if(y2 < y)
+        y -= space_to_next_line/2;
+}
+
+// Diese Funktion ueberprueft anhand von 2 Koordinatenpunkten(jeweils x/y) ob diese Schiff(Linien)position valide
+// ist. Es werden Punkt fuer punkt alle Schiffe mit dem neuen verglichen auf Abstand/Schneidung!
+bool CoordinateSystem::isValidPlacement(int x, int y, int dest_x, int dest_y)
+{
+    // Wurden bereits andere Schiffe gesetzt?
+    if(!ships.empty())
+    {
+        qDebug() << "Ships are already placed. Continue with validation...";
+        // Schleife die jedes bereits platzierte Schiff durchläuft
+        for(auto s : ships)
+        {
+            // Startpunkt des neuen Schiffes
+            int x_tmp_new = x;
+            int y_tmp_new = y;
+
+            // Startpunkt eines bereits gesetzten Schiffes
+            int x_tmp = s.x1();
+            int y_tmp = s.y1();
+
+            bool new_ship_last_check = false;
+            bool ship_last_check = false;
+
+            // Die Schiffe werden mit einem Abstand von einem halben Kaestchen ueberprueft, dabei werden die Punkte entlang des Schiffes(ebenso halbes Kaestchen) verwendet.
+            while(true)
+            {
+                while(true)
+                {
+                    if(!isValidDistance(x_tmp, y_tmp, x_tmp_new, y_tmp_new))
+                        return false;
+
+                    if(ship_last_check == true)
+                    {
+                        ship_last_check = false;
+                        break;
+                    }
+
+                    nextShipPoint(x_tmp, y_tmp, s.x2(), s.y2());
+
+                    if(x_tmp == s.x2() && y_tmp == s.y2())
+                        ship_last_check = true;
+                }
+
+                if(new_ship_last_check == true)
+                    break;
+
+                x_tmp = s.x1();
+                y_tmp = s.y1();
+
+                nextShipPoint(x_tmp_new, y_tmp_new, dest_x, dest_y);
+
+                if(x_tmp_new == dest_x && y_tmp_new == dest_y)
+                    new_ship_last_check = true;
+            }
+        }
+    }
+    return true;
+}
+
 void CoordinateSystem::mousePressEvent(QMouseEvent* event)
 {
       mouse_pressed = true;
+
       QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), points);
       initial_x = p.x();
       initial_y = p.y();
+
 }
 
 void CoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
 {
     mouse_pressed = false;
-    QLine l(initial_x, initial_y, final_x, final_y);
-    ships.push_back(l);
+    // TODO: vielleicht ueberfluessig
+    if(isValidPlacement(initial_x, initial_y, final_x, final_y))
+    {
+        QLine l(initial_x, initial_y, final_x, final_y);
+        ships.push_back(l);
+    }
 }
 
 void CoordinateSystem::paintEvent(QPaintEvent *e)
 {
-    if(mouse_pressed)
+
+    if(mouse_pressed && isValidPlacement(initial_x, initial_y, final_x, final_y))
     {
         QPainter pixmap_painter(target_pixmap);
         QPen pen(ships_color);
@@ -171,19 +279,24 @@ void CoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         clearInvalidPossiblePoints();
         qDebug() << "possible_points:";
         for(QPoint p : possible_points)
+        {
             qDebug() << "x:" << p.x() << "y:" << p.y();
 
-
+            qDebug() << "is VALID!";
+        }
         QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), possible_points);
 
-        final_x = p.x();
-        qDebug() << "initial_x:" << initial_x << "initial_y:" << initial_y;
-        final_y = p.y();
+
+            final_x = p.x();
+            qDebug() << "initial_x:" << initial_x << "initial_y:" << initial_y;
+            final_y = p.y();
     }
-    update();
-    paintAxis();
-    paintShips();
+        update();
+        paintAxis();
+        paintShips();
 }
+
+
 
 void CoordinateSystem::clearField()
 {

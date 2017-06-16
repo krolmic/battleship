@@ -15,6 +15,10 @@ public:
     QPoint getNextPointFromVector(int, int, std::vector<QPoint>&);
     void clearInvalidPossiblePoints();
 
+    void nextShipPoint(int&, int&, int, int);
+    bool isValidDistance(int, int, int, int);
+    bool isValidPlacement(int, int, int, int);
+
     // Aktualisieren des Koordinatensystems
     void paintAxis();
     void paintShips();
@@ -44,22 +48,18 @@ private:
     std::vector<QPoint> possible_points; // Moegliche Punkte bei mouseReleaseEvent
 
 
-
-
-
     // TODO: ein Wert statt width und length, da das Spielfeld immer ein Quadrat bleibt
-    int width = 400;
-    int length = 400;
+    int gamearea = 400;
+//    int width = 400;
+//    int length = 400;
     int space_to_next_line = 20;
-    int ship_length = (length/space_to_next_line)*2;
+    int ship_length = (gamearea/space_to_next_line)*2;
     int initial_x = 0;
     int initial_y = 0;
     int final_x = 0;
     int final_y = 0;
 
-
     bool mouse_pressed = false;
-
 };
 
 #endif // COORDINATESYSTEM_H
