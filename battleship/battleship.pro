@@ -29,13 +29,15 @@ SOURCES += main.cpp \
     setshipsform.cpp \
     coordinatesystem.cpp \
     gameform.cpp \
-    player.cpp
+    player.cpp \
+    digitalclock.cpp
 
 HEADERS  += \
     playerform.h \
     setshipsform.h \
     coordinatesystem.h \
     gameform.h \
-    player.h
+    player.h \
+    digitalclock.h
 
 FORMS    += mainwindow.ui
