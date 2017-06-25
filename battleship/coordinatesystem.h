@@ -4,31 +4,22 @@
 #include <QGraphicsView>
 #include <memory>
 
-
+namespace GUI
+{
+// Wird nur als Basis-Klasse benutzt
 class CoordinateSystem : public QWidget
 {
 public:
-    CoordinateSystem(QWidget *parent = nullptr);
+    explicit CoordinateSystem(QWidget *parent = nullptr);
     ~CoordinateSystem();
 
     void fillPointsList();
-    QPoint getNextPointFromVector(int, int, std::vector<QPoint>&);
-    void clearInvalidPossiblePoints();
-
-    void nextShipPoint(int&, int&, int, int);
-    bool isValidDistance(int, int, int, int);
-    bool isValidPlacement(int, int, int, int);
 
     // Aktualisieren des Koordinatensystems
     void paintAxis();
     void paintShips();
-    void clearField();
-
-    // Events
-    void mousePressEvent(QMouseEvent* event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void paintEvent(QPaintEvent *e);
-    void mouseMoveEvent(QMouseEvent *event);
+    // Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt
+    virtual void clearField() = 0;
 
     std::vector<QLine> ships;
     QPixmap *target_pixmap;
@@ -38,20 +29,15 @@ public:
     Qt::GlobalColor ships_color = Qt::blue;
     Qt::GlobalColor bg_color = Qt::white;
 
-
-private:
+protected:
     // TODO: Namen verbessern
     QWidget *parent;
     //QPainter *pixmap_painter;
 
     std::vector<QPoint> points; // Alle punkte des Koordinatensystems
-    std::vector<QPoint> possible_points; // Moegliche Punkte bei mouseReleaseEvent
 
-
-    // TODO: ein Wert statt width und length, da das Spielfeld immer ein Quadrat bleibt
     int gamearea = 400;
-//    int width = 400;
-//    int length = 400;
+
     int space_to_next_line = 20;
     int ship_length = (gamearea/space_to_next_line)*2;
     int initial_x = 0;
@@ -61,5 +47,6 @@ private:
 
     bool mouse_pressed = false;
 };
+}
 
 #endif // COORDINATESYSTEM_H
