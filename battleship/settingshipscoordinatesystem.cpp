@@ -227,8 +227,6 @@ void SettingShipsCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         paintShips();
 }
 
-
-
 void SettingShipsCoordinateSystem::clearField()
 {
     if(!ships.empty())

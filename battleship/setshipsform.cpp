@@ -34,7 +34,7 @@ SetShipsForm::SetShipsForm(Player *player)
     QMessageBox mBox;
     mBox.setWindowTitle( "Message" );
     // TODO: Genauere Spielanweisungen
-    mBox.setText( "Welcome " + *player->getName() + "!\nPlease place your ships!" );
+    mBox.setText( "<p align='center'>Welcome " + *player->getName() + "!</p>Please place your ships!" );
     mBox.exec();
 }
 
@@ -70,7 +70,7 @@ void SetShipsForm::createCoordinateSystemGroupBox()
 {
     coordinateSystemGroupBox = new QGroupBox(tr("Ships"));
     QVBoxLayout *layout = new QVBoxLayout;
-    field = new CoordinateSystem;
+    field = new GUI::SettingShipsCoordinateSystem;
     layout->addWidget(field);
     coordinateSystemGroupBox->setLayout(layout);
 }

@@ -1,6 +1,7 @@
 #include "gameform.h"
 #include <QtWidgets>
 #include "digitalclock.h"
+#include <gamecoordinatesystem.h>
 
 GameForm::GameForm()
 {
@@ -33,7 +34,7 @@ GameForm::GameForm()
     heightScreen = screenGeometry.height() * 0.85;
     widthScreen = screenGeometry.width() * 0.85;
 
-    setFixedSize(widthScreen,heightScreen);
+    setFixedSize(900,800);
     setWindowTitle(tr("Battleship 0.0.1"));
 }
 
@@ -86,7 +87,8 @@ void GameForm::createGridGroupBoxLeft()
     gridGroupBoxEnemy = new QGroupBox("Enemy Field");
     QGridLayout *layoutLeft = new QGridLayout;
 
-    enemyField1 = new CoordinateSystem;
+    enemyField1 = new GUI::GameCoordinateSystem;
+    //enemyField1->setDisabled(true);
     layoutLeft->addWidget(enemyField1, 0, 0, 6, 4);
 
     // Die ganzen Daten, die weiterverwendet werden, in eine andere Klasse bewegen.
@@ -96,17 +98,17 @@ void GameForm::createGridGroupBoxLeft()
     QLabel *label2 = new QLabel("x + ");
     QLineEdit *lineEdit1 = new QLineEdit;
     QLineEdit *lineEdit2 = new QLineEdit;
-    QPushButton *checkStraightButton = new QPushButton("Prüfen");
+    QPushButton *checkStraightButton = new QPushButton("Check");
     straightFunctionLayout->addWidget(label1, 0, 0, 1, 1);
     straightFunctionLayout->addWidget(lineEdit1, 0, 1, 1, 1);
     straightFunctionLayout->addWidget(label2, 0, 2, 1, 1);
-    straightFunctionLayout->addWidget(lineEdit2, 0, 2, 1, 1);
+    straightFunctionLayout->addWidget(lineEdit2, 0, 3, 1, 1);
     straightFunctionLayout->addWidget(checkStraightButton, 0, 4, 1, 1);
     connect(checkStraightButton, SIGNAL(clicked(bool)), this, SLOT(checkStraight()));
     // Der Button sollte was tun
     DigitalClock *digitalClock = new DigitalClock();
-    straightFunctionLayout->addWidget(digitalClock, 0, 6, 1, 1);
-    layoutLeft->addLayout(straightFunctionLayout, 6,0,2,4);
+    straightFunctionLayout->addWidget(digitalClock, 1, 0, 2, 2);
+    layoutLeft->addLayout(straightFunctionLayout, 4, 0, 1, 4);
 
     gridGroupBoxEnemy->setLayout(layoutLeft);
 }
@@ -116,7 +118,7 @@ void GameForm::createGridGroupBoxRight()
     gridGroupBoxOwn = new QGroupBox("Own Field");
     QGridLayout *layoutRight = new QGridLayout;
 
-    ownField1 = new CoordinateSystem;
+    ownField1 = new GUI::GameCoordinateSystem;
     layoutRight->addWidget(ownField1, 0, 0, 4, 4);
 
 
@@ -135,16 +137,18 @@ void GameForm::createGridGroupBoxRight()
     statisticTable->setItem(2,1,wrongShotOwn);
 
     QStringList rowHeaderList;
-    rowHeaderList << "Restliche Schiffe" << "Gleichungsfehler" << "Fehlschüsse";
+    rowHeaderList << "Ramaining ships" << "Equation errors" << "Miss";
     QStringList colHeaderList;
-    colHeaderList << "Gegner" << "Eigenes";
+    colHeaderList << "Enemy" << "Own";
 
     statisticTable->setHorizontalHeaderLabels(colHeaderList);
     statisticTable->setVerticalHeaderLabels(rowHeaderList);
-    layoutRight->addWidget(statisticTable, 4, 2, 2, 2);
+    statisticTable->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    statisticTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    layoutRight->addWidget(statisticTable, 4, 0, 2, 4);
 
-
-    QPushButton *giveUpButton = new QPushButton("Spiel verlassen");
+    // TODO: Exit-Button unterhalb Enemy und Own Field
+    QPushButton *giveUpButton = new QPushButton("Exit");
     connect(giveUpButton, SIGNAL(clicked(bool)), this, SLOT(close()));
     layoutRight->addWidget(giveUpButton, 6, 3, 1, 1);
 
