@@ -2,10 +2,10 @@
 #define GAMECOORDINATESYSTEM_H
 
 
+#include "coordinatesystem.h"
 #include <qwidget.h>
 #include <QGraphicsView>
 #include <memory>
-#include <coordinatesystem.h>
 #include <QLine>
 
 namespace GUI

@@ -1,6 +1,6 @@
 #ifndef PLAYERFORM_H
 #define PLAYERFORM_H
-#include <player.h>
+#include "player.h"
 #include <QWidget>
 
 class PlayerForm : public QDialog
