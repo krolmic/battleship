@@ -30,7 +30,9 @@ SOURCES += main.cpp \
     coordinatesystem.cpp \
     gameform.cpp \
     player.cpp \
-    digitalclock.cpp
+    digitalclock.cpp \
+    settingshipscoordinatesystem.cpp \
+    gamecoordinatesystem.cpp
 
 HEADERS  += \
     playerform.h \
@@ -38,6 +40,8 @@ HEADERS  += \
     coordinatesystem.h \
     gameform.h \
     player.h \
-    digitalclock.h
+    digitalclock.h \
+    settingshipscoordinatesystem.h \
+    gamecoordinatesystem.h
 
 FORMS    += mainwindow.ui
