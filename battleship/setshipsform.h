@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <coordinatesystem.h>
+#include <settingshipscoordinatesystem.h>
 #include "player.h"
 
 class QAction;
@@ -42,7 +43,7 @@ private:
     QGroupBox *coordinateSystemGroupBox;
     QDialogButtonBox *buttonBox;
 
-    CoordinateSystem *field;
+    GUI::SettingShipsCoordinateSystem *field;
 
     Player *player;
     QLabel *nameLabel;

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <coordinatesystem.h>
+#include <gamecoordinatesystem.h>
 
 class QAction;
 class QMenu;
@@ -46,10 +47,10 @@ private:
         // QLabel *labels[NumGridRows];
         // QLineEdit *lineEdits[NumGridRows];
 
-        CoordinateSystem *enemyField1;
-        CoordinateSystem *enemyField2;
+        GUI::GameCoordinateSystem *enemyField1;
+        GUI::GameCoordinateSystem *enemyField2;
         QTableWidget *statisticTable;
-        CoordinateSystem *ownField1;
+        GUI::GameCoordinateSystem *ownField1;
 
 private slots:
         void openVersion();
