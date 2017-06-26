@@ -41,7 +41,8 @@ HEADERS  += \
     gameform.h \
     player.h \
     digitalclock.h \
-    gamecoordinatesystem.h \
-    settingshipscoordinatesystem.h
+    settingshipscoordinatesystem.h \
+    gamecoordinatesystem.h
+
 
 FORMS    += mainwindow.ui

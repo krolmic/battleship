@@ -2,8 +2,8 @@
 #define GAMEFORM_H
 
 #include <QDialog>
-#include <coordinatesystem.h>
-#include <gamecoordinatesystem.h>
+#include "coordinatesystem.h"
+#include "gamecoordinatesystem.h"
 
 class QAction;
 class QMenu;
