@@ -12,13 +12,19 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
 # Find the QtWidgets library
-find_package(Qt5Widgets)
+# find_package(Qt5Widgets)
+# find_package(Qt5Widgets COMPONENTS QtCore QtNetwork)
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Network REQUIRED)
+
+# find_package(Qt5 COMPONENTS QtCore QtNetwork REQUIRED)
 
 set( SRC_LIST
     main.cpp
+    connection.cpp
 )
 set( HEADER_LIST
-
+    connection.h
 )
 
 add_subdirectory(gui)
@@ -27,7 +33,7 @@ add_subdirectory(gui)
 # add_executable(${PROJECT_NAME} WIN32 ${SRC_LIST} ${HEADER_LIST})
 add_library(${PROJECT_LIB} ${SRC_LIST} ${HEADER_LIST})
 # Use the Widgets module from Qt 5.
-target_link_libraries(${PROJECT_LIB} Qt5::Widgets gui_lib)
+target_link_libraries(${PROJECT_LIB} Qt5::Widgets Qt5::Network gui_lib)
 
 add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIB})

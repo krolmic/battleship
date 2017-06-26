@@ -14,9 +14,16 @@ private:
     QLineEdit *ageLine;
     QDialogButtonBox *buttonBox;
     QGroupBox *horizontalGroupBox;
+    QPushButton *hostGameBtn;
+    QPushButton *directConnBtn;
 
     void createPlayerInputFieldsGroup();
     void accept();
-}; // Ende AdressBook
+   QGroupBox* createPlayerConnectionSelectGroup();
+   
+private slots:
+    void hostGame();
+    void connectDirect();
+};
 
 #endif

@@ -2,6 +2,7 @@
 #include "playerform.h"
 #include "setshipsform.h"
 
+
 PlayerForm::PlayerForm()
 {
     // "Name:"
@@ -18,6 +19,12 @@ PlayerForm::PlayerForm()
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addWidget(horizontalGroupBox);
     mainLayout->addWidget(buttonBox);
+    
+    // add connection possibilities
+    mainLayout->addWidget(createPlayerConnectionSelectGroup());
+    connect(hostGameBtn, &QPushButton::clicked, this, &PlayerForm::hostGame);
+    connect(directConnBtn, &QPushButton::clicked, this, &PlayerForm::connectDirect);
+//     mainLayout->addWidget(hostGameBtn);
 
     // Setzen des Layouts
     setLayout(mainLayout);
@@ -71,3 +78,32 @@ void PlayerForm::accept()
         setShipsForm->exec();
     }
 }
+
+QGroupBox* PlayerForm::createPlayerConnectionSelectGroup()
+{
+    QGroupBox* groupBox = new QGroupBox(tr("How do you want connect?"));
+    
+    hostGameBtn = new QPushButton(tr("Host game"), this);
+    directConnBtn = new QPushButton(tr("Connect to host"), this);
+    
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->addWidget(hostGameBtn);
+    layout->addWidget(directConnBtn);
+    
+    groupBox->setLayout(layout);
+    return groupBox;
+}
+
+void PlayerForm::connectDirect()
+{
+    qDebug() << "lets do direct connect";
+}
+
+void PlayerForm::hostGame()
+{
+    qDebug() << "lets host a game";
+}
+
+
+
+
