@@ -12,6 +12,15 @@ SettingShipsCoordinateSystem::~SettingShipsCoordinateSystem()
 {
 }
 
+void SettingShipsCoordinateSystem::fillPointsList()
+{
+    for(int y=0; y<=gamearea; y+= gamearea/space_to_next_line)
+        for(int x=0; x<=gamearea; x += gamearea/space_to_next_line)
+        {
+            points.push_back(QPoint(x, y));
+        }
+}
+
 QPoint SettingShipsCoordinateSystem::getNextPointFromVector(int x, int y, std::vector<QPoint>& v)
 {
     qDebug() << "Starte" << Q_FUNC_INFO << "args:" << x << "," << y;
@@ -152,6 +161,8 @@ bool SettingShipsCoordinateSystem::isValidPlacement(int x, int y, int dest_x, in
 
 void SettingShipsCoordinateSystem::mousePressEvent(QMouseEvent* event)
 {
+    if(points.empty())
+        fillPointsList();
     qDebug() << Q_FUNC_INFO;
     mouse_pressed = true;
     QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), points);

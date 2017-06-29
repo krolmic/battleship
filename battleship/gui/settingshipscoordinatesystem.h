@@ -13,6 +13,7 @@ public:
     using CoordinateSystem::CoordinateSystem;
     ~SettingShipsCoordinateSystem();
 
+    void fillPointsList();
     QPoint getNextPointFromVector(int, int, std::vector<QPoint>&);
     void clearInvalidPossiblePoints();
 

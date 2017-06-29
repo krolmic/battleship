@@ -18,21 +18,13 @@ CoordinateSystem::CoordinateSystem(QWidget *parent)
     paintAxis();
     paintText();
     mouse_pressed = false;
-    fillPointsList();
 }
 
 CoordinateSystem::~CoordinateSystem()
 {
 }
 
-void CoordinateSystem::fillPointsList()
-{
-    for(int y=0; y<=gamearea; y+= gamearea/space_to_next_line)
-        for(int x=0; x<=gamearea; x += gamearea/space_to_next_line)
-        {
-            points.push_back(QPoint(x, y));
-        }
-}
+
 
 void CoordinateSystem::paintAxis()
 {
