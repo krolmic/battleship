@@ -25,24 +25,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp \
-    playerform.cpp \
-    setshipsform.cpp \
-    coordinatesystem.cpp \
-    gameform.cpp \
-    player.cpp \
-    digitalclock.cpp \
-    gamecoordinatesystem.cpp \
-    settingshipscoordinatesystem.cpp
+    gui\playerform.cpp \
+    gui\setshipsform.cpp \
+    gui\coordinatesystem.cpp \
+    gui\gameform.cpp \
+    gui\player.cpp \
+    gui\digitalclock.cpp \
+    gui\gamecoordinatesystem.cpp \
+    gui\settingshipscoordinatesystem.cpp
 
 HEADERS  += \
-    playerform.h \
-    setshipsform.h \
-    coordinatesystem.h \
-    gameform.h \
-    player.h \
-    digitalclock.h \
-    settingshipscoordinatesystem.h \
-    gamecoordinatesystem.h
+    gui\playerform.h \
+    gui\setshipsform.h \
+    gui\coordinatesystem.h \
+    gui\gameform.h \
+    gui\player.h \
+    gui\digitalclock.h \
+    gui\settingshipscoordinatesystem.h \
+    gui\gamecoordinatesystem.h
+
 
 
 FORMS    += mainwindow.ui
