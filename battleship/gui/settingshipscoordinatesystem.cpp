@@ -26,7 +26,7 @@ QPoint SettingShipsCoordinateSystem::getNextPointFromVector(int x, int y, std::v
         if(new_x_diff < best_x_diff)
             end_x = grid_point.x();
         if (new_y_diff < best_y_diff)
-             end_y = grid_point.y();
+            end_y = grid_point.y();
     }
     qDebug() << "Beendet" << Q_FUNC_INFO << "end_x:" << end_x << " end_y:" << end_y;
     return QPoint(end_x, end_y);
@@ -49,25 +49,25 @@ void SettingShipsCoordinateSystem::clearInvalidPossiblePoints()
 
 bool SettingShipsCoordinateSystem::isValidDistance(int x, int y, int x2, int y2)
 {
-        int valid_diatance_to_next_ship = space_to_next_line/2;
-        if(x == x2 && y == y2)
-            return false;
-        if(x + valid_diatance_to_next_ship == x2 && y == y2)
-            return false;
-        if(x - valid_diatance_to_next_ship == x2 && y == y2)
-            return false;
-        if(x == x2 && y + valid_diatance_to_next_ship == y2)
-            return false;
-        if(x == x2 && y - valid_diatance_to_next_ship == y2)
-            return false;
-        if(x + valid_diatance_to_next_ship == x2 && y + valid_diatance_to_next_ship == y2)
-            return false;
-        if(x + valid_diatance_to_next_ship == x2 && y - valid_diatance_to_next_ship == y2)
-            return false;
-        if(x - valid_diatance_to_next_ship == x2 && y + valid_diatance_to_next_ship == y2)
-            return false;
-        if(x - valid_diatance_to_next_ship == x2 && y - valid_diatance_to_next_ship == y2)
-            return false;
+    int valid_diatance_to_next_ship = space_to_next_line/2;
+    if(x == x2 && y == y2)
+        return false;
+    if(x + valid_diatance_to_next_ship == x2 && y == y2)
+        return false;
+    if(x - valid_diatance_to_next_ship == x2 && y == y2)
+        return false;
+    if(x == x2 && y + valid_diatance_to_next_ship == y2)
+        return false;
+    if(x == x2 && y - valid_diatance_to_next_ship == y2)
+        return false;
+    if(x + valid_diatance_to_next_ship == x2 && y + valid_diatance_to_next_ship == y2)
+        return false;
+    if(x + valid_diatance_to_next_ship == x2 && y - valid_diatance_to_next_ship == y2)
+        return false;
+    if(x - valid_diatance_to_next_ship == x2 && y + valid_diatance_to_next_ship == y2)
+        return false;
+    if(x - valid_diatance_to_next_ship == x2 && y - valid_diatance_to_next_ship == y2)
+        return false;
 
     return true;
 }
@@ -94,6 +94,8 @@ void SettingShipsCoordinateSystem::nextShipPoint(int &x, int &y, int x2, int y2)
 // ist. Es werden Punkt fuer punkt alle Schiffe mit dem neuen verglichen auf Abstand/Schneidung!
 bool SettingShipsCoordinateSystem::isValidPlacement(int x, int y, int dest_x, int dest_y)
 {
+    if (x == -1 || dest_x == -1 )
+        return false;
     // Wurden bereits andere Schiffe gesetzt?
     if(!ships.empty())
     {
@@ -150,16 +152,17 @@ bool SettingShipsCoordinateSystem::isValidPlacement(int x, int y, int dest_x, in
 
 void SettingShipsCoordinateSystem::mousePressEvent(QMouseEvent* event)
 {
-      mouse_pressed = true;
-
-      QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), points);
-      initial_x = p.x();
-      initial_y = p.y();
-
+    qDebug() << Q_FUNC_INFO;
+    mouse_pressed = true;
+    QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), points);
+    initial_x = p.x();
+    initial_y = p.y();
+    qDebug() << Q_FUNC_INFO << "initial_x:" << initial_x << "initial_y:" << initial_y;
 }
 
 void SettingShipsCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
 {
+
     mouse_pressed = false;
     // TODO: vielleicht ueberfluessig
     if(isValidPlacement(initial_x, initial_y, final_x, final_y))
@@ -167,12 +170,17 @@ void SettingShipsCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
         QLine l(initial_x, initial_y, final_x, final_y);
         ships.push_back(l);
     }
+    initial_x = -1;
+    initial_y = -1;
+    final_x = -1;
+    final_y = -1;
+
 }
 
 void SettingShipsCoordinateSystem::paintEvent(QPaintEvent *e)
 {
 
-    if(mouse_pressed && isValidPlacement(initial_x, initial_y, final_x, final_y))
+    if(mouse_pressed && isValidPlacement(initial_x, initial_y, final_x, final_y) && initial_x != -1)
     {
         QPainter pixmap_painter(target_pixmap);
         QPen pen(ships_color);
@@ -195,7 +203,6 @@ void SettingShipsCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         pixmap_painter.setPen(pen);
         pixmap_painter.drawLine(initial_x, initial_y, final_x, final_y);
         update();
-
         possible_points.clear();
         // Definition der moeglichen Punkte
         // TODO: eine Funktion daraus machen
@@ -217,14 +224,17 @@ void SettingShipsCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         }
         QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), possible_points);
 
-
+        if (initial_x != -1)
+        {
             final_x = p.x();
             qDebug() << "initial_x:" << initial_x << "initial_y:" << initial_y;
             final_y = p.y();
+        }
     }
-        update();
-        paintAxis();
-        paintShips();
+    update();
+    paintAxis();
+    paintShips();
+    paintText();
 }
 
 void SettingShipsCoordinateSystem::clearField()

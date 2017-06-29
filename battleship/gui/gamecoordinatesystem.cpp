@@ -45,7 +45,6 @@ void GameCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
 
 void GameCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
 {
-    qDebug() << Q_FUNC_INFO;
     // TODO: das "richtige" Event abfragen
     if (event->type() == QGraphicsSceneMouseEvent::MouseMove)
     {
@@ -65,7 +64,6 @@ void GameCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
 
 void GameCoordinateSystem::paintEvent(QPaintEvent *event)
 {
-    //qDebug() << Q_FUNC_INFO;
     if(mouse_pressed)
     {
         QPainter pixmap_painter(target_pixmap);
