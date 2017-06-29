@@ -43,7 +43,7 @@ private:
         QGroupBox *gridGroupBoxOwn;
         int heightScreen;
         int widthScreen;
-
+        QTextEdit *statusBox;
         // QLabel *labels[NumGridRows];
         // QLineEdit *lineEdits[NumGridRows];
 
