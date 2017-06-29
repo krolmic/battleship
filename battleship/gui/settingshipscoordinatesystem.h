@@ -3,7 +3,7 @@
 #include <qwidget.h>
 #include <QGraphicsView>
 #include <memory>
-#include <coordinatesystem.h>
+#include "coordinatesystem.h"
 
 namespace GUI
 {

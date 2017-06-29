@@ -2,6 +2,7 @@
 #define GAMEFORM_H
 
 #include <QDialog>
+#include <QTextEdit>
 #include "coordinatesystem.h"
 #include "gamecoordinatesystem.h"
 
@@ -24,6 +25,7 @@ class GameForm : public QDialog
 public:
     GameForm();
     ~GameForm();
+    QString statusBoxText = "";
 
 private:
     //Ui::Dialog *ui;
@@ -43,7 +45,7 @@ private:
         QGroupBox *gridGroupBoxOwn;
         int heightScreen;
         int widthScreen;
-        QTextEdit *statusBox;
+        QTextEdit *statusBox;        
         // QLabel *labels[NumGridRows];
         // QLineEdit *lineEdits[NumGridRows];
 

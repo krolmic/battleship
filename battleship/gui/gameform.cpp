@@ -1,7 +1,7 @@
 #include "gameform.h"
 #include <QtWidgets>
 #include "digitalclock.h"
-#include <gamecoordinatesystem.h>
+#include "gamecoordinatesystem.h"
 
 GameForm::GameForm()
 {

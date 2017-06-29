@@ -2,8 +2,8 @@
 #define DIALOG_H
 
 #include <QDialog>
-#include <coordinatesystem.h>
-#include <settingshipscoordinatesystem.h>
+#include "coordinatesystem.h"
+#include "settingshipscoordinatesystem.h"
 #include "player.h"
 
 class QAction;
