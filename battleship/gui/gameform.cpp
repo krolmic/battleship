@@ -22,11 +22,6 @@ GameForm::GameForm()
 
     mainLayout->addLayout(subLayout, 0, 0, 20,1);
 
-    QStatusBar *bar = new QStatusBar(this);
-    bar->showMessage("I am a StatusBar");
-    bar->setMaximumHeight(25);
-    mainLayout->addWidget(bar, 21, 0, 1, 1);
-
     setLayout(mainLayout);
 
     QScreen *screen = QGuiApplication::primaryScreen();
@@ -108,7 +103,10 @@ void GameForm::createGridGroupBoxLeft()
     // Der Button sollte was tun
     DigitalClock *digitalClock = new DigitalClock();
     straightFunctionLayout->addWidget(digitalClock, 1, 0, 2, 2);
-    layoutLeft->addLayout(straightFunctionLayout, 4, 0, 1, 4);
+    layoutLeft->addLayout(straightFunctionLayout, 6, 0, 1, 4);
+
+    statusBox = new QTextEdit(statusBoxText, this);
+    layoutLeft->addWidget(statusBox, 7, 0, 2, 4);
 
     gridGroupBoxEnemy->setLayout(layoutLeft);
 }
@@ -160,4 +158,3 @@ GameForm::~GameForm()
 {
     // delete ui;
 }
-
