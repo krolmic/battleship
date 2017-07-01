@@ -29,9 +29,9 @@ void GameCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
     double y = final_y - initial_y;
     double x = final_x - initial_x;
     qDebug() << "x:" << x << "y:" << y;
-    int multiplicator{5};
+    int multiplicator{100};
     // TODO: den Multiplicator berechnen
-    QLine l(initial_x-x*5, initial_y-y*5, final_x+x*5, final_y+y*5);
+    QLine l(initial_x-x*multiplicator, initial_y-y*multiplicator, final_x+x*multiplicator, final_y+y*multiplicator);
     QPainter pixmap_painter(target_pixmap);
     QPen pen(ships_color);
     pen.setWidth(3);
