@@ -178,6 +178,15 @@ void SettingShipsCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
     // TODO: vielleicht ueberfluessig
     if(isValidPlacement(initial_x, initial_y, final_x, final_y))
     {
+        if (initial_x == final_x && initial_y == final_y)
+        {
+            target_pixmap->fill();
+            paintAxis();
+            paintShips();
+            paintText();
+            update();
+            return;
+        }
         QLine l(initial_x, initial_y, final_x, final_y);
         ships.push_back(l);
     }
