@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QTextEdit>
+#include <QGridLayout>
 #include "coordinatesystem.h"
 #include "gamecoordinatesystem.h"
 
@@ -28,36 +29,41 @@ public:
     QString statusBoxText = "";
 
 private:
-    //Ui::Dialog *ui;
-        void createMenus();
-        void createGridGroupBoxLeft();
-        void createGridGroupBoxRight();
+    void createMenus();
+    void createCoordinateSystemGroupBoxOwn();
+    void createCoordinateSystemGroupBoxEnemy();
+    void createInformationGroupBox();
 
-        // enum { NumGridRows = 3, NumButtons = 4 };
+    // enum { NumGridRows = 3, NumButtons = 4 };
 
-        QMenuBar *menuBar;
-        QMenu *fileMenu;
-        QMenu *helpMenu;
-        QAction *resetAction;
-        QAction *exitAction;
-        QAction *versionAction;
-        QGroupBox *gridGroupBoxEnemy;
-        QGroupBox *gridGroupBoxOwn;
-        int heightScreen;
-        int widthScreen;
-        QTextEdit *statusBox;        
-        // QLabel *labels[NumGridRows];
-        // QLineEdit *lineEdits[NumGridRows];
+    GUI::GameCoordinateSystem *ownField;
+    GUI::GameCoordinateSystem *enemyField;
+    QGroupBox* coordinateSystemGroupBoxOwn;
+    QGroupBox* coordinateSystemGroupBoxEnemy;
+    QMenuBar *menuBar;
+    QMenu *fileMenu;
+    QMenu *helpMenu;
+    QAction *resetAction;
+    QAction *exitAction;
+    QAction *versionAction;
+    QGroupBox *gridGroupBoxEnemy;
+    QGroupBox *gridGroupBoxOwn;
+    QGroupBox *informationGroupBox;
+    int heightScreen;
+    int widthScreen;
+    QTextEdit *statusBox;
+    // QLabel *labels[NumGridRows];
+    // QLineEdit *lineEdits[NumGridRows];
 
-        GUI::GameCoordinateSystem *enemyField1;
-        GUI::GameCoordinateSystem *enemyField2;
-        QTableWidget *statisticTable;
-        GUI::GameCoordinateSystem *ownField1;
+    GUI::GameCoordinateSystem *enemyField1;
+    GUI::GameCoordinateSystem *enemyField2;
+    QTableWidget *statisticTable;
+    GUI::GameCoordinateSystem *ownField1;
 
 private slots:
-        void openVersion();
-        void resetOwnField();
-        void checkStraight();
+    void openVersion();
+    void resetOwnField();
+    void checkStraight();
 };
 
 #endif // GAMEFORM_H
