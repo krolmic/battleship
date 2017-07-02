@@ -5,18 +5,18 @@
 
 using namespace std;
 
-Player::Player(QString* namePlayer, int agePlayer)
+Player::Player(QString namePlayer, int agePlayer)
 {
     name = namePlayer;
     age = agePlayer;
 }
 
-void Player::setName(QString* namePlayer)
+void Player::setName(QString namePlayer)
 {
     this->name = namePlayer;
 }
 
-QString* Player::getName()
+QString Player::getName()
 {
     return name;
 }
@@ -71,13 +71,13 @@ int Player::getGrade()
     return grade;
 }
 
-void Player::changeProfile(QString* namePlayer, int age)
+void Player::changeProfile(QString namePlayer, int age)
 {
     this->name = namePlayer;
     this->age = age;
 }
 
-QString* Player::getStats()
+QString Player::getStats()
 {
     QString failures = QString::number(getNumberFailures());
     QString games = QString::number(getNumberGames());
@@ -85,8 +85,7 @@ QString* Player::getStats()
     QString wins = QString::number(getNumberWins());
 
     QString str = QString("Losses:\t\t") + failures +  QString("\nWins:\t\t") + wins + QString("\nGames:\t\t") + games + QString("\nLevel:\t\t") + grade;
-    QString *stats = new QString(str);
-    return stats;
+    return str;
 }
 
 void Player::addLastOponent(QString lastOponent)
@@ -97,4 +96,16 @@ void Player::addLastOponent(QString lastOponent)
 QList<QString> Player::getLastOponents()
 {
     return lastOponents;
+}
+
+void Player::read(const QJsonObject &json)
+{
+    name = json["name"].toString();
+    age = json["age"].toInt();
+}
+
+void Player::write(QJsonObject &json) const
+{
+    json["name"] = name;
+    json["age"] = age;
 }
