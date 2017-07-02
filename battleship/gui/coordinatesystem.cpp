@@ -17,7 +17,6 @@ CoordinateSystem::CoordinateSystem(QWidget *parent)
     target_pixmap->fill();
     paintAxis();
     paintText();
-    mouse_pressed = false;
 }
 
 CoordinateSystem::~CoordinateSystem()
@@ -38,28 +37,48 @@ void CoordinateSystem::paintAxis()
     QBrush brush;
     brush.setColor(Qt::black);
     brush.setStyle(Qt::SolidPattern);
+    pixmap_painter.setFont( QFont("Arial", 7,QFont::Light));
+
     // TODO: Member in der Klasse
     int step{gamearea/space_to_next_line};
+    int number{10};
     for(int i=0; i<=gamearea; i+= step)
     {
         pixmap_painter.drawLine(i, 0, i, gamearea);
+        if(number < 10 && number > -10)
+        {
+            pixmap_painter.setPen(pen1);
+            pixmap_painter.drawLine(i,((step) * space_to_next_line/2),i,((step) * space_to_next_line/2)+3);
+            pixmap_painter.drawText((QPoint(((step) * space_to_next_line/2)-13, i-3)), std::to_string(number).c_str());
+            pixmap_painter.setPen(pen2);
+        }
         if(i == (step) * space_to_next_line/2)
         {
             pixmap_painter.setPen(pen1);
             pixmap_painter.drawLine(i, 0, i, gamearea);
             pixmap_painter.setPen(pen2);
         }
+        --number;
     }
 
+    number = -10;
     for(int i=0; i<=gamearea; i+= step)
     {
         pixmap_painter.drawLine(0, i, gamearea, i);
+        if(number < 10 && number > -10)
+        {
+            pixmap_painter.setPen(pen1);
+            pixmap_painter.drawLine(((step) * space_to_next_line/2),i,((step) * space_to_next_line/2)-3,i);
+            pixmap_painter.drawText(QPoint(i,((step) * space_to_next_line/2)+13), std::to_string(number).c_str());
+            pixmap_painter.setPen(pen2);
+        }
         if(i == (step) * space_to_next_line/2)
         {
             pixmap_painter.setPen(pen1);
             pixmap_painter.drawLine(0, i, gamearea, i);
             pixmap_painter.setPen(pen2);
         }
+        ++number;
     }
 
     // x-arrow
@@ -83,6 +102,7 @@ void CoordinateSystem::paintAxis()
     //paintText();
 }
 
+// TODO: umbenennen
 void CoordinateSystem::paintText()
 {
     int step{gamearea/space_to_next_line};

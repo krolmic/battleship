@@ -252,9 +252,11 @@ void SettingShipsCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         }
     }
     update();
+    target_pixmap->fill();
     paintAxis();
     paintShips();
     paintText();
+    update();
 }
 
 void SettingShipsCoordinateSystem::clearField()

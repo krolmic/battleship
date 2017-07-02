@@ -78,7 +78,7 @@ void SetShipsForm::createCoordinateSystemGroupBox()
 void SetShipsForm::accept()
 {
     // TODO: zum spaeteren Zeitpunkt Ueberpruefung
-    // TODO: zum spaeteren Zeitpunk Uebergabe des Spieler Objekts
+    // TODO: zum spaeteren Zeitpunkt Uebergabe des Spieler Objekts
     close();
     GameForm *setShipsForm = new GameForm();
     setShipsForm->exec();
