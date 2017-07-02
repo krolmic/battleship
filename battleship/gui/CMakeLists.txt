@@ -1,6 +1,7 @@
 set(PROJECT_LIB gui_lib)
 
 set( SRC_LIST
+    battleship_view.cpp
     playerform.cpp
     setshipsform.cpp
     coordinatesystem.cpp
@@ -11,6 +12,7 @@ set( SRC_LIST
     gamecoordinatesystem.cpp
 )
 set( HEADER_LIST
+    battleship_view.h
     playerform.h
     setshipsform.h
     coordinatesystem.h
