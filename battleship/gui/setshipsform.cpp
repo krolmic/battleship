@@ -5,7 +5,7 @@
 #include <QString>
 
 SetShipsForm::SetShipsForm(Player *player)
-    :player(player), size(QSize(450, 660))
+    :player(player), size(QSize(450, 680))
 {
 
     createMenu();
