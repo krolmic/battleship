@@ -15,9 +15,9 @@ class QLabel;
 class QLineEdit;
 class QTableWidget;
 
-namespace Ui {
-class Dialog;
-}
+// namespace Ui {
+// class Dialog;
+// }
 
 class GameForm : public QDialog
 {

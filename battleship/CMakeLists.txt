@@ -12,16 +12,19 @@ include_directories(${PROJECT_SOURCE_DIR})
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
 
-# Find the QtWidgets library
-find_package(Qt5Widgets)
-find_package(Qt5Network)
+# Find the Qt library
+find_package(Qt5 COMPONENTS Core Widgets Network REQUIRED)
 
 set( SRC_LIST
     main.cpp
-    application.cpp
+    battleship_controller.cpp
 )
 set( HEADER_LIST
-    application.h
+    battleship_controller.h
+    
+    model_interface.h
+    view_interface.h
+    controller_interface.h
 )
 
 add_subdirectory(gui)
