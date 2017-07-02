@@ -58,8 +58,11 @@ void GameCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         final_y = event->pos().y();
     }
     update();
+    target_pixmap->fill();
     paintAxis();
     paintShips();
+    paintText();
+    update();
 }
 
 void GameCoordinateSystem::paintEvent(QPaintEvent *event)

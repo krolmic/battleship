@@ -40,12 +40,15 @@ protected:
     int gamearea = 400;
     int space_to_next_line = 20;
     int ship_length = (gamearea/space_to_next_line)*2;
-    /// Ursprung der Geraden
+    /// die Ausgangskoordinaten
     int initial_x = -1;
     int initial_y = -1;
+    /// die Endkoordinaten
     int final_x = -1;
     int final_y = -1;
+    /// wird beim mousePressEvent auf true gesetzt
     bool mouse_pressed = false;
+    /// bestimmt die Groesse der Pfeile an den Achsen des Koordinatensystems
     int triangle_size = 5;
 };
 }
