@@ -98,6 +98,32 @@ void GameForm::createInformationGroupBox()
     DigitalClock *digitalClock = new DigitalClock();
     statusBox = new QTextEdit;
 
+    // Table
+    statisticTable = new QTableWidget(3,2, this);
+    QTableWidgetItem *restShipsEnemy = new QTableWidgetItem("5");
+    QTableWidgetItem *resShipsOwn = new QTableWidgetItem("4");
+    QTableWidgetItem *straightErrorsEnemy = new QTableWidgetItem("8");
+    QTableWidgetItem *straightErrorsOwn = new QTableWidgetItem("7");
+    QTableWidgetItem *wrongShotEnemy = new QTableWidgetItem("6");
+    QTableWidgetItem *wrongShotOwn = new QTableWidgetItem("4");
+    statisticTable->setItem(0,0,restShipsEnemy);
+    statisticTable->setItem(0,1,resShipsOwn);
+    statisticTable->setItem(1,0,straightErrorsEnemy);
+    statisticTable->setItem(1,1,straightErrorsOwn);
+    statisticTable->setItem(2,0,wrongShotEnemy);
+    statisticTable->setItem(2,1,wrongShotOwn);
+
+    QStringList rowHeaderList;
+    rowHeaderList << "Remaining Ships" << "Equation Errors" << "Miss";
+    QStringList colHeaderList;
+    colHeaderList << "Enemy" << "Own";
+
+    statisticTable->setHorizontalHeaderLabels(colHeaderList);
+    statisticTable->setVerticalHeaderLabels(rowHeaderList);
+    statisticTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    statisticTable->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    // End Table
+
     layout->addWidget(label1,0,0,1,1);
     layout->addWidget(lineEdit1,0,1,1,1);
     layout->addWidget(label2,0,2,1,1);
@@ -105,7 +131,8 @@ void GameForm::createInformationGroupBox()
     layout->addWidget(checkStraightButton,0,4,1,1);
     layout->addWidget(timerLabel,1,0,1,1);
     layout->addWidget(digitalClock,1,1,1,4);
-    layout->addWidget(statusBox,2,0,2,6);
+    layout->addWidget(statusBox,2,0,2,3);
+    layout->addWidget(statisticTable,2,3,2,3);
     connect(checkStraightButton, SIGNAL(clicked(bool)), this, SLOT(checkStraight()));
     informationGroupBox->setLayout(layout);
 }
