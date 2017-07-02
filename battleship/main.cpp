@@ -1,13 +1,16 @@
-#include <QtWidgets>
+#include "application.h"
+// #include <QtWidgets>
+#include <QApplication>
 #include "gui/playerform.h"
 #include "gui/gameform.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+    QApplication guiApp(argc, argv);
+    Application app{};
+    
+    auto* playerForm = new PlayerForm{app};
+    playerForm->show();
 
-    PlayerForm playerForm;
-    playerForm.show();
-
-    return app.exec();
+    return guiApp.exec();
 } // Ende main
