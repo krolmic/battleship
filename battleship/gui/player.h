@@ -3,15 +3,16 @@
 
 #include <QString>
 #include <QList>
+#include <QJsonObject>
 
 using namespace std;
 
 class Player
 {
 public:
-    Player(QString* namePlayer, int agePlayer);
-    void setName(QString * namePlayer);
-    QString* getName();
+    Player(QString namePlayer, int agePlayer);
+    void setName(QString namePlayer);
+    QString getName();
 
     void setAge(int age);
     int getAge();
@@ -28,14 +29,16 @@ public:
     void setGrade(int grade);
     int getGrade();
 
-    void changeProfile(QString* namePlayer, int age);
-    QString* getStats();
+    void changeProfile(QString namePlayer, int age);
+    QString getStats();
 
     void addLastOponent(QString recentOponents);
     QList<QString> getLastOponents();
 
+    void read(const QJsonObject &json);
+    void write(QJsonObject &json) const;
 private:
-    QString* name;
+    QString name;
     int age;
     int numberGames = 0;
     int numberWins = 0;
