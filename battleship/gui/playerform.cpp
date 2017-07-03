@@ -1,10 +1,11 @@
 #include <QtWidgets>
 #include "playerform.h"
 #include "setshipsform.h"
-#include "application.h"
+// #include "application.h"
+#include "controller_interface.h"
 
-PlayerForm::PlayerForm(Application& app, QWidget* parent)
-    : QDialog(parent), app{app}
+GUI::PlayerForm::PlayerForm(ControllerInterface& ctrl, QWidget* parent)
+    : QDialog(parent), ctrl{ctrl}
 {
     // "Name:"
     createPlayerInputFieldsGroup();
@@ -24,8 +25,17 @@ PlayerForm::PlayerForm(Application& app, QWidget* parent)
     
     // add connection possibilities
     mainLayout->addWidget(createPlayerConnectionSelectGroup());
-    connect(hostGameBtn, &QPushButton::clicked, this, &PlayerForm::hostGame);
-    connect(directConnBtn, &QPushButton::clicked, this, &PlayerForm::connectToHost);
+    connect(hostGameBtn, &QPushButton::clicked, [&] () {
+        if (validateUserInput()) {
+//             std::string utf8_text = qs.toUtf8().constData();
+            ctrl.startNewGameAsHost(nameLine->text().toStdString(), ageLine->text().toInt());
+        }
+    });
+    connect(directConnBtn, &QPushButton::clicked, [&] () {
+        if (validateUserInput()) {
+            ctrl.startNewGameAsGuest("localhost", 3570, nameLine->text().toStdString(), ageLine->text().toInt());
+        }
+    });
 
     // Setzen des Layouts
     setLayout(mainLayout);
@@ -33,7 +43,7 @@ PlayerForm::PlayerForm(Application& app, QWidget* parent)
     setAttribute(Qt::WA_DeleteOnClose); //clean up memory, since it's not needed anymore
 }
 
-void PlayerForm::createPlayerInputFieldsGroup()
+void GUI::PlayerForm::createPlayerInputFieldsGroup()
 {
     // Layout
     horizontalGroupBox = new QGroupBox(tr("Enter your data"));
@@ -61,9 +71,22 @@ void PlayerForm::createPlayerInputFieldsGroup()
 //     deleteLater();
 // }
 
+bool GUI::PlayerForm::validateUserInput()
+{
+    if(nameLine->text().isEmpty())
+    {
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Error");
+        msgBox.setText("Sorry, an error occurred.");
+        msgBox.setInformativeText("Please enter your name.");
+        msgBox.exec();
+        return false;
+    }
+    return true;
+}
 
 // Implementation der virtuellen Methode QDialog::accept()
-void PlayerForm::accept()
+void GUI::PlayerForm::accept()
 {
     // Der Name darf nicht leer sein
     if(nameLine->text().isEmpty())
@@ -89,18 +112,18 @@ void PlayerForm::accept()
     qDebug() << "END of void PlayerForm::accept()";
 }
 
-void PlayerForm::hostGame()
-{
-    app.startNewGameAsHost();
-}
+// void PlayerForm::hostGame()
+// {
+//     ctrl.startNewGameAsHost();
+// }
+// 
+// void PlayerForm::connectToHost()
+// {
+//     ctrl.startNewGameAsGuest("localhost", 3570);
+// }
 
-void PlayerForm::connectToHost()
-{
-    app.startNewGameAsGuest("localhost", 3570);
-}
 
-
-QGroupBox* PlayerForm::createPlayerConnectionSelectGroup()
+QGroupBox* GUI::PlayerForm::createPlayerConnectionSelectGroup()
 {
     QGroupBox* groupBox = new QGroupBox(tr("How do you want connect?"));
     
