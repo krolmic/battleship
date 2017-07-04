@@ -2,7 +2,7 @@
 #include "playerform.h"
 #include "setshipsform.h"
 // #include "application.h"
-#include "controller_interface.h"
+#include "common/controller_interface.h"
 
 GUI::PlayerForm::PlayerForm(ControllerInterface& ctrl, QWidget* parent)
     : QDialog(parent), ctrl{ctrl}

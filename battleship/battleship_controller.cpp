@@ -1,15 +1,19 @@
 #include "battleship_controller.h"
-#include "gui/battleship_view.h"
+#include "common/user_friendly_exception.h"
 
 BattleshipController::BattleshipController(ModelInterface& model)
-    : model{model}, view{new GUI::BattleshipView{model, *this}}
+    : model{model}, view{GUI::BattleshipView{model, *this}}
 {
 }
 
 void BattleshipController::startNewGameAsHost(const std::string& playerName, int age)
 {
-    model.startNewGameAsHost(playerName, age);
-    view->showWaitingForGuestConnectingDialog();
+    try {
+        model.startNewGameAsHost(playerName, age);
+        view.showWaitingForGuestConnectingDialog();
+    } catch (UserFriendlyException& e) {
+        view.showErrorMessage(e.what());
+    }
 }
 
 void BattleshipController::startNewGameAsGuest(const std::string& address, int port, const std::string& playerName, int age)

@@ -1,12 +1,18 @@
 #include "game_host.h"
 
+#include <QDebug>
+
 MODEL::GameHost::GameHost()
-    : conn{}
+    : conn{
+            [&](const QByteArray& data) { qDebug() << "wow data received"; },
+            std::bind(&GameHost::connected, this)}
 {
     
 }
 
-MODEL::Connection& MODEL::GameHost::getConnection()
+void MODEL::GameHost::connected()
 {
-    return conn;
+    qDebug() << "GameHost::connected"; 
+    QByteArray block = QString::fromStdString("letz tranzferz $$$$$$").toUtf8();
+    conn.sendData(block);
 }

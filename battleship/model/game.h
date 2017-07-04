@@ -1,15 +1,15 @@
 #ifndef GAME_H
 #define GAME_H
 
-namespace MODEL {
-    class Connection;
-}
+#include "communicator.h"
 
 namespace MODEL {
 class Game
 {
 public:
-    explicit Game();
+//     explicit Game();
+    explicit Game(std::function<void()> callbackOnConnected);
+    
     virtual ~Game();
     
     Game(Game const &) = delete; //disable copy-constructor
@@ -17,7 +17,12 @@ public:
     Game(Game&& other) = delete; //disable move-constructor
     Game& operator=(Game&& other) = delete; //disable move assign-operator
     
-    virtual MODEL::Connection& getConnection() = 0;
+protected:
+    void socketConnected();
+    
+    
+private:
+    Communicator com;
 };
 
 } // NS MODEL

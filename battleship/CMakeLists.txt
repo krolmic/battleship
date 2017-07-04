@@ -5,14 +5,15 @@ project(battleship) #name of the project
 set(PROJECT_LIB ${PROJECT_NAME}_lib) #name of library (we compile our application first as library)
 
 # Options. Turn on with 'cmake -Dmyvarname=ON'.
-# option(TEST "Build all tests." OFF) # Makes boolean 'test' available.
-option(TEST "Build all tests." ON) # Makes boolean 'test' available.
+# option(CREATE_TESTS "Build all tests." OFF)
+option(CREATE_TESTS "Build all tests." ON)
 
 
-add_definitions(-std=c++11 -Wall) #use c++11 standard (default is gnu++11 on gcc) and -Wall enables almost all the warnings 
+add_definitions(-std=c++14 -Wall) #use c++11 standard (default is gnu++11 on gcc) and -Wall enables almost all the warnings 
 # Find includes in corresponding build directories
 # set(CMAKE_INCLUDE_CURRENT_DIR ON)
 include_directories(${PROJECT_SOURCE_DIR})
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
 
@@ -25,12 +26,9 @@ set( SRC_LIST
 )
 set( HEADER_LIST
     battleship_controller.h
-    
-    model_interface.h
-    view_interface.h
-    controller_interface.h
 )
 
+add_subdirectory(common)
 add_subdirectory(gui)
 add_subdirectory(model)
 
@@ -40,7 +38,7 @@ add_subdirectory(model)
 # used elsewhere. Like in this case in a Unit-Test
 add_library(${PROJECT_LIB} ${SRC_LIST} ${HEADER_LIST})
 # Use the Widgets module from Qt 5.
-target_link_libraries(${PROJECT_LIB} Qt5::Widgets gui_lib model_lib)
+target_link_libraries(${PROJECT_LIB} Qt5::Widgets common_lib gui_lib model_lib)
 
 add_executable(${PROJECT_NAME} WIN32 main.cpp)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIB})
@@ -50,7 +48,7 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_LIB})
 ################################
 # Testing
 ################################
-if (TEST)
+if (CREATE_TESTS)
   # This adds another subdirectory, which has 'project(gtest)'.
   add_subdirectory(lib/gtest-1.8.0)
 
@@ -75,6 +73,12 @@ if (TEST)
   # manually running the executable run_model_test to see those specific tests.
   add_test(NAME that-test-I-made COMMAND run_model_test)
 
+  
+  add_executable(run_connection_test test_connection.cpp)
+  target_link_libraries(run_connection_test gtest gtest_main)
+  target_link_libraries(run_connection_test ${PROJECT_LIB})
+  add_test(NAME socket-test COMMAND run_connection_test)
+  
   # You can also omit NAME and COMMAND. The second argument could be some other
   # test executable.
   #add_test(that-other-test-I-made run_model_test)

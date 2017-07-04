@@ -15,8 +15,6 @@ public:
     GameGuest(GameGuest&& other) = delete; //disable move-constructor
     GameGuest& operator=(GameGuest&& other) = delete; //disable move assign-operator
     
-    MODEL::Connection& getConnection();
-    
 private:
     MODEL::ConnectionGuest conn;
 };

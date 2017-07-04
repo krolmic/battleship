@@ -15,9 +15,9 @@ public:
     GameHost(GameHost&& other) = delete; //disable move-constructor
     GameHost& operator=(GameHost&& other) = delete; //disable move assign-operator
     
-    MODEL::Connection& getConnection();
-    
 private:
+    void connected();
+    
     MODEL::ConnectionHost conn;
 };
 

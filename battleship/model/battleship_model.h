@@ -1,7 +1,7 @@
 #ifndef BATTLESHIP_MODEL_H
 #define BATTLESHIP_MODEL_H
 
-#include "model_interface.h"
+#include "common/model_interface.h"
 #include <memory>
 #include "game.h"
 
