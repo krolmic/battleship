@@ -3,12 +3,17 @@
 
 #include "communicator.h"
 
+class BattleshipObserver;
+
 namespace MODEL {
 class Game
 {
 public:
 //     explicit Game();
-    explicit Game(std::function<void()> callbackOnConnected);
+    explicit Game(std::vector<std::reference_wrapper<BattleshipObserver>>& observerList);
+    explicit Game(const std::string& address, int port,
+        std::vector<std::reference_wrapper<BattleshipObserver>>& observerList
+    );
     
     virtual ~Game();
     
@@ -17,8 +22,11 @@ public:
     Game(Game&& other) = delete; //disable move-constructor
     Game& operator=(Game&& other) = delete; //disable move assign-operator
     
+    
+    
 protected:
-    void socketConnected();
+    virtual void socketConnected() = 0;
+    std::vector<std::reference_wrapper<BattleshipObserver>>& observerList;
     
     
 private:

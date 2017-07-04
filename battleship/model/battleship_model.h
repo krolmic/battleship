@@ -3,10 +3,18 @@
 
 #include "common/model_interface.h"
 #include <memory>
+#include <vector>
+#include <functional>
 #include "game.h"
+
+class BattleshipObserver;
 
 namespace MODEL {
 
+/**
+ * acts primarely as a wrapper around MODEL::Game class. Especially we make use of its constructor & destructor.
+ * And we can dynamicallly switch between Host and Guest if so desired
+ */
 class BattleshipModel : public ModelInterface
 {
 public:
@@ -32,8 +40,15 @@ public:
      */
     void cancelHosting() override;
     
+    /**
+     * Observer pattern as a part of MVC-Pattern
+     * @param observer is usally a gui, that reflects/shows state-changes of the model
+     */
+    void registerObserver(BattleshipObserver& observer);
+    
 private:
     std::unique_ptr<MODEL::Game> game = nullptr;
+    std::vector<std::reference_wrapper<BattleshipObserver>> observerList;
     
 };
 

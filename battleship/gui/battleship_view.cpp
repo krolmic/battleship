@@ -67,5 +67,14 @@ void GUI::BattleshipView::showErrorMessage(const std::string& msg, const std::st
     msgBox->show();
 }
 
+void GUI::BattleshipView::shipPlacementStarted()
+{
+    qDebug() << "void GUI::BattleshipView::shipPlacementStarted()";
+}
+
+
+
+
+
 
 

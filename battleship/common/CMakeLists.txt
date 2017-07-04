@@ -10,6 +10,7 @@ set( HEADER_LIST
     
     model_interface.h
     controller_interface.h
+    battleship_observer.h
 )
 
 add_library(${PROJECT_LIB} STATIC ${SRC_LIST} ${HEADER_LIST})

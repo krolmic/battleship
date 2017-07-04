@@ -5,7 +5,6 @@
 #include <QNetworkSession>
 #include <QDataStream>
 #include <QTcpSocket>
-#include "connection_observer.h"
 
 
 MODEL::Connection::Connection( std::function<void(const QByteArray&)> callbackOnDataReceived, 

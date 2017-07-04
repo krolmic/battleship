@@ -2,6 +2,7 @@
 #define BATTLESHIPVIEW_H
 
 #include <string>
+#include "common/battleship_observer.h"
 
 class ModelInterface;
 class ControllerInterface;
@@ -9,7 +10,7 @@ class QDialog;
 
 namespace GUI {
     
-class BattleshipView
+class BattleshipView : public BattleshipObserver
 {
 public:
     explicit BattleshipView(ModelInterface& model, ControllerInterface& controller);
@@ -45,6 +46,8 @@ public:
 //      * @see ViewInterface#showErrorMessage(const std::string&, const std::string&)
 //      */
 //     void showErrorMessage(const std::string& msg, const std::string& title) override;
+    
+    void shipPlacementStarted();
     
 private:
     ModelInterface& model;

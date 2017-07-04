@@ -4,6 +4,7 @@
 BattleshipController::BattleshipController(ModelInterface& model)
     : model{model}, view{GUI::BattleshipView{model, *this}}
 {
+    model.registerObserver(view);
 }
 
 void BattleshipController::startNewGameAsHost(const std::string& playerName, int age)
