@@ -70,6 +70,7 @@ void GUI::BattleshipView::showErrorMessage(const std::string& msg, const std::st
 void GUI::BattleshipView::shipPlacementStarted()
 {
     qDebug() << "void GUI::BattleshipView::shipPlacementStarted()";
+    closeTopDialog();
 }
 
 
