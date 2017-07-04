@@ -47,6 +47,7 @@ void MODEL::ConnectionHost::beginConnecting()
         qDebug() << "QTcpServer::newConnection";
         socket = tcpServer->nextPendingConnection();
         callbackOnConnected();
+        tcpServer->close();
     });
     typedef void (QAbstractSocket::*QAbstractSocketErrorSignal)(QAbstractSocket::SocketError);
     connect(socket, static_cast<QAbstractSocketErrorSignal>(&QAbstractSocket::error), this, &ConnectionHost::displayError);
