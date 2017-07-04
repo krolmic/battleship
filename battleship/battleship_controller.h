@@ -1,9 +1,10 @@
 #ifndef BATTLESHIPCONTROLLER_H
 #define BATTLESHIPCONTROLLER_H
 
-#include "controller_interface.h"
-#include "model_interface.h"
-#include "view_interface.h"
+#include "common/controller_interface.h"
+#include "common/model_interface.h"
+// #include "common/view_interface.h"
+#include "gui/battleship_view.h"
 #include <memory>
 
 class BattleshipController : public ControllerInterface
@@ -24,7 +25,8 @@ public:
     
 private:
     ModelInterface& model;
-    std::unique_ptr<ViewInterface> view;
+//     std::unique_ptr<ViewInterface> view;
+    GUI::BattleshipView view;
     
 };
 

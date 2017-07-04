@@ -8,17 +8,15 @@ namespace MODEL {
 class GameHost : public Game
 {
 public:
-    GameHost();
+    GameHost(std::vector<std::reference_wrapper<BattleshipObserver>>& observerList);
     
     GameHost(GameHost const &) = delete; //disable copy-constructor
     GameHost& operator=(GameHost const &other) = delete; //disable assign-operator
     GameHost(GameHost&& other) = delete; //disable move-constructor
     GameHost& operator=(GameHost&& other) = delete; //disable move assign-operator
     
-    MODEL::Connection& getConnection();
-    
-private:
-    MODEL::ConnectionHost conn;
+protected:
+    void socketConnected();
 };
 
 } // NS MODEL

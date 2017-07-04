@@ -8,17 +8,17 @@ namespace MODEL {
 class GameGuest : public Game
 {
 public:
-    explicit GameGuest(const std::string& address, int port);
+    explicit GameGuest(const std::string& address, int port, 
+                       std::vector<std::reference_wrapper<BattleshipObserver>>& observerList);
     
     GameGuest(GameGuest const &) = delete; //disable copy-constructor
     GameGuest& operator=(GameGuest const &other) = delete; //disable assign-operator
     GameGuest(GameGuest&& other) = delete; //disable move-constructor
     GameGuest& operator=(GameGuest&& other) = delete; //disable move assign-operator
     
-    MODEL::Connection& getConnection();
+protected:
+    void socketConnected();
     
-private:
-    MODEL::ConnectionGuest conn;
 };
 
 } // NS MODEL

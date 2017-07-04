@@ -3,36 +3,42 @@
 
 #include "connection.h"
 #include <string>
-#include <QObject>
 #include <QTcpSocket>
 #include <QAbstractSocket>
 
 class QNetworkSession;
 
 namespace MODEL {
-class ConnectionGuest : public QObject, public Connection //https://stackoverflow.com/questions/8578657/qobject-multiple-inheritance
+class ConnectionGuest : public Connection //https://stackoverflow.com/questions/8578657/qobject-multiple-inheritance
 {
     Q_OBJECT
 
 public:
-    explicit ConnectionGuest(const std::string& address, int port, QObject* parent = nullptr);
+    /**
+     * @param callbackOnDataReceived called when full data blcock is received.
+     * @param callbackOnConnected called when connection is established
+     */
+    explicit ConnectionGuest(  const std::string& address, 
+                                            int port,
+                                            std::function<void(const QByteArray&)> callbackOnDataReceived,
+                                            std::function<void()> callbackOnConnected, 
+                                            QObject* parent = nullptr);
+    
+    
     ConnectionGuest(ConnectionGuest const &) = delete; //disable copy-constructor
     ConnectionGuest& operator=(ConnectionGuest const &other) = delete; //disable assign-operator
     ConnectionGuest(ConnectionGuest&& other) = delete; //disable move-constructor
     ConnectionGuest& operator=(ConnectionGuest&& other) = delete; //disable move assign-operator
-    
+
+protected:
+    void beginConnecting() override;
+
 private slots:
-    void sessionOpened();
-    void readData();
-    void displayError(QAbstractSocket::SocketError socketError);
-    void connected();
+//     void readData();
     
 private:
     std::string address;
     int port;
-    QNetworkSession *networkSession{nullptr};
-    QTcpSocket tcpSocket;
-    quint16 blockSize{0};
 };
 
 } // NS MODEL

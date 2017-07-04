@@ -10,16 +10,18 @@ set( SRC_LIST
     game.cpp
     game_guest.cpp
     game_host.cpp
+    communicator.cpp
 )
 set( HEADER_LIST
     battleship_model.h
     connection.h
     connection_guest.h
-    connection_host.cpp
+    connection_host.h
     game.h
     game_guest.h
     game_host.h
+    communicator.h
 )
 
 add_library(${PROJECT_LIB} STATIC ${SRC_LIST} ${HEADER_LIST})
-target_link_libraries(${PROJECT_LIB} Qt5::Network)
+target_link_libraries(${PROJECT_LIB} Qt5::Network common_lib)

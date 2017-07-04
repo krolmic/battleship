@@ -1,15 +1,20 @@
 #ifndef GAME_H
 #define GAME_H
 
-namespace MODEL {
-    class Connection;
-}
+#include "communicator.h"
+
+class BattleshipObserver;
 
 namespace MODEL {
 class Game
 {
 public:
-    explicit Game();
+//     explicit Game();
+    explicit Game(std::vector<std::reference_wrapper<BattleshipObserver>>& observerList);
+    explicit Game(const std::string& address, int port,
+        std::vector<std::reference_wrapper<BattleshipObserver>>& observerList
+    );
+    
     virtual ~Game();
     
     Game(Game const &) = delete; //disable copy-constructor
@@ -17,7 +22,15 @@ public:
     Game(Game&& other) = delete; //disable move-constructor
     Game& operator=(Game&& other) = delete; //disable move assign-operator
     
-    virtual MODEL::Connection& getConnection() = 0;
+    
+    
+protected:
+    virtual void socketConnected() = 0;
+    std::vector<std::reference_wrapper<BattleshipObserver>>& observerList;
+    
+    
+private:
+    Communicator com;
 };
 
 } // NS MODEL

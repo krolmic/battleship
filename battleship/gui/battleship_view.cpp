@@ -1,6 +1,6 @@
 #include "battleship_view.h"
-#include "model_interface.h"
-#include "controller_interface.h"
+#include "common/model_interface.h"
+#include "common/controller_interface.h"
 #include "playerform.h"
 #include <QMessageBox>
 
@@ -20,7 +20,7 @@ GUI::BattleshipView::BattleshipView(ModelInterface& model, ControllerInterface& 
 void GUI::BattleshipView::showWaitingForGuestConnectingDialog()
 {
     auto msgBox = new QMessageBox{};
-    topDialog = msgBox;
+    topDialog = msgBox; //polymorphism
     msgBox->setAttribute(Qt::WA_DeleteOnClose);
     msgBox->setWindowTitle("Hosting game ...");
     msgBox->setText("Waiting for other player to connect ...");
@@ -49,6 +49,31 @@ void GUI::BattleshipView::closeTopDialog()
         //setting topDialog pointer to nullptr is done anyway in &QDialog::finished signal -> lambda [&] () { topDialog = nullptr; }
     }
 }
+
+void GUI::BattleshipView::showErrorMessage(const std::string& msg, const std::string& title)
+{
+    auto msgBox = new QMessageBox{};
+    topDialog = msgBox;
+    msgBox->setAttribute(Qt::WA_DeleteOnClose);
+    msgBox->setWindowTitle(QString::fromStdString(title));
+    msgBox->setText(QString::fromStdString(msg));
+    msgBox->setStandardButtons(QMessageBox::Ok);
+    msgBox->setDefaultButton(QMessageBox::Ok);
+    
+    QObject::connect(msgBox, &QDialog::finished, [&] (int result) {
+        topDialog = nullptr;
+    });
+
+    msgBox->show();
+}
+
+void GUI::BattleshipView::shipPlacementStarted()
+{
+    qDebug() << "void GUI::BattleshipView::shipPlacementStarted()";
+}
+
+
+
 
 
 

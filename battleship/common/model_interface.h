@@ -3,6 +3,8 @@
 
 #include <string>
 
+class BattleshipObserver;
+
 class ModelInterface //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
 {
 public:
@@ -29,6 +31,12 @@ public:
      * This is the case after ModelInterface#startNewGameAsHost(const std::string&, int) call
      */
     virtual void cancelHosting() = 0;
+    
+    /**
+     * Observer pattern as a part of MVC-Pattern
+     * @param observer is usally a gui, that reflects/shows state-changes of the model
+     */
+    virtual void registerObserver(BattleshipObserver& observer) = 0;
 };
 
 #endif // MODELINTERFACE_H
