@@ -22,7 +22,7 @@ public:
     /// Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt
     virtual void clearField() = 0;
     /// Rechnet die Pixel-Koordinaten eines QPoint in der GUI in die mathematisch richtige Werte um und gibt sie zurueck
-    QPoint getCoordinates(QPoint &);
+    QPoint getCoordinates(int x, int y);
 
     /// Schiffe
     std::vector<QLine> ships;

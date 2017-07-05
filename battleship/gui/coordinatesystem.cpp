@@ -1,4 +1,4 @@
-#include "coordinatesystem.h"
+﻿#include "coordinatesystem.h"
 #include <qpainter.h>
 #include <iostream>
 #include <QMouseEvent>
@@ -130,11 +130,11 @@ void CoordinateSystem::paintShips()
     }
 }
 
-QPoint CoordinateSystem::getCoordinates(QPoint &p)
+QPoint CoordinateSystem::getCoordinates(int x, int y)
 {
-    int x{(gamearea/p.x())*space_to_next_line};
-    int y{(gamearea/p.y())*space_to_next_line};
-    x -= 10;
-    y -= 10;
-    return QPoint(x,y);
+    qDebug() << Q_FUNC_INFO << "args:" << x << y;
+    float result_x = (((float)x/gamearea)*space_to_next_line)-10;
+    float result_y = (((float)y/gamearea)*space_to_next_line)-10;
+    qDebug() << Q_FUNC_INFO << "result:" << result_x << result_y;
+    return QPoint(result_x,result_y);
 }
