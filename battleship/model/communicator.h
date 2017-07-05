@@ -48,7 +48,7 @@ public:
     
 
     void sendUserInfo(const UserInfo& userInfo);
-    
+
 private:
     void dataReceived(const QByteArray& data);
     void sendJson(const Command& command, const QJsonObject& json);
