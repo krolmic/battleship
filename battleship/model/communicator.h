@@ -46,8 +46,14 @@ public:
         timeout
     };
 private:
+    /**
+     * Creates model objects from  json-formatted data
+     *
+     * @param data recieved in json
+     */
     void recieveData(const QByteArray& data);
-    
+    /// Creates json object from @param p
+    void sendPlayer(Player& p);
     
     Game& game;
     std::unique_ptr<Connection> conn;

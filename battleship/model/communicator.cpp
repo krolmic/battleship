@@ -39,10 +39,23 @@ void MODEL::Communicator::recieveData(const QByteArray& data)
         break;
     case objectType::player:
         // TODO: change constructor in Player class
-        // there is not need for QString pointer
+        // there is no need for QString pointer
         Player p(object["name"].toString(),object["PropertyName"].toInt());
         break;
     case objectType::timeout:
         break;
     }
+}
+
+void MODEL::Communicator::sendPlayer(Player& p)
+{
+    QJsonObject playerObject;
+    // TODO: change constructor in Player class
+    // there is no need for QString pointer
+    playerObject["name"] = p.getName();
+    playerObject["age"] = p.getAge();
+    QJsonObject obj;
+    obj["type"] = objectType::player;
+    obj["object"] = playerObject;
+    // use connection to send obj
 }
