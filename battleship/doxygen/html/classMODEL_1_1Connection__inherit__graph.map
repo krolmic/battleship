@@ -1,0 +1,4 @@
+<map id="Connection" name="Connection">
+<area shape="rect" id="node3" href="$classMODEL_1_1ConnectionGuest.html" title="Inherits from Connection and implements the functionality for connection used by guest. " alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node4" href="$classMODEL_1_1ConnectionHost.html" title="Inherits from Connection and implements the functionality for connection used by host. " alt="" coords="153,155,269,181"/>
+</map>

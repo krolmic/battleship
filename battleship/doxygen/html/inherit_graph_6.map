@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classGUI_1_1CoordinateSystem.html" title="A virtual base class that defines the essential data for all coordinate systems. " alt="" coords="127,31,257,57"/>
+<area shape="rect" id="node3" href="$classGUI_1_1GameCoordinateSystem.html" title="A simple class that inherits from CoordinateSystem and implements mouse events for starting attack..." alt="" coords="325,5,490,32"/>
+<area shape="rect" id="node4" href="$classGUI_1_1SettingShipsCoordinateSystem.html" title="A simple class that inherits from CoordinateSystem and implements mouse events for setting ships..." alt="" coords="305,56,509,83"/>
+</map>

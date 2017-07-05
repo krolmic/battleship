@@ -7,6 +7,7 @@
 
 namespace GUI
 {
+/// A simple class that inherits from CoordinateSystem and implements mouse events for setting ships
 class SettingShipsCoordinateSystem : public CoordinateSystem
 {
 public:

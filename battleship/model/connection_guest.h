@@ -9,6 +9,7 @@
 class QNetworkSession;
 
 namespace MODEL {
+/// Inherits from Connection and implements the functionality for connection used by guest
 class ConnectionGuest : public Connection //https://stackoverflow.com/questions/8578657/qobject-multiple-inheritance
 {
     Q_OBJECT

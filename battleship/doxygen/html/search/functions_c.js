@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['senddata',['sendData',['../classMODEL_1_1Connection.html#ae31ebe57b25d10a93a635cad878834b0',1,'MODEL::Connection']]],
+  ['sendjson',['sendJson',['../classMODEL_1_1Communicator.html#ab9ff7c65f14065e5bdad9cfc7e15ba27',1,'MODEL::Communicator']]],
+  ['senduserinfo',['sendUserInfo',['../classMODEL_1_1Communicator.html#addda61885a1ef23ed692f15ca56f43c3',1,'MODEL::Communicator']]],
+  ['sessionopened',['sessionOpened',['../classMODEL_1_1Connection.html#a29259cebd0636f7f03aafe1810b46e02',1,'MODEL::Connection']]],
+  ['setage',['setAge',['../classPlayer.html#a23e901febda7a2f14791b3557c247df0',1,'Player']]],
+  ['setgrade',['setGrade',['../classPlayer.html#a2a94b5f95dfbe0d2b19f925eec316a1d',1,'Player']]],
+  ['setname',['setName',['../classPlayer.html#a0c1485a5850d704d9b373ebe21cb9b21',1,'Player']]],
+  ['setnumberfailures',['setNumberFailures',['../classPlayer.html#aaa363c802f56d43e77f1276b9851b5a5',1,'Player']]],
+  ['setnumbergames',['setNumberGames',['../classPlayer.html#aedf3ee71765e18407ad4ba30a8d25d4b',1,'Player']]],
+  ['setnumberwins',['setNumberWins',['../classPlayer.html#a15e6f02e21348714fabfa32c176e2b4b',1,'Player']]],
+  ['setshipsform',['SetShipsForm',['../classSetShipsForm.html#a5d8d0b3ae99ed33ab7f86da618853892',1,'SetShipsForm']]],
+  ['setup',['SetUp',['../classConnectionTest.html#a901706a587f9ae84df8b2395fbe759cb',1,'ConnectionTest::SetUp()'],['../classModelTest.html#a901706a587f9ae84df8b2395fbe759cb',1,'ModelTest::SetUp()']]],
+  ['setuserinfo',['setUserInfo',['../classMODEL_1_1Player.html#af9bcbb01780c8dbef6c96c6e75da2442',1,'MODEL::Player']]],
+  ['ship',['Ship',['../classMODEL_1_1Ship.html#a8b83f3c2ed4f9097d7010a8f58b720e6',1,'MODEL::Ship::Ship(int id, Point p1, Point p2)'],['../classMODEL_1_1Ship.html#a5575ed570a5875b1c5828778b5d699aa',1,'MODEL::Ship::Ship(Ship const &amp;)=delete'],['../classMODEL_1_1Ship.html#a8415fb9e85dd2049357fa6718d603516',1,'MODEL::Ship::Ship(Ship &amp;&amp;other)=delete']]],
+  ['shipplacementstarted',['shipPlacementStarted',['../classBattleshipObserver.html#a54910db86473248c34d9a0149bdf9754',1,'BattleshipObserver::shipPlacementStarted()'],['../classGUI_1_1BattleshipView.html#a471a07ce060e70b1cfa03ce3674fba80',1,'GUI::BattleshipView::shipPlacementStarted()']]],
+  ['showerrormessage',['showErrorMessage',['../classGUI_1_1BattleshipView.html#af7b5e55bee9a37cc4f9a861af40c120b',1,'GUI::BattleshipView']]],
+  ['showtime',['showTime',['../classDigitalClock.html#af0c88ea180e73ee60842341790d31b44',1,'DigitalClock']]],
+  ['showwaitingforguestconnectingdialog',['showWaitingForGuestConnectingDialog',['../classGUI_1_1BattleshipView.html#a511f6d90d37e864a1879eb6f5bd6f9cb',1,'GUI::BattleshipView']]],
+  ['socketconnected',['socketConnected',['../classMODEL_1_1Game.html#a7e0a9af181a76ce2bf8ce1e11f5e03ab',1,'MODEL::Game']]],
+  ['startnewgameasguest',['startNewGameAsGuest',['../classBattleshipController.html#a97013c1a4017c85bcc654424208a0cb4',1,'BattleshipController::startNewGameAsGuest()'],['../classControllerInterface.html#a59fe7601f2d7853043c7056d892b86a4',1,'ControllerInterface::startNewGameAsGuest()'],['../classModelInterface.html#aee662ec9439a2344dcd39a0b65dcf639',1,'ModelInterface::startNewGameAsGuest()'],['../classMODEL_1_1BattleshipModel.html#a076ef235e6ff9708c2bc0c2a4dcc141b',1,'MODEL::BattleshipModel::startNewGameAsGuest()']]],
+  ['startnewgameashost',['startNewGameAsHost',['../classBattleshipController.html#a37949c2d70eb648a5957f9e60e86085c',1,'BattleshipController::startNewGameAsHost()'],['../classControllerInterface.html#a0a1077ca83efdd21ffe8b1c042eb9b3b',1,'ControllerInterface::startNewGameAsHost()'],['../classModelInterface.html#a36aeb8e4e01dd08fd0416f3269789b31',1,'ModelInterface::startNewGameAsHost()'],['../classMODEL_1_1BattleshipModel.html#a655da28525f6ac4d2d15da6808c538b9',1,'MODEL::BattleshipModel::startNewGameAsHost()']]],
+  ['stoptime',['stopTime',['../classDigitalClock.html#af5f394416f4d08f504e88587f60cc489',1,'DigitalClock']]]
+];

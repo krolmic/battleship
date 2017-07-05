@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classMODEL_1_1Game.html" title="A class representing game session that access both Player and Communicator. " alt="" coords="5,31,63,57"/>
+<area shape="rect" id="node2" href="$classMODEL_1_1GameGuest.html" title="Inherits Game and make it possible to manage guests game. " alt="" coords="111,5,203,32"/>
+<area shape="rect" id="node3" href="$classMODEL_1_1GameHost.html" title="Inherits Game and make it possible to manage hosts game. " alt="" coords="114,56,199,83"/>
+</map>

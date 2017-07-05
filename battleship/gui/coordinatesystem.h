@@ -6,7 +6,7 @@
 
 namespace GUI
 {
-/// Abstrakte Klasse
+/// A virtual base class that defines the essential data for all coordinate systems
 class CoordinateSystem : public QWidget
 {
 public:

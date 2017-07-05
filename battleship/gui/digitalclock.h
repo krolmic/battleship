@@ -2,6 +2,7 @@
 #define DIGITALCLOCK_H
 #include <QLCDNumber>
 
+/// A class that defines the graphical interface for timer
 class DigitalClock : public QLCDNumber
 {
     Q_OBJECT

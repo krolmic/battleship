@@ -1,0 +1,4 @@
+<map id="Game" name="Game">
+<area shape="rect" id="node2" href="$classMODEL_1_1GameGuest.html" title="Inherits Game and make it possible to manage guests game. " alt="" coords="5,80,97,107"/>
+<area shape="rect" id="node3" href="$classMODEL_1_1GameHost.html" title="Inherits Game and make it possible to manage hosts game. " alt="" coords="122,80,207,107"/>
+</map>

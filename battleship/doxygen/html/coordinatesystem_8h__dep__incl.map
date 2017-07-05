@@ -1,0 +1,12 @@
+<map id="gui/coordinatesystem.h" name="gui/coordinatesystem.h">
+<area shape="rect" id="node2" href="$coordinatesystem_8cpp.html" title="gui/coordinatesystem.cpp" alt="" coords="5,80,176,107"/>
+<area shape="rect" id="node3" href="$gamecoordinatesystem_8h.html" title="gui/gamecoordinatesystem.h" alt="" coords="200,80,389,107"/>
+<area shape="rect" id="node5" href="$gameform_8h.html" title="gui/gameform.h" alt="" coords="332,155,444,181"/>
+<area shape="rect" id="node8" href="$setshipsform_8h.html" title="gui/setshipsform.h" alt="" coords="467,155,597,181"/>
+<area shape="rect" id="node10" href="$settingshipscoordinatesystem_8h.html" title="gui/settingshipscoordinatesystem.h" alt="" coords="515,80,741,107"/>
+<area shape="rect" id="node4" href="$gamecoordinatesystem_8cpp.html" title="gui/gamecoordinatesystem.cpp" alt="" coords="55,155,257,181"/>
+<area shape="rect" id="node6" href="$gameform_8cpp.html" title="gui/gameform.cpp" alt="" coords="231,229,358,256"/>
+<area shape="rect" id="node7" href="$setshipsform_8cpp.html" title="gui/setshipsform.cpp" alt="" coords="382,229,525,256"/>
+<area shape="rect" id="node9" href="$playerform_8cpp.html" title="gui/playerform.cpp" alt="" coords="549,229,678,256"/>
+<area shape="rect" id="node11" href="$settingshipscoordinatesystem_8cpp.html" title="gui/settingshipscoordinatesystem.cpp" alt="" coords="621,155,862,181"/>
+</map>

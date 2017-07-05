@@ -1,0 +1,9 @@
+<map id="common/battleship_observer.h" name="common/battleship_observer.h">
+<area shape="rect" id="node2" href="$battleship__view_8h.html" title="gui/battleship_view.h" alt="" coords="175,80,319,107"/>
+<area shape="rect" id="node7" href="$game_8cpp.html" title="model/game.cpp" alt="" coords="343,80,462,107"/>
+<area shape="rect" id="node8" href="$game__host_8cpp.html" title="model/game_host.cpp" alt="" coords="486,80,637,107"/>
+<area shape="rect" id="node3" href="$battleship__controller_8h.html" title="battleship_controller.h" alt="" coords="83,155,232,181"/>
+<area shape="rect" id="node6" href="$battleship__view_8cpp.html" title="gui/battleship_view.cpp" alt="" coords="257,155,415,181"/>
+<area shape="rect" id="node4" href="$battleship__controller_8cpp.html" title="battleship_controller.cpp" alt="" coords="5,229,168,256"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="192,229,267,256"/>
+</map>

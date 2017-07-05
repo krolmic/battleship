@@ -11,7 +11,7 @@ class QDialog;
 class QWidget;
 
 namespace GUI {
-    
+/// A simple class that defines and argument exception
 class BattleshipView : public BattleshipObserver
 {
 public:

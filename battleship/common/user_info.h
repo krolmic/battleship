@@ -5,6 +5,7 @@
 
 class QJsonObject;
 
+/// A class which stores information about Player
 class UserInfo
 {
 public:

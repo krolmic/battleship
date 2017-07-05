@@ -9,6 +9,7 @@
 
 class QString;
 
+/// Provides model data to the view and interprets user actions
 class BattleshipController : public ControllerInterface
 {
 public:

@@ -1,0 +1,168 @@
+\hypertarget{classMODEL_1_1Game}{}\section{Game Class Reference}
+\label{classMODEL_1_1Game}\index{Game@{Game}}
+
+
+A class representing game session that access both \hyperlink{classMODEL_1_1Player}{Player} and \hyperlink{classMODEL_1_1Communicator}{Communicator}.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+
+
+Inheritance diagram for Game\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classMODEL_1_1Game__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classMODEL_1_1Game__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classMODEL_1_1Game_ac168f724bc6694d4f9d4c87f8c0189ba}{$\sim$\+Game} ()
+\item 
+void \hyperlink{classMODEL_1_1Game_a3a9f3966eb6f57eac31e4d6244c07c58}{place\+Ship} (\hyperlink{classMODEL_1_1Point}{Point} p1, \hyperlink{classMODEL_1_1Point}{Point} p2)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMODEL_1_1Game_a12daf58e448825c36267d00317e106ab}{Game} (std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \hyperlink{classBattleshipObserver}{Battleship\+Observer} $>$$>$ \&\hyperlink{classMODEL_1_1Game_afada2cb52f9872db4f3ab6e72d07cd05}{observer\+List}, \hyperlink{classUserInfo}{User\+Info} \hyperlink{classUserInfo}{User\+Info})
+\item 
+\hyperlink{classMODEL_1_1Game_a088a17112f1a818f00c0da4bd4d18c1c}{Game} (const std\+::string \&address, int port, std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \hyperlink{classBattleshipObserver}{Battleship\+Observer} $>$$>$ \&\hyperlink{classMODEL_1_1Game_afada2cb52f9872db4f3ab6e72d07cd05}{observer\+List}, \hyperlink{classUserInfo}{User\+Info} \hyperlink{classUserInfo}{User\+Info})
+\item 
+\hyperlink{classMODEL_1_1Game_aade93aad98ae9bc9931236d08f48fcf3}{Game} (\hyperlink{classMODEL_1_1Game}{Game} const \&)=delete
+\item 
+\hyperlink{classMODEL_1_1Game}{Game} \& \hyperlink{classMODEL_1_1Game_a09ee8455dc72eb38e41bb59d70158bb1}{operator=} (\hyperlink{classMODEL_1_1Game}{Game} const \&other)=delete
+\item 
+\hyperlink{classMODEL_1_1Game_a71b42b0e2d234b1240823a01cfd13e66}{Game} (\hyperlink{classMODEL_1_1Game}{Game} \&\&other)=delete
+\item 
+\hyperlink{classMODEL_1_1Game}{Game} \& \hyperlink{classMODEL_1_1Game_ad1c94ba579ec1ea46b7a534b3443199d}{operator=} (\hyperlink{classMODEL_1_1Game}{Game} \&\&other)=delete
+\item 
+void \hyperlink{classMODEL_1_1Game_a7e0a9af181a76ce2bf8ce1e11f5e03ab}{socket\+Connected} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \hyperlink{classBattleshipObserver}{Battleship\+Observer} $>$ $>$ \& \hyperlink{classMODEL_1_1Game_afada2cb52f9872db4f3ab6e72d07cd05}{observer\+List}
+\item 
+\hyperlink{classMODEL_1_1Player}{M\+O\+D\+E\+L\+::\+Player} \hyperlink{classMODEL_1_1Game_ab8c6b1da146382b3d0d098e55cf4b54f}{me}
+\item 
+\hyperlink{classMODEL_1_1Player}{M\+O\+D\+E\+L\+::\+Player} \hyperlink{classMODEL_1_1Game_a9d4d84ca610764d9de0ca5cca663dc17}{enemy}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMODEL_1_1Communicator}{Communicator} \hyperlink{classMODEL_1_1Game_ad4cdd6f3873de65537dda44338624c21}{com}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class representing game session that access both \hyperlink{classMODEL_1_1Player}{Player} and \hyperlink{classMODEL_1_1Communicator}{Communicator}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!````~Game@{$\sim$\+Game}}
+\index{````~Game@{$\sim$\+Game}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{$\sim$\+Game()}{~Game()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Game} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classMODEL_1_1Game_ac168f724bc6694d4f9d4c87f8c0189ba}{}\label{classMODEL_1_1Game_ac168f724bc6694d4f9d4c87f8c0189ba}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!Game@{Game}}
+\index{Game@{Game}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{Game(std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ Battleship\+Observer $>$$>$ \&observer\+List, User\+Info User\+Info)}{Game(std::vector< std::reference_wrapper< BattleshipObserver >> &observerList, UserInfo UserInfo)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game} (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ {\bf Battleship\+Observer} $>$$>$ \&}]{observer\+List, }
+\item[{{\bf User\+Info}}]{User\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}\hypertarget{classMODEL_1_1Game_a12daf58e448825c36267d00317e106ab}{}\label{classMODEL_1_1Game_a12daf58e448825c36267d00317e106ab}
+constructor used in \hyperlink{classMODEL_1_1GameHost}{Game\+Host} class \index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!Game@{Game}}
+\index{Game@{Game}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{Game(const std\+::string \&address, int port, std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ Battleship\+Observer $>$$>$ \&observer\+List, User\+Info User\+Info)}{Game(const std::string &address, int port, std::vector< std::reference_wrapper< BattleshipObserver >> &observerList, UserInfo UserInfo)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{address, }
+\item[{int}]{port, }
+\item[{std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ {\bf Battleship\+Observer} $>$$>$ \&}]{observer\+List, }
+\item[{{\bf User\+Info}}]{User\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}\hypertarget{classMODEL_1_1Game_a088a17112f1a818f00c0da4bd4d18c1c}{}\label{classMODEL_1_1Game_a088a17112f1a818f00c0da4bd4d18c1c}
+constructor used in \hyperlink{classMODEL_1_1GameGuest}{Game\+Guest} class \index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!Game@{Game}}
+\index{Game@{Game}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{Game(\+Game const \&)=delete}{Game(Game const &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game} (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}\hypertarget{classMODEL_1_1Game_aade93aad98ae9bc9931236d08f48fcf3}{}\label{classMODEL_1_1Game_aade93aad98ae9bc9931236d08f48fcf3}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!Game@{Game}}
+\index{Game@{Game}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{Game(\+Game \&\&other)=delete}{Game(Game &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game} (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}\hypertarget{classMODEL_1_1Game_a71b42b0e2d234b1240823a01cfd13e66}{}\label{classMODEL_1_1Game_a71b42b0e2d234b1240823a01cfd13e66}
+
+
+\subsection{Member Function Documentation}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{operator=(\+Game const \&other)=delete}{operator=(Game const &other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}\hypertarget{classMODEL_1_1Game_a09ee8455dc72eb38e41bb59d70158bb1}{}\label{classMODEL_1_1Game_a09ee8455dc72eb38e41bb59d70158bb1}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{operator=(\+Game \&\&other)=delete}{operator=(Game &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}\hypertarget{classMODEL_1_1Game_ad1c94ba579ec1ea46b7a534b3443199d}{}\label{classMODEL_1_1Game_ad1c94ba579ec1ea46b7a534b3443199d}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!place\+Ship@{place\+Ship}}
+\index{place\+Ship@{place\+Ship}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{place\+Ship(\+Point p1, Point p2)}{placeShip(Point p1, Point p2)}}]{\setlength{\rightskip}{0pt plus 5cm}void place\+Ship (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+O\+D\+E\+L\+::\+Point}}]{p1, }
+\item[{{\bf M\+O\+D\+E\+L\+::\+Point}}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{classMODEL_1_1Game_a3a9f3966eb6f57eac31e4d6244c07c58}{}\label{classMODEL_1_1Game_a3a9f3966eb6f57eac31e4d6244c07c58}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classModelInterface_aa708cd5411011ade34c2796b3f102612}{Model\+Interface\+::place\+Ship(\+M\+O\+D\+E\+L\+::\+Point, M\+O\+D\+E\+L\+::\+Point)} 
+\end{DoxySeeAlso}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!socket\+Connected@{socket\+Connected}}
+\index{socket\+Connected@{socket\+Connected}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{socket\+Connected()}{socketConnected()}}]{\setlength{\rightskip}{0pt plus 5cm}void socket\+Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMODEL_1_1Game_a7e0a9af181a76ce2bf8ce1e11f5e03ab}{}\label{classMODEL_1_1Game_a7e0a9af181a76ce2bf8ce1e11f5e03ab}
+
+
+\subsection{Member Data Documentation}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!com@{com}}
+\index{com@{com}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{com}{com}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator} com\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1Game_ad4cdd6f3873de65537dda44338624c21}{}\label{classMODEL_1_1Game_ad4cdd6f3873de65537dda44338624c21}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!enemy@{enemy}}
+\index{enemy@{enemy}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{enemy}{enemy}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+O\+D\+E\+L\+::\+Player} enemy\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMODEL_1_1Game_a9d4d84ca610764d9de0ca5cca663dc17}{}\label{classMODEL_1_1Game_a9d4d84ca610764d9de0ca5cca663dc17}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!me@{me}}
+\index{me@{me}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{me}{me}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+O\+D\+E\+L\+::\+Player} me\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMODEL_1_1Game_ab8c6b1da146382b3d0d098e55cf4b54f}{}\label{classMODEL_1_1Game_ab8c6b1da146382b3d0d098e55cf4b54f}
+\index{M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}!observer\+List@{observer\+List}}
+\index{observer\+List@{observer\+List}!M\+O\+D\+E\+L\+::\+Game@{M\+O\+D\+E\+L\+::\+Game}}
+\subsubsection[{\texorpdfstring{observer\+List}{observerList}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::reference\+\_\+wrapper$<${\bf Battleship\+Observer}$>$ $>$\& observer\+List\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMODEL_1_1Game_afada2cb52f9872db4f3ab6e72d07cd05}{}\label{classMODEL_1_1Game_afada2cb52f9872db4f3ab6e72d07cd05}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\hyperlink{game_8h}{game.\+h}\item 
+model/\hyperlink{game_8cpp}{game.\+cpp}\end{DoxyCompactItemize}

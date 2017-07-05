@@ -1,0 +1,136 @@
+\hypertarget{classMODEL_1_1ConnectionGuest}{}\section{Connection\+Guest Class Reference}
+\label{classMODEL_1_1ConnectionGuest}\index{Connection\+Guest@{Connection\+Guest}}
+
+
+Inherits from \hyperlink{classMODEL_1_1Connection}{Connection} and implements the functionality for connection used by guest.  
+
+
+
+
+{\ttfamily \#include $<$connection\+\_\+guest.\+h$>$}
+
+
+
+Inheritance diagram for Connection\+Guest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classMODEL_1_1ConnectionGuest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Connection\+Guest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classMODEL_1_1ConnectionGuest__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMODEL_1_1ConnectionGuest_ab8d5bc0edf4d5533d3c9340d901e8677}{Connection\+Guest} (const std\+::string \&\hyperlink{classMODEL_1_1ConnectionGuest_a8b6f74419f28d6b9d96568f2f1087c3e}{address}, int \hyperlink{classMODEL_1_1ConnectionGuest_a63c89c04d1feae07ca35558055155ffb}{port}, std\+::function$<$ void(const Q\+Byte\+Array \&)$>$ \hyperlink{classMODEL_1_1Connection_aa0b44072225e1b07b646bd973719ac80}{callback\+On\+Data\+Received}, std\+::function$<$ void()$>$ \hyperlink{classMODEL_1_1Connection_a0cb35149e127dbce2a09f0ac5d5cfc16}{callback\+On\+Connected}, Q\+Object $\ast$parent=nullptr)
+\item 
+\hyperlink{classMODEL_1_1ConnectionGuest_ae5f32ba2fd933170b2652b1b35441e8b}{Connection\+Guest} (\hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest} const \&)=delete
+\item 
+\hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest} \& \hyperlink{classMODEL_1_1ConnectionGuest_ae55994c212e438a0345319dc2de4fb3a}{operator=} (\hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest} const \&other)=delete
+\item 
+\hyperlink{classMODEL_1_1ConnectionGuest_a396b57f90e3db3e21334e007590d6991}{Connection\+Guest} (\hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest} \&\&other)=delete
+\item 
+\hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest} \& \hyperlink{classMODEL_1_1ConnectionGuest_a66b6e88685e8545357fe457d087c0c38}{operator=} (\hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest} \&\&other)=delete
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMODEL_1_1ConnectionGuest_ac867d4f9a602bf9d11bf2c653cbf4fe4}{begin\+Connecting} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classMODEL_1_1ConnectionGuest_a8b6f74419f28d6b9d96568f2f1087c3e}{address}
+\item 
+int \hyperlink{classMODEL_1_1ConnectionGuest_a63c89c04d1feae07ca35558055155ffb}{port}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Inherits from \hyperlink{classMODEL_1_1Connection}{Connection} and implements the functionality for connection used by guest. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!Connection\+Guest@{Connection\+Guest}}
+\index{Connection\+Guest@{Connection\+Guest}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{Connection\+Guest(const std\+::string \&address, int port, std\+::function$<$ void(const Q\+Byte\+Array \&)$>$ callback\+On\+Data\+Received, std\+::function$<$ void()$>$ callback\+On\+Connected, Q\+Object $\ast$parent=nullptr)}{ConnectionGuest(const std::string &address, int port, std::function< void(const QByteArray &)> callbackOnDataReceived, std::function< void()> callbackOnConnected, QObject *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+Guest} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{address, }
+\item[{int}]{port, }
+\item[{std\+::function$<$ void(const Q\+Byte\+Array \&)$>$}]{callback\+On\+Data\+Received, }
+\item[{std\+::function$<$ void()$>$}]{callback\+On\+Connected, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classMODEL_1_1ConnectionGuest_ab8d5bc0edf4d5533d3c9340d901e8677}{}\label{classMODEL_1_1ConnectionGuest_ab8d5bc0edf4d5533d3c9340d901e8677}
+
+\begin{DoxyParams}{Parameters}
+{\em callback\+On\+Data\+Received} & called when full data blcock is received. \\
+\hline
+{\em callback\+On\+Connected} & called when connection is established \\
+\hline
+\end{DoxyParams}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!Connection\+Guest@{Connection\+Guest}}
+\index{Connection\+Guest@{Connection\+Guest}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{Connection\+Guest(\+Connection\+Guest const \&)=delete}{ConnectionGuest(ConnectionGuest const &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+Guest} (
+\begin{DoxyParamCaption}
+\item[{{\bf Connection\+Guest} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1ConnectionGuest_ae5f32ba2fd933170b2652b1b35441e8b}{}\label{classMODEL_1_1ConnectionGuest_ae5f32ba2fd933170b2652b1b35441e8b}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!Connection\+Guest@{Connection\+Guest}}
+\index{Connection\+Guest@{Connection\+Guest}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{Connection\+Guest(\+Connection\+Guest \&\&other)=delete}{ConnectionGuest(ConnectionGuest &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+Guest} (
+\begin{DoxyParamCaption}
+\item[{{\bf Connection\+Guest} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1ConnectionGuest_a396b57f90e3db3e21334e007590d6991}{}\label{classMODEL_1_1ConnectionGuest_a396b57f90e3db3e21334e007590d6991}
+
+
+\subsection{Member Function Documentation}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!begin\+Connecting@{begin\+Connecting}}
+\index{begin\+Connecting@{begin\+Connecting}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{begin\+Connecting() override}{beginConnecting() override}}]{\setlength{\rightskip}{0pt plus 5cm}void begin\+Connecting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classMODEL_1_1ConnectionGuest_ac867d4f9a602bf9d11bf2c653cbf4fe4}{}\label{classMODEL_1_1ConnectionGuest_ac867d4f9a602bf9d11bf2c653cbf4fe4}
+
+
+Implements \hyperlink{classMODEL_1_1Connection_ae3e484e0f3217ab38dbaa36f4a379f69}{Connection}.
+
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{operator=(\+Connection\+Guest const \&other)=delete}{operator=(ConnectionGuest const &other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+Guest}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Connection\+Guest} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1ConnectionGuest_ae55994c212e438a0345319dc2de4fb3a}{}\label{classMODEL_1_1ConnectionGuest_ae55994c212e438a0345319dc2de4fb3a}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{operator=(\+Connection\+Guest \&\&other)=delete}{operator=(ConnectionGuest &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+Guest}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Connection\+Guest} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1ConnectionGuest_a66b6e88685e8545357fe457d087c0c38}{}\label{classMODEL_1_1ConnectionGuest_a66b6e88685e8545357fe457d087c0c38}
+
+
+\subsection{Member Data Documentation}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!address@{address}}
+\index{address@{address}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{address}{address}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string address\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1ConnectionGuest_a8b6f74419f28d6b9d96568f2f1087c3e}{}\label{classMODEL_1_1ConnectionGuest_a8b6f74419f28d6b9d96568f2f1087c3e}
+\index{M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}!port@{port}}
+\index{port@{port}!M\+O\+D\+E\+L\+::\+Connection\+Guest@{M\+O\+D\+E\+L\+::\+Connection\+Guest}}
+\subsubsection[{\texorpdfstring{port}{port}}]{\setlength{\rightskip}{0pt plus 5cm}int port\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1ConnectionGuest_a63c89c04d1feae07ca35558055155ffb}{}\label{classMODEL_1_1ConnectionGuest_a63c89c04d1feae07ca35558055155ffb}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\hyperlink{connection__guest_8h}{connection\+\_\+guest.\+h}\item 
+model/\hyperlink{connection__guest_8cpp}{connection\+\_\+guest.\+cpp}\end{DoxyCompactItemize}

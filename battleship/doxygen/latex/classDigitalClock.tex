@@ -1,0 +1,115 @@
+\hypertarget{classDigitalClock}{}\section{Digital\+Clock Class Reference}
+\label{classDigitalClock}\index{Digital\+Clock@{Digital\+Clock}}
+
+
+A class that defines the graphical interface for timer.  
+
+
+
+
+{\ttfamily \#include $<$digitalclock.\+h$>$}
+
+
+
+Inheritance diagram for Digital\+Clock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classDigitalClock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Digital\+Clock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classDigitalClock__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDigitalClock_af7c214200f518512b56638fb7d568000}{Digital\+Clock} (int \hyperlink{classDigitalClock_adfb81207db5e40a4ccf2b3812632325f}{stop\+After\+Ms}=120000, int \hyperlink{classDigitalClock_a0f09000c25752c09f48e05b96be37ea8}{begin\+Min}=2, int \hyperlink{classDigitalClock_aea23d1b4ccdcd8aa435aaab8d853af57}{begin\+Sec}=0)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDigitalClock_af0c88ea180e73ee60842341790d31b44}{show\+Time} ()
+\item 
+void \hyperlink{classDigitalClock_af5f394416f4d08f504e88587f60cc489}{stop\+Time} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Timer $\ast$ \hyperlink{classDigitalClock_a3d92d64a319dca68e29374b3ec4262bf}{container\+Timer}
+\item 
+Q\+Timer $\ast$ \hyperlink{classDigitalClock_ae0f3267ca73ca79b3a97682c8e0e7d2c}{timer}
+\item 
+Q\+Time $\ast$ \hyperlink{classDigitalClock_ad093050fd193ddb6080eee02766806b8}{time\+Value}
+\item 
+int \hyperlink{classDigitalClock_adfb81207db5e40a4ccf2b3812632325f}{stop\+After\+Ms}
+\item 
+int \hyperlink{classDigitalClock_a0f09000c25752c09f48e05b96be37ea8}{begin\+Min}
+\item 
+int \hyperlink{classDigitalClock_aea23d1b4ccdcd8aa435aaab8d853af57}{begin\+Sec}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that defines the graphical interface for timer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Digital\+Clock@{Digital\+Clock}!Digital\+Clock@{Digital\+Clock}}
+\index{Digital\+Clock@{Digital\+Clock}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{Digital\+Clock(int stop\+After\+Ms=120000, int begin\+Min=2, int begin\+Sec=0)}{DigitalClock(int stopAfterMs=120000, int beginMin=2, int beginSec=0)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\+Clock} (
+\begin{DoxyParamCaption}
+\item[{int}]{stop\+After\+Ms = {\ttfamily 120000}, }
+\item[{int}]{begin\+Min = {\ttfamily 2}, }
+\item[{int}]{begin\+Sec = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classDigitalClock_af7c214200f518512b56638fb7d568000}{}\label{classDigitalClock_af7c214200f518512b56638fb7d568000}
+
+
+\subsection{Member Function Documentation}
+\index{Digital\+Clock@{Digital\+Clock}!show\+Time@{show\+Time}}
+\index{show\+Time@{show\+Time}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{show\+Time}{showTime}}]{\setlength{\rightskip}{0pt plus 5cm}void show\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\hypertarget{classDigitalClock_af0c88ea180e73ee60842341790d31b44}{}\label{classDigitalClock_af0c88ea180e73ee60842341790d31b44}
+\index{Digital\+Clock@{Digital\+Clock}!stop\+Time@{stop\+Time}}
+\index{stop\+Time@{stop\+Time}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{stop\+Time}{stopTime}}]{\setlength{\rightskip}{0pt plus 5cm}void stop\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\hypertarget{classDigitalClock_af5f394416f4d08f504e88587f60cc489}{}\label{classDigitalClock_af5f394416f4d08f504e88587f60cc489}
+
+
+\subsection{Member Data Documentation}
+\index{Digital\+Clock@{Digital\+Clock}!begin\+Min@{begin\+Min}}
+\index{begin\+Min@{begin\+Min}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{begin\+Min}{beginMin}}]{\setlength{\rightskip}{0pt plus 5cm}int begin\+Min\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDigitalClock_a0f09000c25752c09f48e05b96be37ea8}{}\label{classDigitalClock_a0f09000c25752c09f48e05b96be37ea8}
+\index{Digital\+Clock@{Digital\+Clock}!begin\+Sec@{begin\+Sec}}
+\index{begin\+Sec@{begin\+Sec}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{begin\+Sec}{beginSec}}]{\setlength{\rightskip}{0pt plus 5cm}int begin\+Sec\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDigitalClock_aea23d1b4ccdcd8aa435aaab8d853af57}{}\label{classDigitalClock_aea23d1b4ccdcd8aa435aaab8d853af57}
+\index{Digital\+Clock@{Digital\+Clock}!container\+Timer@{container\+Timer}}
+\index{container\+Timer@{container\+Timer}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{container\+Timer}{containerTimer}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer$\ast$ container\+Timer\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDigitalClock_a3d92d64a319dca68e29374b3ec4262bf}{}\label{classDigitalClock_a3d92d64a319dca68e29374b3ec4262bf}
+\index{Digital\+Clock@{Digital\+Clock}!stop\+After\+Ms@{stop\+After\+Ms}}
+\index{stop\+After\+Ms@{stop\+After\+Ms}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{stop\+After\+Ms}{stopAfterMs}}]{\setlength{\rightskip}{0pt plus 5cm}int stop\+After\+Ms\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDigitalClock_adfb81207db5e40a4ccf2b3812632325f}{}\label{classDigitalClock_adfb81207db5e40a4ccf2b3812632325f}
+\index{Digital\+Clock@{Digital\+Clock}!timer@{timer}}
+\index{timer@{timer}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{timer}{timer}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer$\ast$ timer\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDigitalClock_ae0f3267ca73ca79b3a97682c8e0e7d2c}{}\label{classDigitalClock_ae0f3267ca73ca79b3a97682c8e0e7d2c}
+\index{Digital\+Clock@{Digital\+Clock}!time\+Value@{time\+Value}}
+\index{time\+Value@{time\+Value}!Digital\+Clock@{Digital\+Clock}}
+\subsubsection[{\texorpdfstring{time\+Value}{timeValue}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Time$\ast$ time\+Value\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDigitalClock_ad093050fd193ddb6080eee02766806b8}{}\label{classDigitalClock_ad093050fd193ddb6080eee02766806b8}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{digitalclock_8h}{digitalclock.\+h}\item 
+gui/\hyperlink{digitalclock_8cpp}{digitalclock.\+cpp}\end{DoxyCompactItemize}

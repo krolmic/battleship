@@ -7,6 +7,7 @@
 class UserInfo;
 
 namespace MODEL {
+/// Inherits Game and make it possible to manage guests game
 class GameGuest : public Game
 {
 public:

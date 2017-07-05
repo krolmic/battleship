@@ -6,6 +6,7 @@
 
 using namespace std;
 
+/// A class representing player for graphical interface
 class Player
 {
 public:

@@ -3,6 +3,9 @@
 
 class UserInfo;
 
+/**
+ * A base interface class, includes methods, which communicate with model and gui
+ */
 class BattleshipObserver //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
 {
 public:

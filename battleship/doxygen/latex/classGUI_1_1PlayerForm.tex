@@ -1,0 +1,148 @@
+\hypertarget{classGUI_1_1PlayerForm}{}\section{Player\+Form Class Reference}
+\label{classGUI_1_1PlayerForm}\index{Player\+Form@{Player\+Form}}
+
+
+A simple class that defines graphical interface of the form in which players are able enter the name and age.  
+
+
+
+
+{\ttfamily \#include $<$playerform.\+h$>$}
+
+
+
+Inheritance diagram for Player\+Form\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classGUI_1_1PlayerForm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+Form\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classGUI_1_1PlayerForm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1PlayerForm_adb5d9b0acdc6bd505f507533d8769558}{Player\+Form} (\hyperlink{classControllerInterface}{Controller\+Interface} \&\hyperlink{classGUI_1_1PlayerForm_a15e61471831211a4301410bdd802a4a4}{ctrl}, Q\+Widget $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGUI_1_1PlayerForm_aadb9f3b844fb4cf98288cd3c60a3af91}{accept} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGUI_1_1PlayerForm_a075b75384a607ade082a49f4e05a908d}{create\+Player\+Input\+Fields\+Group} ()
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGUI_1_1PlayerForm_a4964adc00f23438b45887af6a767f09c}{create\+Player\+Connection\+Select\+Group} ()
+\item 
+bool \hyperlink{classGUI_1_1PlayerForm_ad56866bf1cf64173068b9932ce8e6452}{validate\+User\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControllerInterface}{Controller\+Interface} \& \hyperlink{classGUI_1_1PlayerForm_a15e61471831211a4301410bdd802a4a4}{ctrl}
+\item 
+\hyperlink{classPlayer}{Player} $\ast$ \hyperlink{classGUI_1_1PlayerForm_a96781128d3743da3d17e0fdd91afba7b}{player}
+\item 
+Q\+Line\+Edit $\ast$ \hyperlink{classGUI_1_1PlayerForm_a8faa8074b2f9d7f9f4471b1ad61b4c65}{name\+Line}
+\item 
+Q\+Line\+Edit $\ast$ \hyperlink{classGUI_1_1PlayerForm_a54e5ef4f421180fa1ce8eede3fcfaf53}{age\+Line}
+\item 
+Q\+Dialog\+Button\+Box $\ast$ \hyperlink{classGUI_1_1PlayerForm_a4d76db11c020d3d895f14dcecf268a95}{button\+Box}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGUI_1_1PlayerForm_af458ad810116b1284b175480c1a3640e}{horizontal\+Group\+Box}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{classGUI_1_1PlayerForm_a2ae9cb3ec8281a3b0b35124cc17c3f3f}{host\+Game\+Btn}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{classGUI_1_1PlayerForm_a5890045743cc294ab7d3f08d104818a7}{direct\+Conn\+Btn}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple class that defines graphical interface of the form in which players are able enter the name and age. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!Player\+Form@{Player\+Form}}
+\index{Player\+Form@{Player\+Form}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{Player\+Form(\+Controller\+Interface \&ctrl, Q\+Widget $\ast$parent=nullptr)}{PlayerForm(ControllerInterface &ctrl, QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player\+Form} (
+\begin{DoxyParamCaption}
+\item[{{\bf Controller\+Interface} \&}]{ctrl, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1PlayerForm_adb5d9b0acdc6bd505f507533d8769558}{}\label{classGUI_1_1PlayerForm_adb5d9b0acdc6bd505f507533d8769558}
+
+
+\subsection{Member Function Documentation}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!accept@{accept}}
+\index{accept@{accept}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{accept}{accept}}]{\setlength{\rightskip}{0pt plus 5cm}void accept (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\hypertarget{classGUI_1_1PlayerForm_aadb9f3b844fb4cf98288cd3c60a3af91}{}\label{classGUI_1_1PlayerForm_aadb9f3b844fb4cf98288cd3c60a3af91}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!create\+Player\+Connection\+Select\+Group@{create\+Player\+Connection\+Select\+Group}}
+\index{create\+Player\+Connection\+Select\+Group@{create\+Player\+Connection\+Select\+Group}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{create\+Player\+Connection\+Select\+Group()}{createPlayerConnectionSelectGroup()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box $\ast$ create\+Player\+Connection\+Select\+Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a4964adc00f23438b45887af6a767f09c}{}\label{classGUI_1_1PlayerForm_a4964adc00f23438b45887af6a767f09c}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!create\+Player\+Input\+Fields\+Group@{create\+Player\+Input\+Fields\+Group}}
+\index{create\+Player\+Input\+Fields\+Group@{create\+Player\+Input\+Fields\+Group}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{create\+Player\+Input\+Fields\+Group()}{createPlayerInputFieldsGroup()}}]{\setlength{\rightskip}{0pt plus 5cm}void create\+Player\+Input\+Fields\+Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a075b75384a607ade082a49f4e05a908d}{}\label{classGUI_1_1PlayerForm_a075b75384a607ade082a49f4e05a908d}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!validate\+User\+Input@{validate\+User\+Input}}
+\index{validate\+User\+Input@{validate\+User\+Input}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{validate\+User\+Input()}{validateUserInput()}}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\+User\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_ad56866bf1cf64173068b9932ce8e6452}{}\label{classGUI_1_1PlayerForm_ad56866bf1cf64173068b9932ce8e6452}
+\begin{DoxyReturn}{Returns}
+true if name is not empty 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!age\+Line@{age\+Line}}
+\index{age\+Line@{age\+Line}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{age\+Line}{ageLine}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ age\+Line\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a54e5ef4f421180fa1ce8eede3fcfaf53}{}\label{classGUI_1_1PlayerForm_a54e5ef4f421180fa1ce8eede3fcfaf53}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!button\+Box@{button\+Box}}
+\index{button\+Box@{button\+Box}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{button\+Box}{buttonBox}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dialog\+Button\+Box$\ast$ button\+Box\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a4d76db11c020d3d895f14dcecf268a95}{}\label{classGUI_1_1PlayerForm_a4d76db11c020d3d895f14dcecf268a95}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!ctrl@{ctrl}}
+\index{ctrl@{ctrl}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{ctrl}{ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controller\+Interface}\& ctrl\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a15e61471831211a4301410bdd802a4a4}{}\label{classGUI_1_1PlayerForm_a15e61471831211a4301410bdd802a4a4}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!direct\+Conn\+Btn@{direct\+Conn\+Btn}}
+\index{direct\+Conn\+Btn@{direct\+Conn\+Btn}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{direct\+Conn\+Btn}{directConnBtn}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ direct\+Conn\+Btn\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a5890045743cc294ab7d3f08d104818a7}{}\label{classGUI_1_1PlayerForm_a5890045743cc294ab7d3f08d104818a7}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!horizontal\+Group\+Box@{horizontal\+Group\+Box}}
+\index{horizontal\+Group\+Box@{horizontal\+Group\+Box}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{horizontal\+Group\+Box}{horizontalGroupBox}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ horizontal\+Group\+Box\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_af458ad810116b1284b175480c1a3640e}{}\label{classGUI_1_1PlayerForm_af458ad810116b1284b175480c1a3640e}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!host\+Game\+Btn@{host\+Game\+Btn}}
+\index{host\+Game\+Btn@{host\+Game\+Btn}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{host\+Game\+Btn}{hostGameBtn}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ host\+Game\+Btn\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a2ae9cb3ec8281a3b0b35124cc17c3f3f}{}\label{classGUI_1_1PlayerForm_a2ae9cb3ec8281a3b0b35124cc17c3f3f}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!name\+Line@{name\+Line}}
+\index{name\+Line@{name\+Line}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{name\+Line}{nameLine}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ name\+Line\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a8faa8074b2f9d7f9f4471b1ad61b4c65}{}\label{classGUI_1_1PlayerForm_a8faa8074b2f9d7f9f4471b1ad61b4c65}
+\index{G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}!player@{player}}
+\index{player@{player}!G\+U\+I\+::\+Player\+Form@{G\+U\+I\+::\+Player\+Form}}
+\subsubsection[{\texorpdfstring{player}{player}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}$\ast$ player\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1PlayerForm_a96781128d3743da3d17e0fdd91afba7b}{}\label{classGUI_1_1PlayerForm_a96781128d3743da3d17e0fdd91afba7b}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{playerform_8h}{playerform.\+h}\item 
+gui/\hyperlink{playerform_8cpp}{playerform.\+cpp}\end{DoxyCompactItemize}

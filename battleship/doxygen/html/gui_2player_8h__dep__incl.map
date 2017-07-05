@@ -1,0 +1,8 @@
+<map id="gui/player.h" name="gui/player.h">
+<area shape="rect" id="node2" href="$playerform_8h.html" title="gui/playerform.h" alt="" coords="27,80,142,107"/>
+<area shape="rect" id="node5" href="$gui_2player_8cpp.html" title="gui/player.cpp" alt="" coords="167,80,269,107"/>
+<area shape="rect" id="node6" href="$setshipsform_8h.html" title="gui/setshipsform.h" alt="" coords="293,80,423,107"/>
+<area shape="rect" id="node7" href="$setshipsform_8cpp.html" title="gui/setshipsform.cpp" alt="" coords="377,155,520,181"/>
+<area shape="rect" id="node3" href="$battleship__view_8cpp.html" title="gui/battleship_view.cpp" alt="" coords="5,155,164,181"/>
+<area shape="rect" id="node4" href="$playerform_8cpp.html" title="gui/playerform.cpp" alt="" coords="200,155,329,181"/>
+</map>

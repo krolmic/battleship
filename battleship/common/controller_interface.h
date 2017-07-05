@@ -3,6 +3,7 @@
 
 class QString;
 
+/// The base class that defines the controller interface
 class ControllerInterface //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
 {
 public:

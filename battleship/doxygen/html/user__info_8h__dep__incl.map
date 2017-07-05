@@ -1,0 +1,16 @@
+<map id="common/user_info.h" name="common/user_info.h">
+<area shape="rect" id="node2" href="$battleship__controller_8cpp.html" title="battleship_controller.cpp" alt="" coords="5,80,168,107"/>
+<area shape="rect" id="node3" href="$user__info_8cpp.html" title="common/user_info.cpp" alt="" coords="192,80,347,107"/>
+<area shape="rect" id="node4" href="$model_2player_8h.html" title="model/player.h" alt="" coords="503,80,609,107"/>
+<area shape="rect" id="node8" href="$battleship__model_8cpp.html" title="model/battleship_model.cpp" alt="" coords="484,304,668,331"/>
+<area shape="rect" id="node10" href="$game__guest_8cpp.html" title="model/game_guest.cpp" alt="" coords="1043,304,1200,331"/>
+<area shape="rect" id="node12" href="$game__host_8cpp.html" title="model/game_host.cpp" alt="" coords="309,304,459,331"/>
+<area shape="rect" id="node13" href="$communicator_8cpp.html" title="model/communicator.cpp" alt="" coords="995,229,1163,256"/>
+<area shape="rect" id="node14" href="$game_8cpp.html" title="model/game.cpp" alt="" coords="1187,229,1306,256"/>
+<area shape="rect" id="node5" href="$game_8h.html" title="model/game.h" alt="" coords="733,155,837,181"/>
+<area shape="rect" id="node15" href="$model_2player_8cpp.html" title="model/player.cpp" alt="" coords="495,155,617,181"/>
+<area shape="rect" id="node6" href="$battleship__model_8h.html" title="model/battleship_model.h" alt="" coords="632,229,803,256"/>
+<area shape="rect" id="node9" href="$game__guest_8h.html" title="model/game_guest.h" alt="" coords="827,229,970,256"/>
+<area shape="rect" id="node11" href="$game__host_8h.html" title="model/game_host.h" alt="" coords="472,229,608,256"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="main.cpp" alt="" coords="692,304,767,331"/>
+</map>

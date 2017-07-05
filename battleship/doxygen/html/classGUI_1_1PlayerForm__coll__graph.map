@@ -1,0 +1,4 @@
+<map id="PlayerForm" name="PlayerForm">
+<area shape="rect" id="node3" href="$classControllerInterface.html" title="The base class that defines the controller interface. " alt="" coords="99,5,229,32"/>
+<area shape="rect" id="node4" href="$classPlayer.html" title="A class representing player for graphical interface. " alt="" coords="252,5,311,32"/>
+</map>

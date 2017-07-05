@@ -1,0 +1,9 @@
+<map id="model/game.h" name="model/game.h">
+<area shape="rect" id="node2" href="$communicator_8h.html" title="communicator.h" alt="" coords="272,80,387,107"/>
+<area shape="rect" id="node12" href="$model_2player_8h.html" title="model/player.h" alt="" coords="637,80,744,107"/>
+<area shape="rect" id="node7" href="$connection_8h.html" title="connection.h" alt="" coords="480,155,576,181"/>
+<area shape="rect" id="node13" href="$user__info_8h.html" title="common/user_info.h" alt="" coords="621,155,761,181"/>
+<area shape="rect" id="node15" href="$coordinate__system_8h.html" title="coordinate_system.h" alt="" coords="785,155,927,181"/>
+<area shape="rect" id="node17" href="$ship_8h.html" title="ship.h" alt="" coords="846,229,903,256"/>
+<area shape="rect" id="node18" href="$point_8h.html" title="point.h" alt="" coords="844,304,905,331"/>
+</map>

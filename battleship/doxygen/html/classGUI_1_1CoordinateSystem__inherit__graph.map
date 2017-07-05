@@ -1,0 +1,4 @@
+<map id="CoordinateSystem" name="CoordinateSystem">
+<area shape="rect" id="node3" href="$classGUI_1_1GameCoordinateSystem.html" title="A simple class that inherits from CoordinateSystem and implements mouse events for starting attack..." alt="" coords="5,155,171,181"/>
+<area shape="rect" id="node4" href="$classGUI_1_1SettingShipsCoordinateSystem.html" title="A simple class that inherits from CoordinateSystem and implements mouse events for setting ships..." alt="" coords="195,155,399,181"/>
+</map>

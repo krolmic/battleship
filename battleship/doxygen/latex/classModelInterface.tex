@@ -1,0 +1,135 @@
+\hypertarget{classModelInterface}{}\section{Model\+Interface Class Reference}
+\label{classModelInterface}\index{Model\+Interface@{Model\+Interface}}
+
+
+The base class that defines the model interface.  
+
+
+
+
+{\ttfamily \#include $<$model\+\_\+interface.\+h$>$}
+
+
+
+Inheritance diagram for Model\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classModelInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classModelInterface_a185a78e2f43b18782afa624cedb412fc}{$\sim$\+Model\+Interface} ()
+\item 
+virtual void \hyperlink{classModelInterface_a38d9c2d3c1b09f40910a7ad1aa1aace4}{register\+Observer} (\hyperlink{classBattleshipObserver}{Battleship\+Observer} \&observer)=0
+\item 
+virtual void \hyperlink{classModelInterface_a36aeb8e4e01dd08fd0416f3269789b31}{start\+New\+Game\+As\+Host} (\hyperlink{classUserInfo}{User\+Info} user\+Info)=0
+\item 
+virtual void \hyperlink{classModelInterface_aee662ec9439a2344dcd39a0b65dcf639}{start\+New\+Game\+As\+Guest} (const std\+::string \&address, int port, \hyperlink{classUserInfo}{User\+Info} user\+Info)=0
+\item 
+virtual void \hyperlink{classModelInterface_a2bb725b2837f07c50718296b2acb9bd6}{cancel\+Hosting} ()=0
+\item 
+virtual void \hyperlink{classModelInterface_aa708cd5411011ade34c2796b3f102612}{place\+Ship} (\hyperlink{classMODEL_1_1Point}{M\+O\+D\+E\+L\+::\+Point} p1, \hyperlink{classMODEL_1_1Point}{M\+O\+D\+E\+L\+::\+Point} p2)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class that defines the model interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Model\+Interface@{Model\+Interface}!````~Model\+Interface@{$\sim$\+Model\+Interface}}
+\index{````~Model\+Interface@{$\sim$\+Model\+Interface}!Model\+Interface@{Model\+Interface}}
+\subsubsection[{\texorpdfstring{$\sim$\+Model\+Interface()}{~ModelInterface()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual $\sim${\bf Model\+Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classModelInterface_a185a78e2f43b18782afa624cedb412fc}{}\label{classModelInterface_a185a78e2f43b18782afa624cedb412fc}
+
+
+\subsection{Member Function Documentation}
+\index{Model\+Interface@{Model\+Interface}!cancel\+Hosting@{cancel\+Hosting}}
+\index{cancel\+Hosting@{cancel\+Hosting}!Model\+Interface@{Model\+Interface}}
+\subsubsection[{\texorpdfstring{cancel\+Hosting()=0}{cancelHosting()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cancel\+Hosting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classModelInterface_a2bb725b2837f07c50718296b2acb9bd6}{}\label{classModelInterface_a2bb725b2837f07c50718296b2acb9bd6}
+user can stop while hosting game and waiting for others to join his game. This is the case after Model\+Interface\+::start\+New\+Game\+As\+Host(const std\+::string\&, int) call 
+
+Implemented in \hyperlink{classMODEL_1_1BattleshipModel_aa7cd87fbe771e195626f19960095bded}{Battleship\+Model}.
+
+\index{Model\+Interface@{Model\+Interface}!place\+Ship@{place\+Ship}}
+\index{place\+Ship@{place\+Ship}!Model\+Interface@{Model\+Interface}}
+\subsubsection[{\texorpdfstring{place\+Ship(\+M\+O\+D\+E\+L\+::\+Point p1, M\+O\+D\+E\+L\+::\+Point p2)=0}{placeShip(MODEL::Point p1, MODEL::Point p2)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void place\+Ship (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+O\+D\+E\+L\+::\+Point}}]{p1, }
+\item[{{\bf M\+O\+D\+E\+L\+::\+Point}}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classModelInterface_aa708cd5411011ade34c2796b3f102612}{}\label{classModelInterface_aa708cd5411011ade34c2796b3f102612}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::length\+\_\+error} & if ship count exceeds 5. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classMODEL_1_1BattleshipModel_a6de4c3b25683e4774fc9b524aa8c7e6a}{Battleship\+Model}.
+
+\index{Model\+Interface@{Model\+Interface}!register\+Observer@{register\+Observer}}
+\index{register\+Observer@{register\+Observer}!Model\+Interface@{Model\+Interface}}
+\subsubsection[{\texorpdfstring{register\+Observer(\+Battleship\+Observer \&observer)=0}{registerObserver(BattleshipObserver &observer)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void register\+Observer (
+\begin{DoxyParamCaption}
+\item[{{\bf Battleship\+Observer} \&}]{observer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classModelInterface_a38d9c2d3c1b09f40910a7ad1aa1aace4}{}\label{classModelInterface_a38d9c2d3c1b09f40910a7ad1aa1aace4}
+Observer pattern as a part of M\+V\+C-\/\+Pattern 
+\begin{DoxyParams}{Parameters}
+{\em observer} & is usally a gui, that reflects/shows state-\/changes of the model \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMODEL_1_1BattleshipModel_a1afa557183362f561ae105fa141941ea}{Battleship\+Model}.
+
+\index{Model\+Interface@{Model\+Interface}!start\+New\+Game\+As\+Guest@{start\+New\+Game\+As\+Guest}}
+\index{start\+New\+Game\+As\+Guest@{start\+New\+Game\+As\+Guest}!Model\+Interface@{Model\+Interface}}
+\subsubsection[{\texorpdfstring{start\+New\+Game\+As\+Guest(const std\+::string \&address, int port, User\+Info user\+Info)=0}{startNewGameAsGuest(const std::string &address, int port, UserInfo userInfo)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void start\+New\+Game\+As\+Guest (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{address, }
+\item[{int}]{port, }
+\item[{{\bf User\+Info}}]{user\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classModelInterface_aee662ec9439a2344dcd39a0b65dcf639}{}\label{classModelInterface_aee662ec9439a2344dcd39a0b65dcf639}
+connect to a host as a guest over the network 
+\begin{DoxyParams}{Parameters}
+{\em address} & ipv4 address \\
+\hline
+{\em port} & a port number \\
+\hline
+{\em player\+Name} & a name, like firstname \\
+\hline
+{\em age} & biological age of a human player \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMODEL_1_1BattleshipModel_a076ef235e6ff9708c2bc0c2a4dcc141b}{Battleship\+Model}.
+
+\index{Model\+Interface@{Model\+Interface}!start\+New\+Game\+As\+Host@{start\+New\+Game\+As\+Host}}
+\index{start\+New\+Game\+As\+Host@{start\+New\+Game\+As\+Host}!Model\+Interface@{Model\+Interface}}
+\subsubsection[{\texorpdfstring{start\+New\+Game\+As\+Host(\+User\+Info user\+Info)=0}{startNewGameAsHost(UserInfo userInfo)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void start\+New\+Game\+As\+Host (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Info}}]{user\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classModelInterface_a36aeb8e4e01dd08fd0416f3269789b31}{}\label{classModelInterface_a36aeb8e4e01dd08fd0416f3269789b31}
+begin new game as host over the network. But first wat for guest to join. 
+
+Implemented in \hyperlink{classMODEL_1_1BattleshipModel_a655da28525f6ac4d2d15da6808c538b9}{Battleship\+Model}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+common/\hyperlink{model__interface_8h}{model\+\_\+interface.\+h}\end{DoxyCompactItemize}

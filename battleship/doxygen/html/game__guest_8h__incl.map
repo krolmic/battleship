@@ -1,0 +1,11 @@
+<map id="model/game_guest.h" name="model/game_guest.h">
+<area shape="rect" id="node2" href="$game_8h.html" title="game.h" alt="" coords="561,80,627,107"/>
+<area shape="rect" id="node20" href="$connection__guest_8h.html" title="connection_guest.h" alt="" coords="843,155,977,181"/>
+<area shape="rect" id="node3" href="$communicator_8h.html" title="communicator.h" alt="" coords="537,155,651,181"/>
+<area shape="rect" id="node13" href="$model_2player_8h.html" title="model/player.h" alt="" coords="189,155,295,181"/>
+<area shape="rect" id="node8" href="$connection_8h.html" title="connection.h" alt="" coords="862,229,958,256"/>
+<area shape="rect" id="node14" href="$user__info_8h.html" title="common/user_info.h" alt="" coords="172,229,312,256"/>
+<area shape="rect" id="node16" href="$coordinate__system_8h.html" title="coordinate_system.h" alt="" coords="5,229,148,256"/>
+<area shape="rect" id="node18" href="$ship_8h.html" title="ship.h" alt="" coords="8,304,65,331"/>
+<area shape="rect" id="node19" href="$point_8h.html" title="point.h" alt="" coords="6,379,67,405"/>
+</map>

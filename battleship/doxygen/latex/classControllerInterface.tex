@@ -1,0 +1,76 @@
+\hypertarget{classControllerInterface}{}\section{Controller\+Interface Class Reference}
+\label{classControllerInterface}\index{Controller\+Interface@{Controller\+Interface}}
+
+
+The base class that defines the controller interface.  
+
+
+
+
+{\ttfamily \#include $<$controller\+\_\+interface.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classControllerInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classControllerInterface_a46df3c69ef790fee7dc8c58235dc689f}{$\sim$\+Controller\+Interface} ()
+\item 
+virtual void \hyperlink{classControllerInterface_a0a1077ca83efdd21ffe8b1c042eb9b3b}{start\+New\+Game\+As\+Host} (const Q\+String \&player\+Name, const Q\+String \&age)=0
+\item 
+virtual void \hyperlink{classControllerInterface_a59fe7601f2d7853043c7056d892b86a4}{start\+New\+Game\+As\+Guest} (const Q\+String \&address, const Q\+String \&port, const Q\+String \&player\+Name, const Q\+String \&age)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class that defines the controller interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Controller\+Interface@{Controller\+Interface}!````~Controller\+Interface@{$\sim$\+Controller\+Interface}}
+\index{````~Controller\+Interface@{$\sim$\+Controller\+Interface}!Controller\+Interface@{Controller\+Interface}}
+\subsubsection[{\texorpdfstring{$\sim$\+Controller\+Interface()}{~ControllerInterface()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual $\sim${\bf Controller\+Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classControllerInterface_a46df3c69ef790fee7dc8c58235dc689f}{}\label{classControllerInterface_a46df3c69ef790fee7dc8c58235dc689f}
+
+
+\subsection{Member Function Documentation}
+\index{Controller\+Interface@{Controller\+Interface}!start\+New\+Game\+As\+Guest@{start\+New\+Game\+As\+Guest}}
+\index{start\+New\+Game\+As\+Guest@{start\+New\+Game\+As\+Guest}!Controller\+Interface@{Controller\+Interface}}
+\subsubsection[{\texorpdfstring{start\+New\+Game\+As\+Guest(const Q\+String \&address, const Q\+String \&port, const Q\+String \&player\+Name, const Q\+String \&age)=0}{startNewGameAsGuest(const QString &address, const QString &port, const QString &playerName, const QString &age)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void start\+New\+Game\+As\+Guest (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{address, }
+\item[{const Q\+String \&}]{port, }
+\item[{const Q\+String \&}]{player\+Name, }
+\item[{const Q\+String \&}]{age}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classControllerInterface_a59fe7601f2d7853043c7056d892b86a4}{}\label{classControllerInterface_a59fe7601f2d7853043c7056d892b86a4}
+connect to a host as a guest over the network 
+
+Implemented in \hyperlink{classBattleshipController_a97013c1a4017c85bcc654424208a0cb4}{Battleship\+Controller}.
+
+\index{Controller\+Interface@{Controller\+Interface}!start\+New\+Game\+As\+Host@{start\+New\+Game\+As\+Host}}
+\index{start\+New\+Game\+As\+Host@{start\+New\+Game\+As\+Host}!Controller\+Interface@{Controller\+Interface}}
+\subsubsection[{\texorpdfstring{start\+New\+Game\+As\+Host(const Q\+String \&player\+Name, const Q\+String \&age)=0}{startNewGameAsHost(const QString &playerName, const QString &age)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void start\+New\+Game\+As\+Host (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{player\+Name, }
+\item[{const Q\+String \&}]{age}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classControllerInterface_a0a1077ca83efdd21ffe8b1c042eb9b3b}{}\label{classControllerInterface_a0a1077ca83efdd21ffe8b1c042eb9b3b}
+begin new game as host over the network. But first wat for guest to join. 
+
+Implemented in \hyperlink{classBattleshipController_a37949c2d70eb648a5957f9e60e86085c}{Battleship\+Controller}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+common/\hyperlink{controller__interface_8h}{controller\+\_\+interface.\+h}\end{DoxyCompactItemize}
