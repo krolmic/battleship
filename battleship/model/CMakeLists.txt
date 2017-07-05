@@ -11,6 +11,7 @@ set( SRC_LIST
     game_guest.cpp
     game_host.cpp
     communicator.cpp
+    player.cpp
 )
 set( HEADER_LIST
     battleship_model.h
@@ -21,6 +22,7 @@ set( HEADER_LIST
     game_guest.h
     game_host.h
     communicator.h
+    player.h
 )
 
 add_library(${PROJECT_LIB} STATIC ${SRC_LIST} ${HEADER_LIST})

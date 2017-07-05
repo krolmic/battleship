@@ -4,10 +4,20 @@
 #include <memory>
 #include "connection.h"
 
-namespace MODEL {
 
-class Game;
+class UserInfo;
+
+namespace MODEL {
     
+class Game;
+
+enum class Command
+{ 
+    USER_INFO,
+    SHIP_PLACEMENT
+};
+
+
 class Communicator
 {
 public:
@@ -34,8 +44,12 @@ public:
     Communicator(Communicator&& other) = delete; //disable move-constructor
     Communicator& operator=(Communicator&& other) = delete; //disable move assign-operator
     
+    
+    void sendUserInfo(const UserInfo& userInfo);
+    
 private:
     void dataReceived(const QByteArray& data);
+    void sendJson(const Command& command, const QJsonObject& json);
     
     
     Game& game;

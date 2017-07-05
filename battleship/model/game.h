@@ -2,20 +2,35 @@
 #define GAME_H
 
 #include "communicator.h"
+#include "model/player.h"
 
 class BattleshipObserver;
+class UserInfo;
 
 namespace MODEL {
 class Game
 {
 public:
-//     explicit Game();
-    explicit Game(std::vector<std::reference_wrapper<BattleshipObserver>>& observerList);
-    explicit Game(const std::string& address, int port,
-        std::vector<std::reference_wrapper<BattleshipObserver>>& observerList
+    virtual ~Game();
+    
+protected:
+    /**
+     * constructor used in GameHost class
+     */
+    explicit Game(
+        std::vector<std::reference_wrapper<BattleshipObserver>>& observerList, 
+        UserInfo UserInfo);
+
+    /**
+     * constructor used in GameGuest class
+     */
+    explicit Game(
+        const std::string& address, 
+        int port,
+        std::vector<std::reference_wrapper<BattleshipObserver>>& observerList,
+        UserInfo UserInfo
     );
     
-    virtual ~Game();
     
     Game(Game const &) = delete; //disable copy-constructor
     Game& operator=(Game const &other) = delete; //disable assign-operator
@@ -25,9 +40,11 @@ public:
     
     
 protected:
-    virtual void socketConnected() = 0;
+    void socketConnected();
     std::vector<std::reference_wrapper<BattleshipObserver>>& observerList;
     
+    Player me;
+    Player enemy;
     
 private:
     Communicator com;

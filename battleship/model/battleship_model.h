@@ -8,6 +8,7 @@
 #include "game.h"
 
 class BattleshipObserver;
+class UserInfo;
 
 namespace MODEL {
 
@@ -28,12 +29,12 @@ public:
     /**
      * @see ModelInterface#startNewGameAsHost(const std::string&, int)
      */
-    void startNewGameAsHost(const std::string& playerName, int age) override;
+    void startNewGameAsHost(UserInfo userInfo) override;
     
     /**
      * @see ModelInterface#startNewGameAsGuest(const std::string&, int, const std::string&, int)
      */
-    void startNewGameAsGuest(const std::string& address, int port, const std::string& playerName, int age) override;
+    void startNewGameAsGuest(const std::string& address, int port, UserInfo userInfo) override;
     
     /**
      * @see ModelInterface#cancelHosting()

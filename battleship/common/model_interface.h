@@ -4,6 +4,7 @@
 #include <string>
 
 class BattleshipObserver;
+class UserInfo;
 
 class ModelInterface //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
 {
@@ -13,7 +14,7 @@ public:
     /**
      * begin new game as host over the network. But first wat for guest  to join.
      */
-    virtual void startNewGameAsHost(const std::string& playerName, int age) = 0;
+    virtual void startNewGameAsHost(UserInfo userInfo) = 0;
     
     
     /**
@@ -23,7 +24,7 @@ public:
      * @param playerName a name, like firstname
      * @param age biological age of a human player
      */
-    virtual void startNewGameAsGuest(const std::string& address, int port, const std::string& playerName, int age) = 0;
+    virtual void startNewGameAsGuest(const std::string& address, int port, UserInfo userInfo) = 0;
     
     
     /**
