@@ -8,6 +8,7 @@
 #include "game.h"
 
 class BattleshipObserver;
+class UserInfo;
 
 namespace MODEL {
 
@@ -25,15 +26,22 @@ public:
     BattleshipModel(BattleshipModel&& other) = delete; //disable move-constructor
     BattleshipModel& operator=(BattleshipModel&& other) = delete; //disable move assign-operator
     
+    
+    /**
+     * Observer pattern as a part of MVC-Pattern
+     * @param observer is usally a gui, that reflects/shows state-changes of the model
+     */
+    void registerObserver(BattleshipObserver& observer);
+    
     /**
      * @see ModelInterface#startNewGameAsHost(const std::string&, int)
      */
-    void startNewGameAsHost(const std::string& playerName, int age) override;
+    void startNewGameAsHost(UserInfo userInfo) override;
     
     /**
      * @see ModelInterface#startNewGameAsGuest(const std::string&, int, const std::string&, int)
      */
-    void startNewGameAsGuest(const std::string& address, int port, const std::string& playerName, int age) override;
+    void startNewGameAsGuest(const std::string& address, int port, UserInfo userInfo) override;
     
     /**
      * @see ModelInterface#cancelHosting()
@@ -41,10 +49,9 @@ public:
     void cancelHosting() override;
     
     /**
-     * Observer pattern as a part of MVC-Pattern
-     * @param observer is usally a gui, that reflects/shows state-changes of the model
+     * @see ModelInterface#placeShip(MODEL::Point, MODEL::Point)
      */
-    void registerObserver(BattleshipObserver& observer);
+    void placeShip(MODEL::Point p1, MODEL::Point p2) override;
     
 private:
     std::unique_ptr<MODEL::Game> game = nullptr;

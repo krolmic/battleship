@@ -6,11 +6,19 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include "connection.h"
-#include "gui/player.h"
+
+
+class UserInfo;
 
 namespace MODEL {
-
+    
 class Game;
+
+enum class Command
+{ 
+    USER_INFO,
+    SHIP_PLACEMENT
+};
 
 class Communicator
 {
@@ -38,23 +46,13 @@ public:
     Communicator(Communicator&& other) = delete; //disable move-constructor
     Communicator& operator=(Communicator&& other) = delete; //disable move assign-operator
     
-    enum objectType
-    {
-        result,
-        attack,
-        player,
-        timeout
-    };
+
+    void sendUserInfo(const UserInfo& userInfo);
+
 private:
-    /**
-     * Creates model objects from  json-formatted data
-     *
-     * @param data recieved in json
-     */
-    void recieveData(const QByteArray& data);
-    /// Creates json object from @param p
-    void sendPlayer(Player& p);
-    
+    void dataReceived(const QByteArray& data);
+    void sendJson(const Command& command, const QJsonObject& json);
+
     Game& game;
     std::unique_ptr<Connection> conn;
 };

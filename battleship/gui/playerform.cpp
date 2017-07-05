@@ -28,12 +28,12 @@ GUI::PlayerForm::PlayerForm(ControllerInterface& ctrl, QWidget* parent)
     connect(hostGameBtn, &QPushButton::clicked, [&] () {
         if (validateUserInput()) {
 //             std::string utf8_text = qs.toUtf8().constData();
-            ctrl.startNewGameAsHost(nameLine->text().toStdString(), ageLine->text().toInt());
+            ctrl.startNewGameAsHost(nameLine->text(), ageLine->text());
         }
     });
     connect(directConnBtn, &QPushButton::clicked, [&] () {
         if (validateUserInput()) {
-            ctrl.startNewGameAsGuest("localhost", 3570, nameLine->text().toStdString(), ageLine->text().toInt());
+            ctrl.startNewGameAsGuest("localhost", "3570", nameLine->text(), ageLine->text());
         }
     });
 

@@ -7,6 +7,8 @@
 #include "gui/battleship_view.h"
 #include <memory>
 
+class QString;
+
 class BattleshipController : public ControllerInterface
 {
 public:
@@ -16,12 +18,12 @@ public:
     /**
      * @see ModelInterface#startNewGameAsHost(const std::string&, int)
      */
-    void startNewGameAsHost(const std::string& playerName, int age) override;
+    void startNewGameAsHost(const QString& playerName, const QString& age) override;
     
     /**
      * @see ModelInterface#startNewGameAsGuest(const std::string&, int, const std::string&, int)
      */
-    void startNewGameAsGuest(const std::string& address, int port, const std::string& playerName, int age) override;
+    void startNewGameAsGuest(const QString& address, const QString& port, const QString& playerName, const QString& age) override;
     
 private:
     ModelInterface& model;

@@ -46,11 +46,16 @@ void MODEL::ConnectionHost::beginConnecting()
     connect(tcpServer, &QTcpServer::newConnection, [&]() {
         qDebug() << "QTcpServer::newConnection";
         socket = tcpServer->nextPendingConnection();
+        
+        connect(socket, &QIODevice::readyRead, [&]() { readData(); });
+        typedef void (QAbstractSocket::*QAbstractSocketErrorSignal)(QAbstractSocket::SocketError);
+        connect(socket, static_cast<QAbstractSocketErrorSignal>(&QAbstractSocket::error), this, &ConnectionHost::displayError);
+        
         callbackOnConnected();
         tcpServer->close();
     });
-    typedef void (QAbstractSocket::*QAbstractSocketErrorSignal)(QAbstractSocket::SocketError);
-    connect(socket, static_cast<QAbstractSocketErrorSignal>(&QAbstractSocket::error), this, &ConnectionHost::displayError);
+//     typedef void (QAbstractSocket::*QAbstractSocketErrorSignal)(QAbstractSocket::SocketError);
+//     connect(socket, static_cast<QAbstractSocketErrorSignal>(&QAbstractSocket::error), this, &ConnectionHost::displayError);
     
     
     qDebug() << "The server is running on\n\nIP: " << ipAddress
