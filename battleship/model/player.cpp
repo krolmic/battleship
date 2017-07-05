@@ -6,7 +6,7 @@ MODEL::Player::Player()
 
 }
 
-MODEL::Player::Player(UserInfo& userInfo)
+MODEL::Player::Player(const UserInfo& userInfo)
     : userInfo{userInfo}
 {
 

@@ -43,8 +43,8 @@ protected:
     void socketConnected();
     std::vector<std::reference_wrapper<BattleshipObserver>>& observerList;
     
-    Player me;
-    Player enemy;
+    MODEL::Player me;
+    MODEL::Player enemy;
     
 private:
     Communicator com;

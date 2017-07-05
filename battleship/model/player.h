@@ -9,7 +9,7 @@ class Player
 {
 public:
     Player();
-    Player(UserInfo& userInfo);
+    Player(const UserInfo& userInfo);
     
     Player(Player const &) = delete; //disable copy-constructor
     Player& operator=(Player const &other) = delete; //disable assign-operator
