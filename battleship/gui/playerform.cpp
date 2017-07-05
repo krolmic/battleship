@@ -11,29 +11,31 @@ GUI::PlayerForm::PlayerForm(ControllerInterface& ctrl, QWidget* parent)
     createPlayerInputFieldsGroup();
 
     // Definition der Ok und Cancel Buttons
-    buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
-                                     | QDialogButtonBox::Cancel);
+//     buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
+//                                      | QDialogButtonBox::Cancel);
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+//     connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+//     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
     
     // Layout
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addWidget(horizontalGroupBox);
-    mainLayout->addWidget(buttonBox);
+//     mainLayout->addWidget(buttonBox);
     
     // add connection possibilities
     mainLayout->addWidget(createPlayerConnectionSelectGroup());
     connect(hostGameBtn, &QPushButton::clicked, [&] () {
         if (validateUserInput()) {
 //             std::string utf8_text = qs.toUtf8().constData();
-            ctrl.startNewGameAsHost(nameLine->text(), ageLine->text());
+            ctrl.startNewGameAsHost("Player Host", ageLine->text());
+//             ctrl.startNewGameAsHost(nameLine->text(), ageLine->text());
         }
     });
     connect(directConnBtn, &QPushButton::clicked, [&] () {
         if (validateUserInput()) {
-            ctrl.startNewGameAsGuest("localhost", "3570", nameLine->text(), ageLine->text());
+            ctrl.startNewGameAsGuest("localhost", "3570", "Player Guest", ageLine->text());
+//             ctrl.startNewGameAsGuest("localhost", "3570", nameLine->text(), ageLine->text());
         }
     });
 
@@ -73,6 +75,7 @@ void GUI::PlayerForm::createPlayerInputFieldsGroup()
 
 bool GUI::PlayerForm::validateUserInput()
 {
+    return true; //TODO remove
     if(nameLine->text().isEmpty())
     {
         QMessageBox msgBox;
@@ -85,32 +88,33 @@ bool GUI::PlayerForm::validateUserInput()
     return true;
 }
 
-// Implementation der virtuellen Methode QDialog::accept()
-void GUI::PlayerForm::accept()
-{
-    // Der Name darf nicht leer sein
-    if(nameLine->text().isEmpty())
-    {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("Error");
-        msgBox.setText("Sorry, an error occurred.");
-        msgBox.setInformativeText("Please enter your name.");
-        msgBox.exec();
-    }
-    else
-    {
-        // GUI für Schiffe Setzen anzeigen
-        // Player Form schliessen
-        int ageNumber = (ageLine->text()).toInt();
-
-        //QString* name = new QString(nameLine->text());
-        player = new Player(new QString(nameLine->text()), ageNumber);
-        SetShipsForm *setShipsForm = new SetShipsForm(player);
-        setShipsForm->show(); //with exec() setAttribute(Qt::WA_DeleteOnClose) doesn't work
-        close();
-    }
-    qDebug() << "END of void PlayerForm::accept()";
-}
+// // Implementation der virtuellen Methode QDialog::accept()
+// void GUI::PlayerForm::accept()
+// {
+//     // Der Name darf nicht leer sein
+//     if(nameLine->text().isEmpty())
+//     {
+//         QMessageBox msgBox;
+//         msgBox.setWindowTitle("Error");
+//         msgBox.setText("Sorry, an error occurred.");
+//         msgBox.setInformativeText("Please enter your name.");
+//         msgBox.exec();
+//     }
+//     else
+//     {
+//         // GUI für Schiffe Setzen anzeigen
+//         // Player Form schliessen
+//         int ageNumber = (ageLine->text()).toInt();
+// 
+//         //QString* name = new QString(nameLine->text());
+//         player = new Player(new QString(nameLine->text()), ageNumber);
+// 
+//         SetShipsForm *setShipsForm = new SetShipsForm(player);
+//         setShipsForm->show(); //with exec() setAttribute(Qt::WA_DeleteOnClose) doesn't work
+//         close();
+//     }
+//     qDebug() << "END of void PlayerForm::accept()";
+// }
 
 // void PlayerForm::hostGame()
 // {

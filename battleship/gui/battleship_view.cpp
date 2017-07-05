@@ -3,6 +3,8 @@
 #include "common/controller_interface.h"
 #include "playerform.h"
 #include <QMessageBox>
+#include <QWidget>
+#include "setshipsform.h"
 
 #include <QDebug>
 
@@ -13,7 +15,12 @@ GUI::BattleshipView::BattleshipView(ModelInterface& model, ControllerInterface& 
     : model{model}, ctrl {ctrl}
 {
     auto* playerForm = new PlayerForm{ctrl};
+    addWidget(playerForm);
     playerForm->show();
+    
+    
+//     auto* win = new GUI::SettingShipsCoordinateSystem{};
+//     win->show();
 }
 
 
@@ -50,6 +57,21 @@ void GUI::BattleshipView::closeTopDialog()
     }
 }
 
+void GUI::BattleshipView::closeAllCurrentWindows()
+{
+    for (QWidget* win : currentWindowList) {
+        win->close();
+    }
+    currentWindowList.clear();
+}
+
+void GUI::BattleshipView::addWidget(QWidget* widget)
+{
+    currentWindowList.emplace_back(widget);
+}
+
+
+
 void GUI::BattleshipView::showErrorMessage(const std::string& msg, const std::string& title)
 {
     auto msgBox = new QMessageBox{};
@@ -67,11 +89,39 @@ void GUI::BattleshipView::showErrorMessage(const std::string& msg, const std::st
     msgBox->show();
 }
 
-void GUI::BattleshipView::shipPlacementStarted()
+
+void GUI::BattleshipView::onRcvUserInfo(const UserInfo& me, const UserInfo& enemy)
 {
-    qDebug() << "void GUI::BattleshipView::shipPlacementStarted()";
+    qDebug() << "GUI::BattleshipView::onRcvUserInfo()";
     closeTopDialog();
+    closeAllCurrentWindows();
+    
+    SetShipsForm *setShipsForm = new SetShipsForm(me, enemy);
+    addWidget(setShipsForm);
+    setShipsForm->setAttribute(Qt::WA_DeleteOnClose); //prevent memory leak
+    setShipsForm->show(); //with exec() setAttribute(Qt::WA_DeleteOnClose) doesn't work
+//     setShipsForm->exec();
 }
+
+
+
+
+// void GUI::BattleshipView::shipPlacementStarted()
+// {
+//     qDebug() << "void GUI::BattleshipView::shipPlacementStarted()";
+//     closeTopDialog();
+//     
+//     // GUI für Schiffe Setzen anzeigen
+// 
+//     //QString* name = new QString(nameLine->text());
+// //     player = new Player(new QString(nameLine->text()), ageNumber);
+//     
+//     //TODO closeCurrentWindows();
+//     //TODO
+// //     SetShipsForm *setShipsForm = new SetShipsForm(player);
+// //     setShipsForm->show(); //with exec() setAttribute(Qt::WA_DeleteOnClose) doesn't work
+// //     close();
+// }
 
 
 

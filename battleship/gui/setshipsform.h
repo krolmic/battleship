@@ -5,6 +5,7 @@
 #include "coordinatesystem.h"
 #include "settingshipscoordinatesystem.h"
 #include "player.h"
+#include "common/user_info.h"
 
 class QAction;
 class QDialogButtonBox;
@@ -16,6 +17,10 @@ class QMenuBar;
 class QPushButton;
 class QTextEdit;
 
+namespace GUI {
+    
+class BattleshipView;
+
 
 
 class SetShipsForm : public QDialog
@@ -24,7 +29,7 @@ class SetShipsForm : public QDialog
 
 public:
     // TODO: Player Klasse statt QString benutzen, falls die Klasse notwendig
-    SetShipsForm(Player *player);
+    SetShipsForm(const UserInfo& me, const UserInfo& enemy, QDialog* parent = nullptr);
 
 private:
     void createMenu();
@@ -34,18 +39,22 @@ private:
 
     void accept();
 
+    UserInfo meUserInfo;
+    UserInfo enemyUserInfo;
+    
     QMenuBar *menuBar;
     QMenu *gameMenu;
     QAction *exitAction;
     QAction *deleteShipsAction;
 
     QGroupBox *playerInformationGroupBox;
+    QGroupBox *enemyPlayerInformationGroupBox;
     QGroupBox *coordinateSystemGroupBox;
     QDialogButtonBox *buttonBox;
 
     GUI::SettingShipsCoordinateSystem *field;
 
-    Player *player;
+//     Player *player;
     QLabel *nameLabel;
 
     const QSize size;
@@ -55,4 +64,5 @@ private slots:
     void deleteShips();
 };
 
+} //end NS
 #endif // DIALOG_H
