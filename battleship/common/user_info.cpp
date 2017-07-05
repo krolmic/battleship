@@ -12,6 +12,7 @@ UserInfo::UserInfo(const std::string& name, int age)
 }
 
 UserInfo::UserInfo(const QJsonObject& json)
+    : name{ json["name"].toString().toStdString() }, age{ json["age"].toInt() }
 {
     
 }

@@ -25,7 +25,7 @@ public:
 private slots:
 //     void hostGame();
 //     void connectToHost();
-    void accept();
+//     void accept();
     
 private:
     void createPlayerInputFieldsGroup();
@@ -39,7 +39,7 @@ private:
     Player *player;
     QLineEdit *nameLine;
     QLineEdit *ageLine;
-    QDialogButtonBox *buttonBox;
+//     QDialogButtonBox *buttonBox;
     QGroupBox *horizontalGroupBox;
     QPushButton* hostGameBtn;
     QPushButton* directConnBtn;

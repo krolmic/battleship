@@ -3,6 +3,7 @@
 
 #include "communicator.h"
 #include "model/player.h"
+#include <vector>
 
 class BattleshipObserver;
 class UserInfo;
@@ -16,11 +17,23 @@ class Game
 public:
     virtual ~Game();
     
+
+    
+    /**
+     * received UserInfo from enemy after players have connected
+     */
+    void onRcvUserInfo(const UserInfo& userInfo);
+    
+    /**
+     * received all ships of the enemy after placement,
+     * now it's time to reconstruct the ships of the enemy locally
+     */
+    void onRcvShipPlacement(const std::vector<std::pair<Point, Point>> rawShipList);
+    
     /**
      * @see ModelInterface#placeShip(MODEL::Point, MODEL::Point)
      */
     void placeShip(Point p1, Point p2);
-    
     
 protected:
     /**

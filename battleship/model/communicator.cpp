@@ -54,11 +54,16 @@ void MODEL::Communicator::dataReceived(const QByteArray& data)
     QJsonObject jsonTotal{ doc.object() };
 //     int command{ jsonTotal["command"].toInt() };
     Command command{ static_cast<Command>(jsonTotal["command"].toInt()) };
-//     qDebug() << "command enum as int: " << command;
+    QJsonObject json{ jsonTotal["value"].toObject() };
+    qDebug() << "command enum as int: " << static_cast<int>(command);
+    qDebug() << "json received: " << json;
     switch (command) {
-        case Command::USER_INFO :
-                qDebug() << "YES !!! Command::USER_INFO: ";
+        case Command::USER_INFO : 
+        {
+            UserInfo enemyUserInfo{json};
+            game.onRcvUserInfo(enemyUserInfo);
             break;
+        }
         case Command::SHIP_PLACEMENT :
             break;
     }

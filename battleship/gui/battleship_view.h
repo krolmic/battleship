@@ -3,10 +3,12 @@
 
 #include <string>
 #include "common/battleship_observer.h"
+#include <vector>
 
 class ModelInterface;
 class ControllerInterface;
 class QDialog;
+class QWidget;
 
 namespace GUI {
 /// A simple class that defines and argument exception
@@ -28,8 +30,19 @@ public:
     
     /**
      * closes top dialog programmatically, also without user having to click. Such dialog can be a popup informing about errors.
+     * Top dialogs are informative popups, like QMessageBox, they don't affect BattleshipView#closeAllCurrentWindows()
      */
     void closeTopDialog();
+    
+    /**
+     * close windows, what are stored by BattleshipView#addWidget()
+     */
+    void closeAllCurrentWindows();
+    
+    /**
+     * adds pointer/holder of widget, so it can be closed later by BattleshipView#closeAllCurrentWindows()
+     */
+    void addWidget(QWidget* widget);
     
     
 //     /**
@@ -47,13 +60,19 @@ public:
 //      */
 //     void showErrorMessage(const std::string& msg, const std::string& title) override;
     
-    void shipPlacementStarted();
+    /**
+     * @see BattleshipObserver#onRcvUserInfo(const UserInfo&)
+     */
+    void onRcvUserInfo(const UserInfo& me, const UserInfo& enemy) override;
+    
+//     void shipPlacementStarted();
     
 private:
     ModelInterface& model;
     ControllerInterface& ctrl;
     
     QDialog* topDialog{ nullptr };
+    std::vector<QWidget*> currentWindowList;
 };
 
 } // end NS

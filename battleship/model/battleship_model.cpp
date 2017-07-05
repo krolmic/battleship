@@ -31,6 +31,7 @@ void MODEL::BattleshipModel::cancelHosting()
     game.reset(nullptr);
 }
 
+// void MODEL::BattleshipModel::placeShip(MODEL::Point p1, MODEL::Point p2)
 void MODEL::BattleshipModel::placeShip(MODEL::Point p1, MODEL::Point p2)
 {
     game->placeShip(p1, p2);
