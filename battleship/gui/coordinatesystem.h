@@ -21,6 +21,9 @@ public:
     void paintShips();
     /// Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt
     virtual void clearField() = 0;
+    /// Rechnet die Pixel-Koordinaten eines QPoint in der GUI in die mathematisch richtige Werte um und gibt sie zurueck
+    QPoint getCoordinates(QPoint &);
+
     /// Schiffe
     std::vector<QLine> ships;
     /// Pain Device fuer das Koordinatensystem
@@ -50,6 +53,8 @@ protected:
     bool mouse_pressed = false;
     /// bestimmt die Groesse der Pfeile an den Achsen des Koordinatensystems
     int triangle_size = 5;
+
+
 };
 }
 
