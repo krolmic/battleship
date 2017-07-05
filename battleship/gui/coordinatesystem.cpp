@@ -130,3 +130,11 @@ void CoordinateSystem::paintShips()
     }
 }
 
+QPoint CoordinateSystem::getCoordinates(QPoint &p)
+{
+    int x{(gamearea/p.x())*space_to_next_line};
+    int y{(gamearea/p.y())*space_to_next_line};
+    x -= 10;
+    y -= 10;
+    return QPoint(x,y);
+}
