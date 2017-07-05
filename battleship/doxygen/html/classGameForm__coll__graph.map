@@ -1,0 +1,4 @@
+<map id="GameForm" name="GameForm">
+<area shape="rect" id="node3" href="$classGUI_1_1GameCoordinateSystem.html" title="A simple class that inherits from CoordinateSystem and implements mouse events for starting attack..." alt="" coords="99,157,264,184"/>
+<area shape="rect" id="node4" href="$classGUI_1_1CoordinateSystem.html" title="A virtual base class that defines the essential data for all coordinate systems. " alt="" coords="116,81,247,108"/>
+</map>

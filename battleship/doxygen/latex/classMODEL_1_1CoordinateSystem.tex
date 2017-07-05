@@ -1,0 +1,114 @@
+\hypertarget{classMODEL_1_1CoordinateSystem}{}\section{Coordinate\+System Class Reference}
+\label{classMODEL_1_1CoordinateSystem}\index{Coordinate\+System@{Coordinate\+System}}
+
+
+A class that stores data of coordinate system separately from the graphical interface.  
+
+
+
+
+{\ttfamily \#include $<$coordinate\+\_\+system.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMODEL_1_1CoordinateSystem_a0f510c32a263eee79e23b75f085a7310}{Coordinate\+System} ()
+\item 
+\hyperlink{classMODEL_1_1CoordinateSystem_ad26ab1d9575143de58d6b3cff4db5512}{Coordinate\+System} (\hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System} const \&)=delete
+\item 
+\hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System} \& \hyperlink{classMODEL_1_1CoordinateSystem_a376f10ca28f88f8c64fe6e97cae72ba5}{operator=} (\hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System} const \&other)=delete
+\item 
+\hyperlink{classMODEL_1_1CoordinateSystem_ae2ac12d2a7cced154ff6e386093c28e5}{Coordinate\+System} (\hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System} \&\&other)=delete
+\item 
+\hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System} \& \hyperlink{classMODEL_1_1CoordinateSystem_ae7f1054276ec7cb6e3312046a03234d8}{operator=} (\hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System} \&\&other)=delete
+\item 
+bool \hyperlink{classMODEL_1_1CoordinateSystem_a4d891d157f79f1769e8f0f77315bb722}{add\+Ship} (\hyperlink{classMODEL_1_1Point}{M\+O\+D\+E\+L\+::\+Point} p1, \hyperlink{classMODEL_1_1Point}{M\+O\+D\+E\+L\+::\+Point} p2)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::deque$<$ \hyperlink{classMODEL_1_1Ship}{M\+O\+D\+E\+L\+::\+Ship} $>$ \hyperlink{classMODEL_1_1CoordinateSystem_ac3f25e91761f938fa2bdae218c7762d3}{ship\+List}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \hyperlink{classMODEL_1_1CoordinateSystem_a7c5d516fce407f772cd9c9724018306b}{M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT} \{5\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that stores data of coordinate system separately from the graphical interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!Coordinate\+System@{Coordinate\+System}}
+\index{Coordinate\+System@{Coordinate\+System}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{Coordinate\+System()}{CoordinateSystem()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate\+System} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classMODEL_1_1CoordinateSystem_a0f510c32a263eee79e23b75f085a7310}{}\label{classMODEL_1_1CoordinateSystem_a0f510c32a263eee79e23b75f085a7310}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!Coordinate\+System@{Coordinate\+System}}
+\index{Coordinate\+System@{Coordinate\+System}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{Coordinate\+System(\+Coordinate\+System const \&)=delete}{CoordinateSystem(CoordinateSystem const &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate\+System} (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate\+System} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1CoordinateSystem_ad26ab1d9575143de58d6b3cff4db5512}{}\label{classMODEL_1_1CoordinateSystem_ad26ab1d9575143de58d6b3cff4db5512}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!Coordinate\+System@{Coordinate\+System}}
+\index{Coordinate\+System@{Coordinate\+System}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{Coordinate\+System(\+Coordinate\+System \&\&other)=delete}{CoordinateSystem(CoordinateSystem &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate\+System} (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate\+System} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1CoordinateSystem_ae2ac12d2a7cced154ff6e386093c28e5}{}\label{classMODEL_1_1CoordinateSystem_ae2ac12d2a7cced154ff6e386093c28e5}
+
+
+\subsection{Member Function Documentation}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!add\+Ship@{add\+Ship}}
+\index{add\+Ship@{add\+Ship}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{add\+Ship(\+M\+O\+D\+E\+L\+::\+Point p1, M\+O\+D\+E\+L\+::\+Point p2)}{addShip(MODEL::Point p1, MODEL::Point p2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool add\+Ship (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+O\+D\+E\+L\+::\+Point}}]{p1, }
+\item[{{\bf M\+O\+D\+E\+L\+::\+Point}}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{classMODEL_1_1CoordinateSystem_a4d891d157f79f1769e8f0f77315bb722}{}\label{classMODEL_1_1CoordinateSystem_a4d891d157f79f1769e8f0f77315bb722}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classModelInterface_aa708cd5411011ade34c2796b3f102612}{Model\+Interface\+::place\+Ship(\+M\+O\+D\+E\+L\+::\+Point, M\+O\+D\+E\+L\+::\+Point)}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if 5 ships have been added 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::length\+\_\+error} & on attempt to add more than 5 ships \\
+\hline
+\end{DoxyExceptions}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{operator=(\+Coordinate\+System const \&other)=delete}{operator=(CoordinateSystem const &other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate\+System}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate\+System} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1CoordinateSystem_a376f10ca28f88f8c64fe6e97cae72ba5}{}\label{classMODEL_1_1CoordinateSystem_a376f10ca28f88f8c64fe6e97cae72ba5}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{operator=(\+Coordinate\+System \&\&other)=delete}{operator=(CoordinateSystem &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate\+System}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate\+System} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1CoordinateSystem_ae7f1054276ec7cb6e3312046a03234d8}{}\label{classMODEL_1_1CoordinateSystem_ae7f1054276ec7cb6e3312046a03234d8}
+
+
+\subsection{Member Data Documentation}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT@{M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT}}
+\index{M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT@{M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT}{MAX_SHIP_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}constexpr int M\+A\+X\+\_\+\+S\+H\+I\+P\+\_\+\+C\+O\+U\+NT \{5\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classMODEL_1_1CoordinateSystem_a7c5d516fce407f772cd9c9724018306b}{}\label{classMODEL_1_1CoordinateSystem_a7c5d516fce407f772cd9c9724018306b}
+\index{M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}!ship\+List@{ship\+List}}
+\index{ship\+List@{ship\+List}!M\+O\+D\+E\+L\+::\+Coordinate\+System@{M\+O\+D\+E\+L\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{ship\+List}{shipList}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::deque$<${\bf M\+O\+D\+E\+L\+::\+Ship}$>$ ship\+List\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1CoordinateSystem_ac3f25e91761f938fa2bdae218c7762d3}{}\label{classMODEL_1_1CoordinateSystem_ac3f25e91761f938fa2bdae218c7762d3}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\hyperlink{coordinate__system_8h}{coordinate\+\_\+system.\+h}\item 
+model/\hyperlink{coordinate__system_8cpp}{coordinate\+\_\+system.\+cpp}\end{DoxyCompactItemize}

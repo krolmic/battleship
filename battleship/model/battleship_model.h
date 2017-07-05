@@ -12,10 +12,8 @@ class UserInfo;
 
 namespace MODEL {
 
-/**
- * acts primarely as a wrapper around MODEL::Game class. Especially we make use of its constructor & destructor.
- * And we can dynamicallly switch between Host and Guest if so desired
- */
+
+/// acts primarely as a wrapper around MODEL::Game class. Especially we make use of its constructor & destructor. And we can dynamicallly switch between Host and Guest if so desired
 class BattleshipModel : public ModelInterface
 {
 public:

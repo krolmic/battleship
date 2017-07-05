@@ -1,0 +1,51 @@
+\hypertarget{namespaceMODEL}{}\section{M\+O\+D\+EL Namespace Reference}
+\label{namespaceMODEL}\index{M\+O\+D\+EL@{M\+O\+D\+EL}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMODEL_1_1BattleshipModel}{Battleship\+Model}
+\begin{DoxyCompactList}\small\item\em acts primarely as a wrapper around \hyperlink{classMODEL_1_1Game}{M\+O\+D\+E\+L\+::\+Game} class. Especially we make use of its constructor \& destructor. And we can dynamicallly switch between Host and Guest if so desired \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1Communicator}{Communicator}
+\begin{DoxyCompactList}\small\item\em A class that uses \hyperlink{classMODEL_1_1Connection}{Connection} to recieve/send encoded/decoded information stored in json objects. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1Connection}{Connection}
+\begin{DoxyCompactList}\small\item\em A base class that defines the basic functions for connection. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1ConnectionGuest}{Connection\+Guest}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classMODEL_1_1Connection}{Connection} and implements the functionality for connection used by guest. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1ConnectionHost}{Connection\+Host}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classMODEL_1_1Connection}{Connection} and implements the functionality for connection used by host. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1CoordinateSystem}{Coordinate\+System}
+\begin{DoxyCompactList}\small\item\em A class that stores data of coordinate system separately from the graphical interface. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1Game}{Game}
+\begin{DoxyCompactList}\small\item\em A class representing game session that access both \hyperlink{classMODEL_1_1Player}{Player} and \hyperlink{classMODEL_1_1Communicator}{Communicator}. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1GameGuest}{Game\+Guest}
+\begin{DoxyCompactList}\small\item\em Inherits \hyperlink{classMODEL_1_1Game}{Game} and make it possible to manage guests game. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1GameHost}{Game\+Host}
+\begin{DoxyCompactList}\small\item\em Inherits \hyperlink{classMODEL_1_1Game}{Game} and make it possible to manage hosts game. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1Player}{Player}
+\begin{DoxyCompactList}\small\item\em A class representing player for model, stores information in \hyperlink{classUserInfo}{User\+Info} object within it. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1Point}{Point}
+\begin{DoxyCompactList}\small\item\em A simple class representing point. \end{DoxyCompactList}\item 
+class \hyperlink{classMODEL_1_1Ship}{Ship}
+\begin{DoxyCompactList}\small\item\em A class representing a ship. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153}{Command} \{ \hyperlink{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153a53e95d4aedd7db4fe9f58af71525d56a}{U\+S\+E\+R\+\_\+\+I\+N\+FO}, 
+\hyperlink{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153a8f686af5a9b889f9a227dfd8862a81d4}{S\+H\+I\+P\+\_\+\+P\+L\+A\+C\+E\+M\+E\+NT}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{M\+O\+D\+EL@{M\+O\+D\+EL}!Command@{Command}}
+\index{Command@{Command}!M\+O\+D\+EL@{M\+O\+D\+EL}}
+\subsubsection[{\texorpdfstring{Command}{Command}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Command}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153}{}\label{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+S\+E\+R\+\_\+\+I\+N\+FO@{U\+S\+E\+R\+\_\+\+I\+N\+FO}!M\+O\+D\+EL@{M\+O\+D\+EL}}\index{M\+O\+D\+EL@{M\+O\+D\+EL}!U\+S\+E\+R\+\_\+\+I\+N\+FO@{U\+S\+E\+R\+\_\+\+I\+N\+FO}}\item[{\em 
+U\+S\+E\+R\+\_\+\+I\+N\+FO\hypertarget{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153a53e95d4aedd7db4fe9f58af71525d56a}{}\label{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153a53e95d4aedd7db4fe9f58af71525d56a}
+}]\index{S\+H\+I\+P\+\_\+\+P\+L\+A\+C\+E\+M\+E\+NT@{S\+H\+I\+P\+\_\+\+P\+L\+A\+C\+E\+M\+E\+NT}!M\+O\+D\+EL@{M\+O\+D\+EL}}\index{M\+O\+D\+EL@{M\+O\+D\+EL}!S\+H\+I\+P\+\_\+\+P\+L\+A\+C\+E\+M\+E\+NT@{S\+H\+I\+P\+\_\+\+P\+L\+A\+C\+E\+M\+E\+NT}}\item[{\em 
+S\+H\+I\+P\+\_\+\+P\+L\+A\+C\+E\+M\+E\+NT\hypertarget{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153a8f686af5a9b889f9a227dfd8862a81d4}{}\label{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153a8f686af5a9b889f9a227dfd8862a81d4}
+}]\end{description}
+\end{Desc}

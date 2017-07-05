@@ -1,0 +1,186 @@
+\hypertarget{classGUI_1_1SettingShipsCoordinateSystem}{}\section{Setting\+Ships\+Coordinate\+System Class Reference}
+\label{classGUI_1_1SettingShipsCoordinateSystem}\index{Setting\+Ships\+Coordinate\+System@{Setting\+Ships\+Coordinate\+System}}
+
+
+A simple class that inherits from \hyperlink{classGUI_1_1CoordinateSystem}{Coordinate\+System} and implements mouse events for setting ships.  
+
+
+
+
+{\ttfamily \#include $<$settingshipscoordinatesystem.\+h$>$}
+
+
+
+Inheritance diagram for Setting\+Ships\+Coordinate\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classGUI_1_1SettingShipsCoordinateSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Setting\+Ships\+Coordinate\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classGUI_1_1SettingShipsCoordinateSystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1SettingShipsCoordinateSystem_a1043bd36a10f81e768fd9378d870d639}{$\sim$\+Setting\+Ships\+Coordinate\+System} ()
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_abcb8de61d1e6998fbc06813adfebde57}{fill\+Points\+List} ()
+\item 
+Q\+Point \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_a98993f7ed1af6efcbdc1e75414ccd7c8}{get\+Next\+Point\+From\+Vector} (int, int, std\+::vector$<$ Q\+Point $>$ \&)
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_a72b3b7dabd8a31aa0ce42d064ac9abc3}{clear\+Invalid\+Possible\+Points} ()
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_abcd1d610fb9754e26e40919bb75e62e8}{next\+Ship\+Point} (int \&, int \&, int, int)
+\item 
+bool \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_a41d94ca8a060a8d13c88593cecb38f4a}{is\+Valid\+Distance} (int, int, int, int)
+\item 
+bool \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_af059c33f0621f128e60e5152e5778ec6}{is\+Valid\+Placement} (int, int, int, int)
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_afcf62685a11ce5529786cc14ddecc7f2}{clear\+Field} ()
+\begin{DoxyCompactList}\small\item\em Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt. \end{DoxyCompactList}\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_ad2272e344e46519f026cd02f419884f1}{mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_a35226f6549add1ff837c65888fcd00fc}{mouse\+Release\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_a4c44746ee6abcfabac1581977a1b5c02}{paint\+Event} (Q\+Paint\+Event $\ast$e)
+\item 
+void \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_ae820c6a86f0a1908bf451f86db043489}{mouse\+Move\+Event} (Q\+Mouse\+Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Q\+Point $>$ \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_aa17adb05d9fe96ccd88569f02c6da0b2}{possible\+\_\+points}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A simple class that inherits from \hyperlink{classGUI_1_1CoordinateSystem}{Coordinate\+System} and implements mouse events for setting ships. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!````~Setting\+Ships\+Coordinate\+System@{$\sim$\+Setting\+Ships\+Coordinate\+System}}
+\index{````~Setting\+Ships\+Coordinate\+System@{$\sim$\+Setting\+Ships\+Coordinate\+System}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{$\sim$\+Setting\+Ships\+Coordinate\+System()}{~SettingShipsCoordinateSystem()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Setting\+Ships\+Coordinate\+System} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_a1043bd36a10f81e768fd9378d870d639}{}\label{classGUI_1_1SettingShipsCoordinateSystem_a1043bd36a10f81e768fd9378d870d639}
+
+
+\subsection{Member Function Documentation}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!clear\+Field@{clear\+Field}}
+\index{clear\+Field@{clear\+Field}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{clear\+Field()}{clearField()}}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_afcf62685a11ce5529786cc14ddecc7f2}{}\label{classGUI_1_1SettingShipsCoordinateSystem_afcf62685a11ce5529786cc14ddecc7f2}
+
+
+Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt. 
+
+
+
+Implements \hyperlink{classGUI_1_1CoordinateSystem_a3d41bd83deb883b8d0c8d192bd0b1ddd}{Coordinate\+System}.
+
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!clear\+Invalid\+Possible\+Points@{clear\+Invalid\+Possible\+Points}}
+\index{clear\+Invalid\+Possible\+Points@{clear\+Invalid\+Possible\+Points}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{clear\+Invalid\+Possible\+Points()}{clearInvalidPossiblePoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+Invalid\+Possible\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_a72b3b7dabd8a31aa0ce42d064ac9abc3}{}\label{classGUI_1_1SettingShipsCoordinateSystem_a72b3b7dabd8a31aa0ce42d064ac9abc3}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!fill\+Points\+List@{fill\+Points\+List}}
+\index{fill\+Points\+List@{fill\+Points\+List}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{fill\+Points\+List()}{fillPointsList()}}]{\setlength{\rightskip}{0pt plus 5cm}void fill\+Points\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_abcb8de61d1e6998fbc06813adfebde57}{}\label{classGUI_1_1SettingShipsCoordinateSystem_abcb8de61d1e6998fbc06813adfebde57}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!get\+Next\+Point\+From\+Vector@{get\+Next\+Point\+From\+Vector}}
+\index{get\+Next\+Point\+From\+Vector@{get\+Next\+Point\+From\+Vector}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{get\+Next\+Point\+From\+Vector(int, int, std\+::vector$<$ Q\+Point $>$ \&)}{getNextPointFromVector(int, int, std::vector< QPoint > &)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point get\+Next\+Point\+From\+Vector (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{std\+::vector$<$ Q\+Point $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_a98993f7ed1af6efcbdc1e75414ccd7c8}{}\label{classGUI_1_1SettingShipsCoordinateSystem_a98993f7ed1af6efcbdc1e75414ccd7c8}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!is\+Valid\+Distance@{is\+Valid\+Distance}}
+\index{is\+Valid\+Distance@{is\+Valid\+Distance}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{is\+Valid\+Distance(int, int, int, int)}{isValidDistance(int, int, int, int)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Valid\+Distance (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{x2, }
+\item[{int}]{y2}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_a41d94ca8a060a8d13c88593cecb38f4a}{}\label{classGUI_1_1SettingShipsCoordinateSystem_a41d94ca8a060a8d13c88593cecb38f4a}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!is\+Valid\+Placement@{is\+Valid\+Placement}}
+\index{is\+Valid\+Placement@{is\+Valid\+Placement}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{is\+Valid\+Placement(int, int, int, int)}{isValidPlacement(int, int, int, int)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Valid\+Placement (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{dest\+\_\+x, }
+\item[{int}]{dest\+\_\+y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_af059c33f0621f128e60e5152e5778ec6}{}\label{classGUI_1_1SettingShipsCoordinateSystem_af059c33f0621f128e60e5152e5778ec6}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{mouse\+Move\+Event(\+Q\+Mouse\+Event $\ast$event)}{mouseMoveEvent(QMouseEvent *event)}}]{\setlength{\rightskip}{0pt plus 5cm}void mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_ae820c6a86f0a1908bf451f86db043489}{}\label{classGUI_1_1SettingShipsCoordinateSystem_ae820c6a86f0a1908bf451f86db043489}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{mouse\+Press\+Event(\+Q\+Mouse\+Event $\ast$event)}{mousePressEvent(QMouseEvent *event)}}]{\setlength{\rightskip}{0pt plus 5cm}void mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_ad2272e344e46519f026cd02f419884f1}{}\label{classGUI_1_1SettingShipsCoordinateSystem_ad2272e344e46519f026cd02f419884f1}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!mouse\+Release\+Event@{mouse\+Release\+Event}}
+\index{mouse\+Release\+Event@{mouse\+Release\+Event}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{mouse\+Release\+Event(\+Q\+Mouse\+Event $\ast$event)}{mouseReleaseEvent(QMouseEvent *event)}}]{\setlength{\rightskip}{0pt plus 5cm}void mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_a35226f6549add1ff837c65888fcd00fc}{}\label{classGUI_1_1SettingShipsCoordinateSystem_a35226f6549add1ff837c65888fcd00fc}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!next\+Ship\+Point@{next\+Ship\+Point}}
+\index{next\+Ship\+Point@{next\+Ship\+Point}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{next\+Ship\+Point(int \&, int \&, int, int)}{nextShipPoint(int &, int &, int, int)}}]{\setlength{\rightskip}{0pt plus 5cm}void next\+Ship\+Point (
+\begin{DoxyParamCaption}
+\item[{int \&}]{x, }
+\item[{int \&}]{y, }
+\item[{int}]{x2, }
+\item[{int}]{y2}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_abcd1d610fb9754e26e40919bb75e62e8}{}\label{classGUI_1_1SettingShipsCoordinateSystem_abcd1d610fb9754e26e40919bb75e62e8}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{paint\+Event(\+Q\+Paint\+Event $\ast$e)}{paintEvent(QPaintEvent *e)}}]{\setlength{\rightskip}{0pt plus 5cm}void paint\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Paint\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_a4c44746ee6abcfabac1581977a1b5c02}{}\label{classGUI_1_1SettingShipsCoordinateSystem_a4c44746ee6abcfabac1581977a1b5c02}
+
+
+\subsection{Member Data Documentation}
+\index{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}!possible\+\_\+points@{possible\+\_\+points}}
+\index{possible\+\_\+points@{possible\+\_\+points}!G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System@{G\+U\+I\+::\+Setting\+Ships\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{possible\+\_\+points}{possible_points}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Point$>$ possible\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1SettingShipsCoordinateSystem_aa17adb05d9fe96ccd88569f02c6da0b2}{}\label{classGUI_1_1SettingShipsCoordinateSystem_aa17adb05d9fe96ccd88569f02c6da0b2}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{settingshipscoordinatesystem_8h}{settingshipscoordinatesystem.\+h}\item 
+gui/\hyperlink{settingshipscoordinatesystem_8cpp}{settingshipscoordinatesystem.\+cpp}\end{DoxyCompactItemize}

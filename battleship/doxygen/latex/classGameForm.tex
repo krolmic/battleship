@@ -1,0 +1,248 @@
+\hypertarget{classGameForm}{}\section{Game\+Form Class Reference}
+\label{classGameForm}\index{Game\+Form@{Game\+Form}}
+
+
+A simple class that defines graphical interface of the form in which players are able to attack, recieve attack, etc.  
+
+
+
+
+{\ttfamily \#include $<$gameform.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Form\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classGameForm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Form\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classGameForm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameForm_ae853c67cf61b3a8128ded1b1c18171cb}{Game\+Form} ()
+\item 
+\hyperlink{classGameForm_a8020ae990541b81e274d003ed1eeeb59}{$\sim$\+Game\+Form} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{classGameForm_a6b42c6ec1657cd85c98c46fcfd126046}{status\+Box\+Text} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGameForm_a8b722117b1f1f02aeb60af137ee2d446}{open\+Version} ()
+\item 
+void \hyperlink{classGameForm_a57fd57ebca600cae3a27f5c768cf0e2d}{reset\+Own\+Field} ()
+\item 
+void \hyperlink{classGameForm_acc5a7e6e3595b7a835ed0ad3aeb4df73}{check\+Straight} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGameForm_a5c788b6fcb676c3e1cef7e01eed9a420}{create\+Menus} ()
+\item 
+void \hyperlink{classGameForm_aacac9e13e6b6a0e20730e8fc831fbf75}{create\+Coordinate\+System\+Group\+Box\+Own} ()
+\item 
+void \hyperlink{classGameForm_a26921e3aabc5bc459af0414c3ab4de06}{create\+Coordinate\+System\+Group\+Box\+Enemy} ()
+\item 
+void \hyperlink{classGameForm_ac4d7e3039b39795dcc72a68cc7324e1e}{create\+Information\+Group\+Box} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1GameCoordinateSystem}{G\+U\+I\+::\+Game\+Coordinate\+System} $\ast$ \hyperlink{classGameForm_a3f769801cb22e13a5a878fcdc0518d05}{own\+Field}
+\item 
+\hyperlink{classGUI_1_1GameCoordinateSystem}{G\+U\+I\+::\+Game\+Coordinate\+System} $\ast$ \hyperlink{classGameForm_a2961c0b23c7112cbc62af053e164b322}{enemy\+Field}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGameForm_ad18a9191e99822758eb03d5ed5e86e31}{coordinate\+System\+Group\+Box\+Own}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGameForm_a8bdbfc571a3841ecd4e94c8c79deb480}{coordinate\+System\+Group\+Box\+Enemy}
+\item 
+Q\+Menu\+Bar $\ast$ \hyperlink{classGameForm_af1e1fab084abbaa2eb09807c6f403a9b}{menu\+Bar}
+\item 
+Q\+Menu $\ast$ \hyperlink{classGameForm_adb1ab65d1aecac73e58f48557c143b2e}{file\+Menu}
+\item 
+Q\+Menu $\ast$ \hyperlink{classGameForm_ac589920cc2b87288e454430daa93a976}{help\+Menu}
+\item 
+Q\+Action $\ast$ \hyperlink{classGameForm_adb8d61a6d4522657760029f301a75497}{reset\+Action}
+\item 
+Q\+Action $\ast$ \hyperlink{classGameForm_a95088aac220cb7eb4159ab75d86cb81d}{exit\+Action}
+\item 
+Q\+Action $\ast$ \hyperlink{classGameForm_a4f38a2d30e7f01b923b0d9e3f9f2e048}{version\+Action}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGameForm_a37c93b300cdcf03835fe5f67b43eb08d}{grid\+Group\+Box\+Enemy}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGameForm_a39a9c8ff476ae5757052f6691858b0db}{grid\+Group\+Box\+Own}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{classGameForm_ab8c97454af833ee8fdc146bcb0f2d8df}{information\+Group\+Box}
+\item 
+int \hyperlink{classGameForm_aca14d609fbdac3a9b31c709986e66da6}{height\+Screen}
+\item 
+int \hyperlink{classGameForm_aacecc4646535564c1445645a8161dc5f}{width\+Screen}
+\item 
+Q\+Text\+Edit $\ast$ \hyperlink{classGameForm_acbe8a9ebdd294a5a7a2f0ba567a3d4cf}{status\+Box}
+\item 
+\hyperlink{classGUI_1_1GameCoordinateSystem}{G\+U\+I\+::\+Game\+Coordinate\+System} $\ast$ \hyperlink{classGameForm_aac386a83076364dd03dd54329a305e33}{enemy\+Field1}
+\item 
+\hyperlink{classGUI_1_1GameCoordinateSystem}{G\+U\+I\+::\+Game\+Coordinate\+System} $\ast$ \hyperlink{classGameForm_a49061c1a5fbf771824810fbdc3181951}{enemy\+Field2}
+\item 
+Q\+Table\+Widget $\ast$ \hyperlink{classGameForm_a173cb497cbbb32fee84511c972bbcf0f}{statistic\+Table}
+\item 
+\hyperlink{classGUI_1_1GameCoordinateSystem}{G\+U\+I\+::\+Game\+Coordinate\+System} $\ast$ \hyperlink{classGameForm_a6e2c3e513f802d34db2d7952c15fffc6}{own\+Field1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple class that defines graphical interface of the form in which players are able to attack, recieve attack, etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Game\+Form@{Game\+Form}!Game\+Form@{Game\+Form}}
+\index{Game\+Form@{Game\+Form}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{Game\+Form()}{GameForm()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\+Form} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameForm_ae853c67cf61b3a8128ded1b1c18171cb}{}\label{classGameForm_ae853c67cf61b3a8128ded1b1c18171cb}
+\index{Game\+Form@{Game\+Form}!````~Game\+Form@{$\sim$\+Game\+Form}}
+\index{````~Game\+Form@{$\sim$\+Game\+Form}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{$\sim$\+Game\+Form()}{~GameForm()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Game\+Form} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameForm_a8020ae990541b81e274d003ed1eeeb59}{}\label{classGameForm_a8020ae990541b81e274d003ed1eeeb59}
+
+
+\subsection{Member Function Documentation}
+\index{Game\+Form@{Game\+Form}!check\+Straight@{check\+Straight}}
+\index{check\+Straight@{check\+Straight}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{check\+Straight}{checkStraight}}]{\setlength{\rightskip}{0pt plus 5cm}void check\+Straight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\hypertarget{classGameForm_acc5a7e6e3595b7a835ed0ad3aeb4df73}{}\label{classGameForm_acc5a7e6e3595b7a835ed0ad3aeb4df73}
+\index{Game\+Form@{Game\+Form}!create\+Coordinate\+System\+Group\+Box\+Enemy@{create\+Coordinate\+System\+Group\+Box\+Enemy}}
+\index{create\+Coordinate\+System\+Group\+Box\+Enemy@{create\+Coordinate\+System\+Group\+Box\+Enemy}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{create\+Coordinate\+System\+Group\+Box\+Enemy()}{createCoordinateSystemGroupBoxEnemy()}}]{\setlength{\rightskip}{0pt plus 5cm}void create\+Coordinate\+System\+Group\+Box\+Enemy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a26921e3aabc5bc459af0414c3ab4de06}{}\label{classGameForm_a26921e3aabc5bc459af0414c3ab4de06}
+\index{Game\+Form@{Game\+Form}!create\+Coordinate\+System\+Group\+Box\+Own@{create\+Coordinate\+System\+Group\+Box\+Own}}
+\index{create\+Coordinate\+System\+Group\+Box\+Own@{create\+Coordinate\+System\+Group\+Box\+Own}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{create\+Coordinate\+System\+Group\+Box\+Own()}{createCoordinateSystemGroupBoxOwn()}}]{\setlength{\rightskip}{0pt plus 5cm}void create\+Coordinate\+System\+Group\+Box\+Own (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_aacac9e13e6b6a0e20730e8fc831fbf75}{}\label{classGameForm_aacac9e13e6b6a0e20730e8fc831fbf75}
+\index{Game\+Form@{Game\+Form}!create\+Information\+Group\+Box@{create\+Information\+Group\+Box}}
+\index{create\+Information\+Group\+Box@{create\+Information\+Group\+Box}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{create\+Information\+Group\+Box()}{createInformationGroupBox()}}]{\setlength{\rightskip}{0pt plus 5cm}void create\+Information\+Group\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_ac4d7e3039b39795dcc72a68cc7324e1e}{}\label{classGameForm_ac4d7e3039b39795dcc72a68cc7324e1e}
+\index{Game\+Form@{Game\+Form}!create\+Menus@{create\+Menus}}
+\index{create\+Menus@{create\+Menus}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{create\+Menus()}{createMenus()}}]{\setlength{\rightskip}{0pt plus 5cm}void create\+Menus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a5c788b6fcb676c3e1cef7e01eed9a420}{}\label{classGameForm_a5c788b6fcb676c3e1cef7e01eed9a420}
+\index{Game\+Form@{Game\+Form}!open\+Version@{open\+Version}}
+\index{open\+Version@{open\+Version}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{open\+Version}{openVersion}}]{\setlength{\rightskip}{0pt plus 5cm}void open\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\hypertarget{classGameForm_a8b722117b1f1f02aeb60af137ee2d446}{}\label{classGameForm_a8b722117b1f1f02aeb60af137ee2d446}
+\index{Game\+Form@{Game\+Form}!reset\+Own\+Field@{reset\+Own\+Field}}
+\index{reset\+Own\+Field@{reset\+Own\+Field}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{reset\+Own\+Field}{resetOwnField}}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+Own\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\hypertarget{classGameForm_a57fd57ebca600cae3a27f5c768cf0e2d}{}\label{classGameForm_a57fd57ebca600cae3a27f5c768cf0e2d}
+
+
+\subsection{Member Data Documentation}
+\index{Game\+Form@{Game\+Form}!coordinate\+System\+Group\+Box\+Enemy@{coordinate\+System\+Group\+Box\+Enemy}}
+\index{coordinate\+System\+Group\+Box\+Enemy@{coordinate\+System\+Group\+Box\+Enemy}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{coordinate\+System\+Group\+Box\+Enemy}{coordinateSystemGroupBoxEnemy}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ coordinate\+System\+Group\+Box\+Enemy\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a8bdbfc571a3841ecd4e94c8c79deb480}{}\label{classGameForm_a8bdbfc571a3841ecd4e94c8c79deb480}
+\index{Game\+Form@{Game\+Form}!coordinate\+System\+Group\+Box\+Own@{coordinate\+System\+Group\+Box\+Own}}
+\index{coordinate\+System\+Group\+Box\+Own@{coordinate\+System\+Group\+Box\+Own}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{coordinate\+System\+Group\+Box\+Own}{coordinateSystemGroupBoxOwn}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ coordinate\+System\+Group\+Box\+Own\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_ad18a9191e99822758eb03d5ed5e86e31}{}\label{classGameForm_ad18a9191e99822758eb03d5ed5e86e31}
+\index{Game\+Form@{Game\+Form}!enemy\+Field@{enemy\+Field}}
+\index{enemy\+Field@{enemy\+Field}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{enemy\+Field}{enemyField}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+::\+Game\+Coordinate\+System}$\ast$ enemy\+Field\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a2961c0b23c7112cbc62af053e164b322}{}\label{classGameForm_a2961c0b23c7112cbc62af053e164b322}
+\index{Game\+Form@{Game\+Form}!enemy\+Field1@{enemy\+Field1}}
+\index{enemy\+Field1@{enemy\+Field1}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{enemy\+Field1}{enemyField1}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+::\+Game\+Coordinate\+System}$\ast$ enemy\+Field1\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_aac386a83076364dd03dd54329a305e33}{}\label{classGameForm_aac386a83076364dd03dd54329a305e33}
+\index{Game\+Form@{Game\+Form}!enemy\+Field2@{enemy\+Field2}}
+\index{enemy\+Field2@{enemy\+Field2}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{enemy\+Field2}{enemyField2}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+::\+Game\+Coordinate\+System}$\ast$ enemy\+Field2\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a49061c1a5fbf771824810fbdc3181951}{}\label{classGameForm_a49061c1a5fbf771824810fbdc3181951}
+\index{Game\+Form@{Game\+Form}!exit\+Action@{exit\+Action}}
+\index{exit\+Action@{exit\+Action}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{exit\+Action}{exitAction}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ exit\+Action\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a95088aac220cb7eb4159ab75d86cb81d}{}\label{classGameForm_a95088aac220cb7eb4159ab75d86cb81d}
+\index{Game\+Form@{Game\+Form}!file\+Menu@{file\+Menu}}
+\index{file\+Menu@{file\+Menu}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{file\+Menu}{fileMenu}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ file\+Menu\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_adb1ab65d1aecac73e58f48557c143b2e}{}\label{classGameForm_adb1ab65d1aecac73e58f48557c143b2e}
+\index{Game\+Form@{Game\+Form}!grid\+Group\+Box\+Enemy@{grid\+Group\+Box\+Enemy}}
+\index{grid\+Group\+Box\+Enemy@{grid\+Group\+Box\+Enemy}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{grid\+Group\+Box\+Enemy}{gridGroupBoxEnemy}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ grid\+Group\+Box\+Enemy\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a37c93b300cdcf03835fe5f67b43eb08d}{}\label{classGameForm_a37c93b300cdcf03835fe5f67b43eb08d}
+\index{Game\+Form@{Game\+Form}!grid\+Group\+Box\+Own@{grid\+Group\+Box\+Own}}
+\index{grid\+Group\+Box\+Own@{grid\+Group\+Box\+Own}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{grid\+Group\+Box\+Own}{gridGroupBoxOwn}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ grid\+Group\+Box\+Own\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a39a9c8ff476ae5757052f6691858b0db}{}\label{classGameForm_a39a9c8ff476ae5757052f6691858b0db}
+\index{Game\+Form@{Game\+Form}!height\+Screen@{height\+Screen}}
+\index{height\+Screen@{height\+Screen}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{height\+Screen}{heightScreen}}]{\setlength{\rightskip}{0pt plus 5cm}int height\+Screen\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_aca14d609fbdac3a9b31c709986e66da6}{}\label{classGameForm_aca14d609fbdac3a9b31c709986e66da6}
+\index{Game\+Form@{Game\+Form}!help\+Menu@{help\+Menu}}
+\index{help\+Menu@{help\+Menu}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{help\+Menu}{helpMenu}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ help\+Menu\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_ac589920cc2b87288e454430daa93a976}{}\label{classGameForm_ac589920cc2b87288e454430daa93a976}
+\index{Game\+Form@{Game\+Form}!information\+Group\+Box@{information\+Group\+Box}}
+\index{information\+Group\+Box@{information\+Group\+Box}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{information\+Group\+Box}{informationGroupBox}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ information\+Group\+Box\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_ab8c97454af833ee8fdc146bcb0f2d8df}{}\label{classGameForm_ab8c97454af833ee8fdc146bcb0f2d8df}
+\index{Game\+Form@{Game\+Form}!menu\+Bar@{menu\+Bar}}
+\index{menu\+Bar@{menu\+Bar}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{menu\+Bar}{menuBar}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu\+Bar$\ast$ menu\+Bar\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_af1e1fab084abbaa2eb09807c6f403a9b}{}\label{classGameForm_af1e1fab084abbaa2eb09807c6f403a9b}
+\index{Game\+Form@{Game\+Form}!own\+Field@{own\+Field}}
+\index{own\+Field@{own\+Field}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{own\+Field}{ownField}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+::\+Game\+Coordinate\+System}$\ast$ own\+Field\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a3f769801cb22e13a5a878fcdc0518d05}{}\label{classGameForm_a3f769801cb22e13a5a878fcdc0518d05}
+\index{Game\+Form@{Game\+Form}!own\+Field1@{own\+Field1}}
+\index{own\+Field1@{own\+Field1}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{own\+Field1}{ownField1}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+::\+Game\+Coordinate\+System}$\ast$ own\+Field1\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a6e2c3e513f802d34db2d7952c15fffc6}{}\label{classGameForm_a6e2c3e513f802d34db2d7952c15fffc6}
+\index{Game\+Form@{Game\+Form}!reset\+Action@{reset\+Action}}
+\index{reset\+Action@{reset\+Action}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{reset\+Action}{resetAction}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ reset\+Action\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_adb8d61a6d4522657760029f301a75497}{}\label{classGameForm_adb8d61a6d4522657760029f301a75497}
+\index{Game\+Form@{Game\+Form}!statistic\+Table@{statistic\+Table}}
+\index{statistic\+Table@{statistic\+Table}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{statistic\+Table}{statisticTable}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Table\+Widget$\ast$ statistic\+Table\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a173cb497cbbb32fee84511c972bbcf0f}{}\label{classGameForm_a173cb497cbbb32fee84511c972bbcf0f}
+\index{Game\+Form@{Game\+Form}!status\+Box@{status\+Box}}
+\index{status\+Box@{status\+Box}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{status\+Box}{statusBox}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Edit$\ast$ status\+Box\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_acbe8a9ebdd294a5a7a2f0ba567a3d4cf}{}\label{classGameForm_acbe8a9ebdd294a5a7a2f0ba567a3d4cf}
+\index{Game\+Form@{Game\+Form}!status\+Box\+Text@{status\+Box\+Text}}
+\index{status\+Box\+Text@{status\+Box\+Text}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{status\+Box\+Text}{statusBoxText}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String status\+Box\+Text = \char`\"{}\char`\"{}}\hypertarget{classGameForm_a6b42c6ec1657cd85c98c46fcfd126046}{}\label{classGameForm_a6b42c6ec1657cd85c98c46fcfd126046}
+\index{Game\+Form@{Game\+Form}!version\+Action@{version\+Action}}
+\index{version\+Action@{version\+Action}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{version\+Action}{versionAction}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ version\+Action\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_a4f38a2d30e7f01b923b0d9e3f9f2e048}{}\label{classGameForm_a4f38a2d30e7f01b923b0d9e3f9f2e048}
+\index{Game\+Form@{Game\+Form}!width\+Screen@{width\+Screen}}
+\index{width\+Screen@{width\+Screen}!Game\+Form@{Game\+Form}}
+\subsubsection[{\texorpdfstring{width\+Screen}{widthScreen}}]{\setlength{\rightskip}{0pt plus 5cm}int width\+Screen\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGameForm_aacecc4646535564c1445645a8161dc5f}{}\label{classGameForm_aacecc4646535564c1445645a8161dc5f}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{gameform_8h}{gameform.\+h}\item 
+gui/\hyperlink{gameform_8cpp}{gameform.\+cpp}\end{DoxyCompactItemize}

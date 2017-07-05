@@ -19,7 +19,7 @@ enum class Command
     USER_INFO,
     SHIP_PLACEMENT
 };
-
+/// A class that uses Connection to recieve/send encoded/decoded information stored in json objects
 class Communicator
 {
 public:

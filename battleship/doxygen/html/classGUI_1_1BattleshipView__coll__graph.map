@@ -1,0 +1,5 @@
+<map id="BattleshipView" name="BattleshipView">
+<area shape="rect" id="node2" href="$classBattleshipObserver.html" title="A base interface class, includes methods, which communicate with model and gui. " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node3" href="$classControllerInterface.html" title="The base class that defines the controller interface. " alt="" coords="163,5,293,32"/>
+<area shape="rect" id="node4" href="$classModelInterface.html" title="The base class that defines the model interface. " alt="" coords="317,5,425,32"/>
+</map>

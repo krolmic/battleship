@@ -1,0 +1,6 @@
+<map id="Communicator" name="Communicator">
+<area shape="rect" id="node2" href="$classMODEL_1_1Game.html" title="A class representing game session that access both Player and Communicator. " alt="" coords="79,199,137,225"/>
+<area shape="rect" id="node3" href="$classMODEL_1_1Player.html" title="A class representing player for model, stores information in UserInfo object within it..." alt="" coords="147,95,205,121"/>
+<area shape="rect" id="node4" href="$classUserInfo.html" title="A class which stores information about Player. " alt="" coords="77,5,149,32"/>
+<area shape="rect" id="node5" href="$classMODEL_1_1CoordinateSystem.html" title="A class that stores data of coordinate system separately from the graphical interface. " alt="" coords="173,5,304,32"/>
+</map>

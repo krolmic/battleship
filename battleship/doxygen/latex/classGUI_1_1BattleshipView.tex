@@ -1,0 +1,133 @@
+\hypertarget{classGUI_1_1BattleshipView}{}\section{Battleship\+View Class Reference}
+\label{classGUI_1_1BattleshipView}\index{Battleship\+View@{Battleship\+View}}
+
+
+A simple class that defines and argument exception.  
+
+
+
+
+{\ttfamily \#include $<$battleship\+\_\+view.\+h$>$}
+
+
+
+Inheritance diagram for Battleship\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classGUI_1_1BattleshipView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Battleship\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGUI_1_1BattleshipView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1BattleshipView_ac9fd11bfc017f0fe052608d297a5d457}{Battleship\+View} (\hyperlink{classModelInterface}{Model\+Interface} \&\hyperlink{classGUI_1_1BattleshipView_a9253735219a238f80643188b190e90ce}{model}, \hyperlink{classControllerInterface}{Controller\+Interface} \&controller)
+\item 
+void \hyperlink{classGUI_1_1BattleshipView_af7b5e55bee9a37cc4f9a861af40c120b}{show\+Error\+Message} (const std\+::string \&msg, const std\+::string \&title=\char`\"{}Oops, something went wrong\char`\"{})
+\item 
+void \hyperlink{classGUI_1_1BattleshipView_a511f6d90d37e864a1879eb6f5bd6f9cb}{show\+Waiting\+For\+Guest\+Connecting\+Dialog} ()
+\item 
+void \hyperlink{classGUI_1_1BattleshipView_aec4e5a4c453a3913c0a25435cfc92dd6}{close\+Top\+Dialog} ()
+\item 
+void \hyperlink{classGUI_1_1BattleshipView_a471a07ce060e70b1cfa03ce3674fba80}{ship\+Placement\+Started} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModelInterface}{Model\+Interface} \& \hyperlink{classGUI_1_1BattleshipView_a9253735219a238f80643188b190e90ce}{model}
+\item 
+\hyperlink{classControllerInterface}{Controller\+Interface} \& \hyperlink{classGUI_1_1BattleshipView_a15e61471831211a4301410bdd802a4a4}{ctrl}
+\item 
+Q\+Dialog $\ast$ \hyperlink{classGUI_1_1BattleshipView_a08be9ec085bb0c3f19f8efe83902b4cb}{top\+Dialog} \{ nullptr \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple class that defines and argument exception. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!Battleship\+View@{Battleship\+View}}
+\index{Battleship\+View@{Battleship\+View}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{Battleship\+View(\+Model\+Interface \&model, Controller\+Interface \&controller)}{BattleshipView(ModelInterface &model, ControllerInterface &controller)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Battleship\+View} (
+\begin{DoxyParamCaption}
+\item[{{\bf Model\+Interface} \&}]{model, }
+\item[{{\bf Controller\+Interface} \&}]{ctrl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classGUI_1_1BattleshipView_ac9fd11bfc017f0fe052608d297a5d457}{}\label{classGUI_1_1BattleshipView_ac9fd11bfc017f0fe052608d297a5d457}
+Application begins with \hyperlink{classGUI_1_1PlayerForm}{Player\+Form} Dialog asking user for his name 
+
+\subsection{Member Function Documentation}
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!close\+Top\+Dialog@{close\+Top\+Dialog}}
+\index{close\+Top\+Dialog@{close\+Top\+Dialog}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{close\+Top\+Dialog()}{closeTopDialog()}}]{\setlength{\rightskip}{0pt plus 5cm}void close\+Top\+Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1BattleshipView_aec4e5a4c453a3913c0a25435cfc92dd6}{}\label{classGUI_1_1BattleshipView_aec4e5a4c453a3913c0a25435cfc92dd6}
+closes top dialog programmatically, also without user having to click. Such dialog can be a popup informing about errors. \index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!ship\+Placement\+Started@{ship\+Placement\+Started}}
+\index{ship\+Placement\+Started@{ship\+Placement\+Started}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{ship\+Placement\+Started()}{shipPlacementStarted()}}]{\setlength{\rightskip}{0pt plus 5cm}void ship\+Placement\+Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classGUI_1_1BattleshipView_a471a07ce060e70b1cfa03ce3674fba80}{}\label{classGUI_1_1BattleshipView_a471a07ce060e70b1cfa03ce3674fba80}
+\begin{DoxySeeAlso}{See also}
+View\+Interface\+::show\+Waiting\+For\+Guest\+Connecting\+Dialog() 
+
+View\+Interface\+::close\+Top\+Dialog() 
+
+View\+Interface\+::show\+Error\+Message(const std\+::string\&, const std\+::string\&) 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classBattleshipObserver_a54910db86473248c34d9a0149bdf9754}{Battleship\+Observer}.
+
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!show\+Error\+Message@{show\+Error\+Message}}
+\index{show\+Error\+Message@{show\+Error\+Message}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{show\+Error\+Message(const std\+::string \&msg, const std\+::string \&title=""Oops, something went wrong"")}{showErrorMessage(const std::string &msg, const std::string &title="Oops, something went wrong")}}]{\setlength{\rightskip}{0pt plus 5cm}void show\+Error\+Message (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{msg, }
+\item[{const std\+::string \&}]{title = {\ttfamily \char`\"{}Oops,~something~went~wrong\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1BattleshipView_af7b5e55bee9a37cc4f9a861af40c120b}{}\label{classGUI_1_1BattleshipView_af7b5e55bee9a37cc4f9a861af40c120b}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & actual error message message \\
+\hline
+{\em title} & title of the window like Q\+Message\+Box \\
+\hline
+\end{DoxyParams}
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!show\+Waiting\+For\+Guest\+Connecting\+Dialog@{show\+Waiting\+For\+Guest\+Connecting\+Dialog}}
+\index{show\+Waiting\+For\+Guest\+Connecting\+Dialog@{show\+Waiting\+For\+Guest\+Connecting\+Dialog}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{show\+Waiting\+For\+Guest\+Connecting\+Dialog()}{showWaitingForGuestConnectingDialog()}}]{\setlength{\rightskip}{0pt plus 5cm}void show\+Waiting\+For\+Guest\+Connecting\+Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1BattleshipView_a511f6d90d37e864a1879eb6f5bd6f9cb}{}\label{classGUI_1_1BattleshipView_a511f6d90d37e864a1879eb6f5bd6f9cb}
+inform user that he has to be patient. Being patient is always good... well at least for someone. 
+
+\subsection{Member Data Documentation}
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!ctrl@{ctrl}}
+\index{ctrl@{ctrl}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{ctrl}{ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controller\+Interface}\& ctrl\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1BattleshipView_a15e61471831211a4301410bdd802a4a4}{}\label{classGUI_1_1BattleshipView_a15e61471831211a4301410bdd802a4a4}
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!model@{model}}
+\index{model@{model}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{model}{model}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Model\+Interface}\& model\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1BattleshipView_a9253735219a238f80643188b190e90ce}{}\label{classGUI_1_1BattleshipView_a9253735219a238f80643188b190e90ce}
+\index{G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}!top\+Dialog@{top\+Dialog}}
+\index{top\+Dialog@{top\+Dialog}!G\+U\+I\+::\+Battleship\+View@{G\+U\+I\+::\+Battleship\+View}}
+\subsubsection[{\texorpdfstring{top\+Dialog}{topDialog}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dialog$\ast$ top\+Dialog \{ nullptr \}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGUI_1_1BattleshipView_a08be9ec085bb0c3f19f8efe83902b4cb}{}\label{classGUI_1_1BattleshipView_a08be9ec085bb0c3f19f8efe83902b4cb}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{battleship__view_8h}{battleship\+\_\+view.\+h}\item 
+gui/\hyperlink{battleship__view_8cpp}{battleship\+\_\+view.\+cpp}\end{DoxyCompactItemize}

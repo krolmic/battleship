@@ -1,0 +1,5 @@
+<map id="SetShipsForm" name="SetShipsForm">
+<area shape="rect" id="node3" href="$classPlayer.html" title="A class representing player for graphical interface. " alt="" coords="99,157,157,184"/>
+<area shape="rect" id="node4" href="$classGUI_1_1SettingShipsCoordinateSystem.html" title="A simple class that inherits from CoordinateSystem and implements mouse events for setting ships..." alt="" coords="182,157,386,184"/>
+<area shape="rect" id="node5" href="$classGUI_1_1CoordinateSystem.html" title="A virtual base class that defines the essential data for all coordinate systems. " alt="" coords="219,81,349,108"/>
+</map>

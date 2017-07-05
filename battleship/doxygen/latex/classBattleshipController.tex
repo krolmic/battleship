@@ -1,0 +1,108 @@
+\hypertarget{classBattleshipController}{}\section{Battleship\+Controller Class Reference}
+\label{classBattleshipController}\index{Battleship\+Controller@{Battleship\+Controller}}
+
+
+Provides model data to the view and interprets user actions.  
+
+
+
+
+{\ttfamily \#include $<$battleship\+\_\+controller.\+h$>$}
+
+
+
+Inheritance diagram for Battleship\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classBattleshipController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Battleship\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBattleshipController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBattleshipController_a49400b3ee3215b3cc3ee3252eb0e2c3c}{Battleship\+Controller} (\hyperlink{classModelInterface}{Model\+Interface} \&\hyperlink{classBattleshipController_a9253735219a238f80643188b190e90ce}{model})
+\item 
+void \hyperlink{classBattleshipController_a37949c2d70eb648a5957f9e60e86085c}{start\+New\+Game\+As\+Host} (const Q\+String \&player\+Name, const Q\+String \&age) override
+\item 
+void \hyperlink{classBattleshipController_a97013c1a4017c85bcc654424208a0cb4}{start\+New\+Game\+As\+Guest} (const Q\+String \&address, const Q\+String \&port, const Q\+String \&player\+Name, const Q\+String \&age) override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModelInterface}{Model\+Interface} \& \hyperlink{classBattleshipController_a9253735219a238f80643188b190e90ce}{model}
+\item 
+\hyperlink{classGUI_1_1BattleshipView}{G\+U\+I\+::\+Battleship\+View} \hyperlink{classBattleshipController_a2fe88ba65554ddc67524f04c82812c27}{view}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides model data to the view and interprets user actions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Battleship\+Controller@{Battleship\+Controller}!Battleship\+Controller@{Battleship\+Controller}}
+\index{Battleship\+Controller@{Battleship\+Controller}!Battleship\+Controller@{Battleship\+Controller}}
+\subsubsection[{\texorpdfstring{Battleship\+Controller(\+Model\+Interface \&model)}{BattleshipController(ModelInterface &model)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Battleship\+Controller} (
+\begin{DoxyParamCaption}
+\item[{{\bf Model\+Interface} \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classBattleshipController_a49400b3ee3215b3cc3ee3252eb0e2c3c}{}\label{classBattleshipController_a49400b3ee3215b3cc3ee3252eb0e2c3c}
+
+
+\subsection{Member Function Documentation}
+\index{Battleship\+Controller@{Battleship\+Controller}!start\+New\+Game\+As\+Guest@{start\+New\+Game\+As\+Guest}}
+\index{start\+New\+Game\+As\+Guest@{start\+New\+Game\+As\+Guest}!Battleship\+Controller@{Battleship\+Controller}}
+\subsubsection[{\texorpdfstring{start\+New\+Game\+As\+Guest(const Q\+String \&address, const Q\+String \&port, const Q\+String \&player\+Name, const Q\+String \&age) override}{startNewGameAsGuest(const QString &address, const QString &port, const QString &playerName, const QString &age) override}}]{\setlength{\rightskip}{0pt plus 5cm}void start\+New\+Game\+As\+Guest (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{address, }
+\item[{const Q\+String \&}]{port, }
+\item[{const Q\+String \&}]{player\+Name, }
+\item[{const Q\+String \&}]{age}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBattleshipController_a97013c1a4017c85bcc654424208a0cb4}{}\label{classBattleshipController_a97013c1a4017c85bcc654424208a0cb4}
+\begin{DoxySeeAlso}{See also}
+Model\+Interface\+::start\+New\+Game\+As\+Guest(const std\+::string\&, int, const std\+::string\&, int) 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classControllerInterface_a59fe7601f2d7853043c7056d892b86a4}{Controller\+Interface}.
+
+\index{Battleship\+Controller@{Battleship\+Controller}!start\+New\+Game\+As\+Host@{start\+New\+Game\+As\+Host}}
+\index{start\+New\+Game\+As\+Host@{start\+New\+Game\+As\+Host}!Battleship\+Controller@{Battleship\+Controller}}
+\subsubsection[{\texorpdfstring{start\+New\+Game\+As\+Host(const Q\+String \&player\+Name, const Q\+String \&age) override}{startNewGameAsHost(const QString &playerName, const QString &age) override}}]{\setlength{\rightskip}{0pt plus 5cm}void start\+New\+Game\+As\+Host (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{player\+Name, }
+\item[{const Q\+String \&}]{age}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBattleshipController_a37949c2d70eb648a5957f9e60e86085c}{}\label{classBattleshipController_a37949c2d70eb648a5957f9e60e86085c}
+\begin{DoxySeeAlso}{See also}
+Model\+Interface\+::start\+New\+Game\+As\+Host(const std\+::string\&, int) 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classControllerInterface_a0a1077ca83efdd21ffe8b1c042eb9b3b}{Controller\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\index{Battleship\+Controller@{Battleship\+Controller}!model@{model}}
+\index{model@{model}!Battleship\+Controller@{Battleship\+Controller}}
+\subsubsection[{\texorpdfstring{model}{model}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Model\+Interface}\& model\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classBattleshipController_a9253735219a238f80643188b190e90ce}{}\label{classBattleshipController_a9253735219a238f80643188b190e90ce}
+\index{Battleship\+Controller@{Battleship\+Controller}!view@{view}}
+\index{view@{view}!Battleship\+Controller@{Battleship\+Controller}}
+\subsubsection[{\texorpdfstring{view}{view}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+::\+Battleship\+View} view\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classBattleshipController_a2fe88ba65554ddc67524f04c82812c27}{}\label{classBattleshipController_a2fe88ba65554ddc67524f04c82812c27}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{battleship__controller_8h}{battleship\+\_\+controller.\+h}\item 
+\hyperlink{battleship__controller_8cpp}{battleship\+\_\+controller.\+cpp}\end{DoxyCompactItemize}

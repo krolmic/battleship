@@ -6,6 +6,7 @@
 
 namespace MODEL {
 
+/// A class representing player for model, stores information in UserInfo object within it
 class Player
 {
 public:

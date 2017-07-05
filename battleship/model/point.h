@@ -3,6 +3,7 @@
 
 namespace MODEL {
 
+/// A simple class representing point
 class Point
 {
 public:

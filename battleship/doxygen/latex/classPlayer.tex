@@ -1,0 +1,225 @@
+\hypertarget{classPlayer}{}\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+A class representing player for graphical interface.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayer_aa862d30723707ac0ce1923d103a5033f}{Player} (Q\+String $\ast$name\+Player, int age\+Player)
+\item 
+void \hyperlink{classPlayer_a0c1485a5850d704d9b373ebe21cb9b21}{set\+Name} (Q\+String $\ast$name\+Player)
+\item 
+Q\+String $\ast$ \hyperlink{classPlayer_ae3585f991fe37695e2b1a5eba8cacac1}{get\+Name} ()
+\item 
+void \hyperlink{classPlayer_a23e901febda7a2f14791b3557c247df0}{set\+Age} (int \hyperlink{classPlayer_a91d98a856bbd96810b40af3ca5cc901a}{age})
+\item 
+int \hyperlink{classPlayer_a44a88871339022e9a268d613b55f39a1}{get\+Age} ()
+\item 
+void \hyperlink{classPlayer_a15e6f02e21348714fabfa32c176e2b4b}{set\+Number\+Wins} (int \hyperlink{classPlayer_a5490bb5e66c3e5ac702c7df4f363d57d}{number\+Wins})
+\item 
+int \hyperlink{classPlayer_ab4b4189b22c7952d961060550146a5e3}{get\+Number\+Wins} ()
+\item 
+void \hyperlink{classPlayer_aedf3ee71765e18407ad4ba30a8d25d4b}{set\+Number\+Games} (int \hyperlink{classPlayer_a1d6d057cd152c5d158546791cbd6bc8f}{number\+Games})
+\item 
+int \hyperlink{classPlayer_a1bcc25b1f0cb70eec57316d4bee68359}{get\+Number\+Games} ()
+\item 
+void \hyperlink{classPlayer_aaa363c802f56d43e77f1276b9851b5a5}{set\+Number\+Failures} (int number\+Failure)
+\item 
+int \hyperlink{classPlayer_a8b87716141c31266b5bb5ba5372b9b64}{get\+Number\+Failures} ()
+\item 
+void \hyperlink{classPlayer_a2a94b5f95dfbe0d2b19f925eec316a1d}{set\+Grade} (int \hyperlink{classPlayer_a13d4b9fff7f9b28844a348b444cff7be}{grade})
+\item 
+int \hyperlink{classPlayer_a8320479b8d8233a1f9e97db652d228e9}{get\+Grade} ()
+\item 
+void \hyperlink{classPlayer_a37db9063f0dd514f2dc74a20fb4f5b71}{change\+Profile} (Q\+String $\ast$name\+Player, int \hyperlink{classPlayer_a91d98a856bbd96810b40af3ca5cc901a}{age})
+\item 
+Q\+String $\ast$ \hyperlink{classPlayer_aa4991dab5d59dfd37e9da17465e8dc52}{get\+Stats} ()
+\item 
+void \hyperlink{classPlayer_a67f249eb58bec9270d90245a97211d52}{add\+Last\+Oponent} (Q\+String recent\+Oponents)
+\item 
+Q\+List$<$ Q\+String $>$ \hyperlink{classPlayer_a6e0c06b360697a7f3fea19e5e1de37c3}{get\+Last\+Oponents} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String $\ast$ \hyperlink{classPlayer_a4b7508f4b75dd810016635bb8a9ee1e3}{name}
+\item 
+int \hyperlink{classPlayer_a91d98a856bbd96810b40af3ca5cc901a}{age}
+\item 
+int \hyperlink{classPlayer_a1d6d057cd152c5d158546791cbd6bc8f}{number\+Games} = 0
+\item 
+int \hyperlink{classPlayer_a5490bb5e66c3e5ac702c7df4f363d57d}{number\+Wins} = 0
+\item 
+int \hyperlink{classPlayer_aeee09fe6d2b453144787ac2b70052d69}{number\+Failures} = 0
+\item 
+int \hyperlink{classPlayer_a13d4b9fff7f9b28844a348b444cff7be}{grade} = 0
+\item 
+Q\+List$<$ Q\+String $>$ \hyperlink{classPlayer_aa26e1577cdda5a121a83a7fb5dd4c985}{last\+Oponents}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class representing player for graphical interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{\texorpdfstring{Player(\+Q\+String $\ast$name\+Player, int age\+Player)}{Player(QString *namePlayer, int agePlayer)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} (
+\begin{DoxyParamCaption}
+\item[{Q\+String $\ast$}]{name\+Player, }
+\item[{int}]{age\+Player}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_aa862d30723707ac0ce1923d103a5033f}{}\label{classPlayer_aa862d30723707ac0ce1923d103a5033f}
+
+
+\subsection{Member Function Documentation}
+\index{Player@{Player}!add\+Last\+Oponent@{add\+Last\+Oponent}}
+\index{add\+Last\+Oponent@{add\+Last\+Oponent}!Player@{Player}}
+\subsubsection[{\texorpdfstring{add\+Last\+Oponent(\+Q\+String recent\+Oponents)}{addLastOponent(QString recentOponents)}}]{\setlength{\rightskip}{0pt plus 5cm}void add\+Last\+Oponent (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{recent\+Oponents}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a67f249eb58bec9270d90245a97211d52}{}\label{classPlayer_a67f249eb58bec9270d90245a97211d52}
+\index{Player@{Player}!change\+Profile@{change\+Profile}}
+\index{change\+Profile@{change\+Profile}!Player@{Player}}
+\subsubsection[{\texorpdfstring{change\+Profile(\+Q\+String $\ast$name\+Player, int age)}{changeProfile(QString *namePlayer, int age)}}]{\setlength{\rightskip}{0pt plus 5cm}void change\+Profile (
+\begin{DoxyParamCaption}
+\item[{Q\+String $\ast$}]{name\+Player, }
+\item[{int}]{age}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a37db9063f0dd514f2dc74a20fb4f5b71}{}\label{classPlayer_a37db9063f0dd514f2dc74a20fb4f5b71}
+\index{Player@{Player}!get\+Age@{get\+Age}}
+\index{get\+Age@{get\+Age}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Age()}{getAge()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Age (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a44a88871339022e9a268d613b55f39a1}{}\label{classPlayer_a44a88871339022e9a268d613b55f39a1}
+\index{Player@{Player}!get\+Grade@{get\+Grade}}
+\index{get\+Grade@{get\+Grade}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Grade()}{getGrade()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Grade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a8320479b8d8233a1f9e97db652d228e9}{}\label{classPlayer_a8320479b8d8233a1f9e97db652d228e9}
+\index{Player@{Player}!get\+Last\+Oponents@{get\+Last\+Oponents}}
+\index{get\+Last\+Oponents@{get\+Last\+Oponents}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Last\+Oponents()}{getLastOponents()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+String $>$ get\+Last\+Oponents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a6e0c06b360697a7f3fea19e5e1de37c3}{}\label{classPlayer_a6e0c06b360697a7f3fea19e5e1de37c3}
+\index{Player@{Player}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Name()}{getName()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String $\ast$ get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_ae3585f991fe37695e2b1a5eba8cacac1}{}\label{classPlayer_ae3585f991fe37695e2b1a5eba8cacac1}
+\index{Player@{Player}!get\+Number\+Failures@{get\+Number\+Failures}}
+\index{get\+Number\+Failures@{get\+Number\+Failures}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Number\+Failures()}{getNumberFailures()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Number\+Failures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a8b87716141c31266b5bb5ba5372b9b64}{}\label{classPlayer_a8b87716141c31266b5bb5ba5372b9b64}
+\index{Player@{Player}!get\+Number\+Games@{get\+Number\+Games}}
+\index{get\+Number\+Games@{get\+Number\+Games}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Number\+Games()}{getNumberGames()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Number\+Games (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a1bcc25b1f0cb70eec57316d4bee68359}{}\label{classPlayer_a1bcc25b1f0cb70eec57316d4bee68359}
+\index{Player@{Player}!get\+Number\+Wins@{get\+Number\+Wins}}
+\index{get\+Number\+Wins@{get\+Number\+Wins}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Number\+Wins()}{getNumberWins()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Number\+Wins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_ab4b4189b22c7952d961060550146a5e3}{}\label{classPlayer_ab4b4189b22c7952d961060550146a5e3}
+\index{Player@{Player}!get\+Stats@{get\+Stats}}
+\index{get\+Stats@{get\+Stats}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Stats()}{getStats()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String $\ast$ get\+Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_aa4991dab5d59dfd37e9da17465e8dc52}{}\label{classPlayer_aa4991dab5d59dfd37e9da17465e8dc52}
+\index{Player@{Player}!set\+Age@{set\+Age}}
+\index{set\+Age@{set\+Age}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Age(int age)}{setAge(int age)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Age (
+\begin{DoxyParamCaption}
+\item[{int}]{age}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a23e901febda7a2f14791b3557c247df0}{}\label{classPlayer_a23e901febda7a2f14791b3557c247df0}
+\index{Player@{Player}!set\+Grade@{set\+Grade}}
+\index{set\+Grade@{set\+Grade}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Grade(int grade)}{setGrade(int grade)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Grade (
+\begin{DoxyParamCaption}
+\item[{int}]{grade}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a2a94b5f95dfbe0d2b19f925eec316a1d}{}\label{classPlayer_a2a94b5f95dfbe0d2b19f925eec316a1d}
+\index{Player@{Player}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Name(\+Q\+String $\ast$name\+Player)}{setName(QString *namePlayer)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Name (
+\begin{DoxyParamCaption}
+\item[{Q\+String $\ast$}]{name\+Player}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a0c1485a5850d704d9b373ebe21cb9b21}{}\label{classPlayer_a0c1485a5850d704d9b373ebe21cb9b21}
+\index{Player@{Player}!set\+Number\+Failures@{set\+Number\+Failures}}
+\index{set\+Number\+Failures@{set\+Number\+Failures}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Number\+Failures(int number\+Failure)}{setNumberFailures(int numberFailure)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Number\+Failures (
+\begin{DoxyParamCaption}
+\item[{int}]{number\+Failure}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_aaa363c802f56d43e77f1276b9851b5a5}{}\label{classPlayer_aaa363c802f56d43e77f1276b9851b5a5}
+\index{Player@{Player}!set\+Number\+Games@{set\+Number\+Games}}
+\index{set\+Number\+Games@{set\+Number\+Games}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Number\+Games(int number\+Games)}{setNumberGames(int numberGames)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Number\+Games (
+\begin{DoxyParamCaption}
+\item[{int}]{number\+Games}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_aedf3ee71765e18407ad4ba30a8d25d4b}{}\label{classPlayer_aedf3ee71765e18407ad4ba30a8d25d4b}
+\index{Player@{Player}!set\+Number\+Wins@{set\+Number\+Wins}}
+\index{set\+Number\+Wins@{set\+Number\+Wins}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Number\+Wins(int number\+Wins)}{setNumberWins(int numberWins)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Number\+Wins (
+\begin{DoxyParamCaption}
+\item[{int}]{number\+Wins}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayer_a15e6f02e21348714fabfa32c176e2b4b}{}\label{classPlayer_a15e6f02e21348714fabfa32c176e2b4b}
+
+
+\subsection{Member Data Documentation}
+\index{Player@{Player}!age@{age}}
+\index{age@{age}!Player@{Player}}
+\subsubsection[{\texorpdfstring{age}{age}}]{\setlength{\rightskip}{0pt plus 5cm}int age\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_a91d98a856bbd96810b40af3ca5cc901a}{}\label{classPlayer_a91d98a856bbd96810b40af3ca5cc901a}
+\index{Player@{Player}!grade@{grade}}
+\index{grade@{grade}!Player@{Player}}
+\subsubsection[{\texorpdfstring{grade}{grade}}]{\setlength{\rightskip}{0pt plus 5cm}int grade = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_a13d4b9fff7f9b28844a348b444cff7be}{}\label{classPlayer_a13d4b9fff7f9b28844a348b444cff7be}
+\index{Player@{Player}!last\+Oponents@{last\+Oponents}}
+\index{last\+Oponents@{last\+Oponents}!Player@{Player}}
+\subsubsection[{\texorpdfstring{last\+Oponents}{lastOponents}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$Q\+String$>$ last\+Oponents\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_aa26e1577cdda5a121a83a7fb5dd4c985}{}\label{classPlayer_aa26e1577cdda5a121a83a7fb5dd4c985}
+\index{Player@{Player}!name@{name}}
+\index{name@{name}!Player@{Player}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String$\ast$ name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_a4b7508f4b75dd810016635bb8a9ee1e3}{}\label{classPlayer_a4b7508f4b75dd810016635bb8a9ee1e3}
+\index{Player@{Player}!number\+Failures@{number\+Failures}}
+\index{number\+Failures@{number\+Failures}!Player@{Player}}
+\subsubsection[{\texorpdfstring{number\+Failures}{numberFailures}}]{\setlength{\rightskip}{0pt plus 5cm}int number\+Failures = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_aeee09fe6d2b453144787ac2b70052d69}{}\label{classPlayer_aeee09fe6d2b453144787ac2b70052d69}
+\index{Player@{Player}!number\+Games@{number\+Games}}
+\index{number\+Games@{number\+Games}!Player@{Player}}
+\subsubsection[{\texorpdfstring{number\+Games}{numberGames}}]{\setlength{\rightskip}{0pt plus 5cm}int number\+Games = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_a1d6d057cd152c5d158546791cbd6bc8f}{}\label{classPlayer_a1d6d057cd152c5d158546791cbd6bc8f}
+\index{Player@{Player}!number\+Wins@{number\+Wins}}
+\index{number\+Wins@{number\+Wins}!Player@{Player}}
+\subsubsection[{\texorpdfstring{number\+Wins}{numberWins}}]{\setlength{\rightskip}{0pt plus 5cm}int number\+Wins = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlayer_a5490bb5e66c3e5ac702c7df4f363d57d}{}\label{classPlayer_a5490bb5e66c3e5ac702c7df4f363d57d}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{gui_2player_8h}{player.\+h}\item 
+gui/\hyperlink{gui_2player_8cpp}{player.\+cpp}\end{DoxyCompactItemize}

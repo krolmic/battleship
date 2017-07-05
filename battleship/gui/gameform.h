@@ -18,7 +18,7 @@ class QTableWidget;
 // namespace Ui {
 // class Dialog;
 // }
-
+/// A simple class that defines graphical interface of the form in which players are able to attack, recieve attack, etc.
 class GameForm : public QDialog
 {
     Q_OBJECT

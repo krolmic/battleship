@@ -8,6 +8,7 @@ class QTcpServer;
 
 
 namespace MODEL {
+/// Inherits from Connection and implements the functionality for connection used by host
 class ConnectionHost : public Connection //https://stackoverflow.com/questions/8578657/qobject-multiple-inheritance
 {
     Q_OBJECT

@@ -5,6 +5,7 @@
 
 namespace MODEL {
 
+/// A class representing a ship
 class Ship
 {
 public:

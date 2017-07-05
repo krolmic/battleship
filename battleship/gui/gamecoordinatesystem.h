@@ -10,6 +10,7 @@
 
 namespace GUI
 {
+/// A simple class that inherits from CoordinateSystem and implements mouse events for starting attack
 class GameCoordinateSystem : public CoordinateSystem
 {
 public:

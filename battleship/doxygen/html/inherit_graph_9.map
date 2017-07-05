@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classGameForm.html" title="A simple class that defines graphical interface of the form in which players are able to attack..." alt="" coords="132,5,219,32"/>
+<area shape="rect" id="node3" href="$classGUI_1_1PlayerForm.html" title="A simple class that defines graphical interface of the form in which players are able enter the name ..." alt="" coords="131,56,220,83"/>
+<area shape="rect" id="node4" href="$classSetShipsForm.html" title="A simple class that defines graphical interface of the form in which players are able to set ships..." alt="" coords="123,107,228,133"/>
+</map>

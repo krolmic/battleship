@@ -5,6 +5,7 @@
 #include "connection_host.h"
 
 namespace MODEL {
+/// Inherits Game and make it possible to manage hosts game
 class GameHost : public Game
 {
 public:

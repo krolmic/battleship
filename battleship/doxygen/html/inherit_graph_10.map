@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classModelInterface.html" title="The base class that defines the model interface. " alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node2" href="$classMODEL_1_1BattleshipModel.html" title="acts primarely as a wrapper around MODEL::Game class. Especially we make use of its constructor &amp; des..." alt="" coords="161,5,276,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="model/connection_host.h" name="model/connection_host.h">
+<area shape="rect" id="node2" href="$game__host_8h.html" title="model/game_host.h" alt="" coords="125,80,261,107"/>
+<area shape="rect" id="node5" href="$communicator_8cpp.html" title="model/communicator.cpp" alt="" coords="285,80,453,107"/>
+<area shape="rect" id="node6" href="$connection__host_8cpp.html" title="model/connection_host.cpp" alt="" coords="477,80,659,107"/>
+<area shape="rect" id="node7" href="$test__connection_8cpp.html" title="test_connection.cpp" alt="" coords="683,80,821,107"/>
+<area shape="rect" id="node3" href="$battleship__model_8cpp.html" title="model/battleship_model.cpp" alt="" coords="5,155,189,181"/>
+<area shape="rect" id="node4" href="$game__host_8cpp.html" title="model/game_host.cpp" alt="" coords="214,155,365,181"/>
+</map>

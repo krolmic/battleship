@@ -9,7 +9,7 @@ class UserInfo;
 namespace MODEL {
     class Point;
 }
-
+/// The base class that defines the model interface
 class ModelInterface //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
 {
 public:

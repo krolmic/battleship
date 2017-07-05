@@ -1,0 +1,12 @@
+<map id="model/game_guest.cpp" name="model/game_guest.cpp">
+<area shape="rect" id="node2" href="$game__guest_8h.html" title="game_guest.h" alt="" coords="624,80,728,107"/>
+<area shape="rect" id="node15" href="$user__info_8h.html" title="common/user_info.h" alt="" coords="821,304,961,331"/>
+<area shape="rect" id="node3" href="$game_8h.html" title="game.h" alt="" coords="573,155,638,181"/>
+<area shape="rect" id="node21" href="$connection__guest_8h.html" title="connection_guest.h" alt="" coords="597,229,731,256"/>
+<area shape="rect" id="node4" href="$communicator_8h.html" title="communicator.h" alt="" coords="272,229,387,256"/>
+<area shape="rect" id="node14" href="$model_2player_8h.html" title="model/player.h" alt="" coords="837,229,944,256"/>
+<area shape="rect" id="node9" href="$connection_8h.html" title="connection.h" alt="" coords="480,304,576,331"/>
+<area shape="rect" id="node17" href="$coordinate__system_8h.html" title="coordinate_system.h" alt="" coords="985,304,1127,331"/>
+<area shape="rect" id="node19" href="$ship_8h.html" title="ship.h" alt="" coords="1067,379,1125,405"/>
+<area shape="rect" id="node20" href="$point_8h.html" title="point.h" alt="" coords="1065,453,1127,480"/>
+</map>

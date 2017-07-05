@@ -7,7 +7,7 @@
 namespace MODEL {
 
 class Point;
-    
+/// A class that stores data of coordinate system separately from the graphical interface
 class CoordinateSystem
 {
 public:

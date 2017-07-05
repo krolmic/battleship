@@ -1,0 +1,261 @@
+\hypertarget{classGUI_1_1CoordinateSystem}{}\section{Coordinate\+System Class Reference}
+\label{classGUI_1_1CoordinateSystem}\index{Coordinate\+System@{Coordinate\+System}}
+
+
+A virtual base class that defines the essential data for all coordinate systems.  
+
+
+
+
+{\ttfamily \#include $<$coordinatesystem.\+h$>$}
+
+
+
+Inheritance diagram for Coordinate\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGUI_1_1CoordinateSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Coordinate\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classGUI_1_1CoordinateSystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1CoordinateSystem_a279a1ccd5bfc8d71d086cb2d7fb77ec3}{Coordinate\+System} (Q\+Widget $\ast$\hyperlink{classGUI_1_1CoordinateSystem_a1799d742cabf4aedc2b3553023ccd368}{parent}=nullptr)
+\item 
+\hyperlink{classGUI_1_1CoordinateSystem_a6b68547f4cdb1b9a42b0e31fe61c3064}{$\sim$\+Coordinate\+System} ()
+\item 
+void \hyperlink{classGUI_1_1CoordinateSystem_a457f85ceb4ade790e815a0ea27e7760e}{paint\+Text} ()
+\begin{DoxyCompactList}\small\item\em zeichnet die Beschriftungen der X-\/ und Y-\/\+Achse \end{DoxyCompactList}\item 
+void \hyperlink{classGUI_1_1CoordinateSystem_ae1362a28cae5c9ba80e89b7a0734bf0b}{paint\+Axis} ()
+\begin{DoxyCompactList}\small\item\em zeichnet die X-\/ und Y-\/\+Achse \end{DoxyCompactList}\item 
+void \hyperlink{classGUI_1_1CoordinateSystem_a0abd1bd78d11330c8c70f9eaeec33c2f}{paint\+Ships} ()
+\begin{DoxyCompactList}\small\item\em zeichnet die Schiffe aus ships \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGUI_1_1CoordinateSystem_a3d41bd83deb883b8d0c8d192bd0b1ddd}{clear\+Field} ()=0
+\begin{DoxyCompactList}\small\item\em Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt. \end{DoxyCompactList}\item 
+Q\+Point \hyperlink{classGUI_1_1CoordinateSystem_a99abd61b7c05252962b38933538410a4}{get\+Coordinates} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Rechnet die Pixel-\/\+Koordinaten eines Q\+Point in der \hyperlink{namespaceGUI}{G\+UI} in die mathematisch richtige Werte um und gibt sie zurueck. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Q\+Line $>$ \hyperlink{classGUI_1_1CoordinateSystem_aace79121ea432bad20264eafaec2e60f}{ships}
+\begin{DoxyCompactList}\small\item\em Schiffe. \end{DoxyCompactList}\item 
+Q\+Pixmap $\ast$ \hyperlink{classGUI_1_1CoordinateSystem_a4e0ef07bc83595ef2208e719435b2bdb}{target\+\_\+pixmap}
+\begin{DoxyCompactList}\small\item\em Pain Device fuer das Koordinatensystem. \end{DoxyCompactList}\item 
+Qt\+::\+Global\+Color \hyperlink{classGUI_1_1CoordinateSystem_a10cc8a23e9d2e122f5160ac6cc8c024a}{lines\+\_\+color} = Qt\+::gray
+\begin{DoxyCompactList}\small\item\em Farben. \end{DoxyCompactList}\item 
+Qt\+::\+Global\+Color \hyperlink{classGUI_1_1CoordinateSystem_a105b11a9cc588b3a0b7c6208b270d5c9}{x\+\_\+y\+\_\+axis\+\_\+color} = Qt\+::black
+\item 
+Qt\+::\+Global\+Color \hyperlink{classGUI_1_1CoordinateSystem_aade80ae99e4ee3610c175da220484c30}{ships\+\_\+color} = Qt\+::blue
+\item 
+Qt\+::\+Global\+Color \hyperlink{classGUI_1_1CoordinateSystem_a8263857bd70758bdb9272b15dc87f55f}{bg\+\_\+color} = Qt\+::white
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Widget $\ast$ \hyperlink{classGUI_1_1CoordinateSystem_a1799d742cabf4aedc2b3553023ccd368}{parent}
+\item 
+std\+::vector$<$ Q\+Point $>$ \hyperlink{classGUI_1_1CoordinateSystem_af6b75c3f51fa26c16961a577565e177e}{points}
+\begin{DoxyCompactList}\small\item\em Alle Schnittpunkte der Linien auf dem Koordinatensystem. \end{DoxyCompactList}\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_af95e9c45410ea5d7085675933c5eeae3}{gamearea} = 400
+\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_ad513b38928d1200efd7c23313bf19a6f}{space\+\_\+to\+\_\+next\+\_\+line} = 20
+\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_aee01da46fa67198ecaa2f6f4d640c4be}{ship\+\_\+length} = (\hyperlink{classGUI_1_1CoordinateSystem_af95e9c45410ea5d7085675933c5eeae3}{gamearea}/\hyperlink{classGUI_1_1CoordinateSystem_ad513b38928d1200efd7c23313bf19a6f}{space\+\_\+to\+\_\+next\+\_\+line})$\ast$2
+\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_a4aea6960b7b2ff7fe72c11feaead9d78}{initial\+\_\+x} = -\/1
+\begin{DoxyCompactList}\small\item\em die Ausgangskoordinaten \end{DoxyCompactList}\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_a5a8fb7f950cc366b0a248a04fb2270da}{initial\+\_\+y} = -\/1
+\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_a5e3c4d4ddb249df69bacc54748304113}{final\+\_\+x} = -\/1
+\begin{DoxyCompactList}\small\item\em die Endkoordinaten \end{DoxyCompactList}\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_a7be498e5c36f146dc15c99d79a1dec26}{final\+\_\+y} = -\/1
+\item 
+bool \hyperlink{classGUI_1_1CoordinateSystem_a76fde535d6e6d8b00594daf38372fa0d}{mouse\+\_\+pressed} = false
+\begin{DoxyCompactList}\small\item\em wird beim mouse\+Press\+Event auf true gesetzt \end{DoxyCompactList}\item 
+int \hyperlink{classGUI_1_1CoordinateSystem_aac44d9cfd174bff52e3126dcc059d851}{triangle\+\_\+size} = 5
+\begin{DoxyCompactList}\small\item\em bestimmt die Groesse der Pfeile an den Achsen des Koordinatensystems \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A virtual base class that defines the essential data for all coordinate systems. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!Coordinate\+System@{Coordinate\+System}}
+\index{Coordinate\+System@{Coordinate\+System}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{Coordinate\+System(\+Q\+Widget $\ast$parent=nullptr)}{CoordinateSystem(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate\+System} (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classGUI_1_1CoordinateSystem_a279a1ccd5bfc8d71d086cb2d7fb77ec3}{}\label{classGUI_1_1CoordinateSystem_a279a1ccd5bfc8d71d086cb2d7fb77ec3}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!````~Coordinate\+System@{$\sim$\+Coordinate\+System}}
+\index{````~Coordinate\+System@{$\sim$\+Coordinate\+System}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{$\sim$\+Coordinate\+System()}{~CoordinateSystem()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Coordinate\+System} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1CoordinateSystem_a6b68547f4cdb1b9a42b0e31fe61c3064}{}\label{classGUI_1_1CoordinateSystem_a6b68547f4cdb1b9a42b0e31fe61c3064}
+
+
+\subsection{Member Function Documentation}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!clear\+Field@{clear\+Field}}
+\index{clear\+Field@{clear\+Field}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{clear\+Field()=0}{clearField()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clear\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classGUI_1_1CoordinateSystem_a3d41bd83deb883b8d0c8d192bd0b1ddd}{}\label{classGUI_1_1CoordinateSystem_a3d41bd83deb883b8d0c8d192bd0b1ddd}
+
+
+Eine Funktion, die pure virtual ist, wird fuer eine abstrakte Klasse benoetigt. 
+
+
+
+Implemented in \hyperlink{classGUI_1_1SettingShipsCoordinateSystem_afcf62685a11ce5529786cc14ddecc7f2}{Setting\+Ships\+Coordinate\+System}, and \hyperlink{classGUI_1_1GameCoordinateSystem_afcf62685a11ce5529786cc14ddecc7f2}{Game\+Coordinate\+System}.
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{get\+Coordinates(int x, int y)}{getCoordinates(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point get\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1CoordinateSystem_a99abd61b7c05252962b38933538410a4}{}\label{classGUI_1_1CoordinateSystem_a99abd61b7c05252962b38933538410a4}
+
+
+Rechnet die Pixel-\/\+Koordinaten eines Q\+Point in der \hyperlink{namespaceGUI}{G\+UI} in die mathematisch richtige Werte um und gibt sie zurueck. 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!paint\+Axis@{paint\+Axis}}
+\index{paint\+Axis@{paint\+Axis}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{paint\+Axis()}{paintAxis()}}]{\setlength{\rightskip}{0pt plus 5cm}void paint\+Axis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1CoordinateSystem_ae1362a28cae5c9ba80e89b7a0734bf0b}{}\label{classGUI_1_1CoordinateSystem_ae1362a28cae5c9ba80e89b7a0734bf0b}
+
+
+zeichnet die X-\/ und Y-\/\+Achse 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!paint\+Ships@{paint\+Ships}}
+\index{paint\+Ships@{paint\+Ships}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{paint\+Ships()}{paintShips()}}]{\setlength{\rightskip}{0pt plus 5cm}void paint\+Ships (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1CoordinateSystem_a0abd1bd78d11330c8c70f9eaeec33c2f}{}\label{classGUI_1_1CoordinateSystem_a0abd1bd78d11330c8c70f9eaeec33c2f}
+
+
+zeichnet die Schiffe aus ships 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!paint\+Text@{paint\+Text}}
+\index{paint\+Text@{paint\+Text}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{paint\+Text()}{paintText()}}]{\setlength{\rightskip}{0pt plus 5cm}void paint\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGUI_1_1CoordinateSystem_a457f85ceb4ade790e815a0ea27e7760e}{}\label{classGUI_1_1CoordinateSystem_a457f85ceb4ade790e815a0ea27e7760e}
+
+
+zeichnet die Beschriftungen der X-\/ und Y-\/\+Achse 
+
+
+
+\subsection{Member Data Documentation}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!bg\+\_\+color@{bg\+\_\+color}}
+\index{bg\+\_\+color@{bg\+\_\+color}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{bg\+\_\+color}{bg_color}}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Global\+Color bg\+\_\+color = Qt\+::white}\hypertarget{classGUI_1_1CoordinateSystem_a8263857bd70758bdb9272b15dc87f55f}{}\label{classGUI_1_1CoordinateSystem_a8263857bd70758bdb9272b15dc87f55f}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!final\+\_\+x@{final\+\_\+x}}
+\index{final\+\_\+x@{final\+\_\+x}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{final\+\_\+x}{final_x}}]{\setlength{\rightskip}{0pt plus 5cm}int final\+\_\+x = -\/1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_a5e3c4d4ddb249df69bacc54748304113}{}\label{classGUI_1_1CoordinateSystem_a5e3c4d4ddb249df69bacc54748304113}
+
+
+die Endkoordinaten 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!final\+\_\+y@{final\+\_\+y}}
+\index{final\+\_\+y@{final\+\_\+y}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{final\+\_\+y}{final_y}}]{\setlength{\rightskip}{0pt plus 5cm}int final\+\_\+y = -\/1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_a7be498e5c36f146dc15c99d79a1dec26}{}\label{classGUI_1_1CoordinateSystem_a7be498e5c36f146dc15c99d79a1dec26}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!gamearea@{gamearea}}
+\index{gamearea@{gamearea}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{gamearea}{gamearea}}]{\setlength{\rightskip}{0pt plus 5cm}int gamearea = 400\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_af95e9c45410ea5d7085675933c5eeae3}{}\label{classGUI_1_1CoordinateSystem_af95e9c45410ea5d7085675933c5eeae3}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!initial\+\_\+x@{initial\+\_\+x}}
+\index{initial\+\_\+x@{initial\+\_\+x}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{initial\+\_\+x}{initial_x}}]{\setlength{\rightskip}{0pt plus 5cm}int initial\+\_\+x = -\/1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_a4aea6960b7b2ff7fe72c11feaead9d78}{}\label{classGUI_1_1CoordinateSystem_a4aea6960b7b2ff7fe72c11feaead9d78}
+
+
+die Ausgangskoordinaten 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!initial\+\_\+y@{initial\+\_\+y}}
+\index{initial\+\_\+y@{initial\+\_\+y}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{initial\+\_\+y}{initial_y}}]{\setlength{\rightskip}{0pt plus 5cm}int initial\+\_\+y = -\/1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_a5a8fb7f950cc366b0a248a04fb2270da}{}\label{classGUI_1_1CoordinateSystem_a5a8fb7f950cc366b0a248a04fb2270da}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!lines\+\_\+color@{lines\+\_\+color}}
+\index{lines\+\_\+color@{lines\+\_\+color}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{lines\+\_\+color}{lines_color}}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Global\+Color lines\+\_\+color = Qt\+::gray}\hypertarget{classGUI_1_1CoordinateSystem_a10cc8a23e9d2e122f5160ac6cc8c024a}{}\label{classGUI_1_1CoordinateSystem_a10cc8a23e9d2e122f5160ac6cc8c024a}
+
+
+Farben. 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!mouse\+\_\+pressed@{mouse\+\_\+pressed}}
+\index{mouse\+\_\+pressed@{mouse\+\_\+pressed}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{mouse\+\_\+pressed}{mouse_pressed}}]{\setlength{\rightskip}{0pt plus 5cm}bool mouse\+\_\+pressed = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_a76fde535d6e6d8b00594daf38372fa0d}{}\label{classGUI_1_1CoordinateSystem_a76fde535d6e6d8b00594daf38372fa0d}
+
+
+wird beim mouse\+Press\+Event auf true gesetzt 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!parent@{parent}}
+\index{parent@{parent}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{parent}{parent}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ parent\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_a1799d742cabf4aedc2b3553023ccd368}{}\label{classGUI_1_1CoordinateSystem_a1799d742cabf4aedc2b3553023ccd368}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!points@{points}}
+\index{points@{points}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{points}{points}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Point$>$ points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_af6b75c3f51fa26c16961a577565e177e}{}\label{classGUI_1_1CoordinateSystem_af6b75c3f51fa26c16961a577565e177e}
+
+
+Alle Schnittpunkte der Linien auf dem Koordinatensystem. 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!ship\+\_\+length@{ship\+\_\+length}}
+\index{ship\+\_\+length@{ship\+\_\+length}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{ship\+\_\+length}{ship_length}}]{\setlength{\rightskip}{0pt plus 5cm}int ship\+\_\+length = ({\bf gamearea}/{\bf space\+\_\+to\+\_\+next\+\_\+line})$\ast$2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_aee01da46fa67198ecaa2f6f4d640c4be}{}\label{classGUI_1_1CoordinateSystem_aee01da46fa67198ecaa2f6f4d640c4be}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!ships@{ships}}
+\index{ships@{ships}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{ships}{ships}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Line$>$ ships}\hypertarget{classGUI_1_1CoordinateSystem_aace79121ea432bad20264eafaec2e60f}{}\label{classGUI_1_1CoordinateSystem_aace79121ea432bad20264eafaec2e60f}
+
+
+Schiffe. 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!ships\+\_\+color@{ships\+\_\+color}}
+\index{ships\+\_\+color@{ships\+\_\+color}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{ships\+\_\+color}{ships_color}}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Global\+Color ships\+\_\+color = Qt\+::blue}\hypertarget{classGUI_1_1CoordinateSystem_aade80ae99e4ee3610c175da220484c30}{}\label{classGUI_1_1CoordinateSystem_aade80ae99e4ee3610c175da220484c30}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!space\+\_\+to\+\_\+next\+\_\+line@{space\+\_\+to\+\_\+next\+\_\+line}}
+\index{space\+\_\+to\+\_\+next\+\_\+line@{space\+\_\+to\+\_\+next\+\_\+line}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{space\+\_\+to\+\_\+next\+\_\+line}{space_to_next_line}}]{\setlength{\rightskip}{0pt plus 5cm}int space\+\_\+to\+\_\+next\+\_\+line = 20\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_ad513b38928d1200efd7c23313bf19a6f}{}\label{classGUI_1_1CoordinateSystem_ad513b38928d1200efd7c23313bf19a6f}
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!target\+\_\+pixmap@{target\+\_\+pixmap}}
+\index{target\+\_\+pixmap@{target\+\_\+pixmap}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{target\+\_\+pixmap}{target_pixmap}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pixmap$\ast$ target\+\_\+pixmap}\hypertarget{classGUI_1_1CoordinateSystem_a4e0ef07bc83595ef2208e719435b2bdb}{}\label{classGUI_1_1CoordinateSystem_a4e0ef07bc83595ef2208e719435b2bdb}
+
+
+Pain Device fuer das Koordinatensystem. 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!triangle\+\_\+size@{triangle\+\_\+size}}
+\index{triangle\+\_\+size@{triangle\+\_\+size}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{triangle\+\_\+size}{triangle_size}}]{\setlength{\rightskip}{0pt plus 5cm}int triangle\+\_\+size = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGUI_1_1CoordinateSystem_aac44d9cfd174bff52e3126dcc059d851}{}\label{classGUI_1_1CoordinateSystem_aac44d9cfd174bff52e3126dcc059d851}
+
+
+bestimmt die Groesse der Pfeile an den Achsen des Koordinatensystems 
+
+\index{G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}!x\+\_\+y\+\_\+axis\+\_\+color@{x\+\_\+y\+\_\+axis\+\_\+color}}
+\index{x\+\_\+y\+\_\+axis\+\_\+color@{x\+\_\+y\+\_\+axis\+\_\+color}!G\+U\+I\+::\+Coordinate\+System@{G\+U\+I\+::\+Coordinate\+System}}
+\subsubsection[{\texorpdfstring{x\+\_\+y\+\_\+axis\+\_\+color}{x_y_axis_color}}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Global\+Color x\+\_\+y\+\_\+axis\+\_\+color = Qt\+::black}\hypertarget{classGUI_1_1CoordinateSystem_a105b11a9cc588b3a0b7c6208b270d5c9}{}\label{classGUI_1_1CoordinateSystem_a105b11a9cc588b3a0b7c6208b270d5c9}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gui/\hyperlink{coordinatesystem_8h}{coordinatesystem.\+h}\item 
+gui/\hyperlink{coordinatesystem_8cpp}{coordinatesystem.\+cpp}\end{DoxyCompactItemize}

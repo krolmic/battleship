@@ -10,7 +10,7 @@ class UserInfo;
 namespace MODEL {
     
 class Point;
-    
+/// A class representing game session that access both Player and Communicator
 class Game
 {
 public:

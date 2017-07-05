@@ -17,7 +17,7 @@ class QPushButton;
 class QTextEdit;
 
 
-
+/// A simple class that defines graphical interface of the form in which players are able to set ships
 class SetShipsForm : public QDialog
 {
     Q_OBJECT

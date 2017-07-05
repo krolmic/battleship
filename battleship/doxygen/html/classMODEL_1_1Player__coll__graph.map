@@ -1,0 +1,4 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node2" href="$classUserInfo.html" title="A class which stores information about Player. " alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node3" href="$classMODEL_1_1CoordinateSystem.html" title="A class that stores data of coordinate system separately from the graphical interface. " alt="" coords="101,5,232,32"/>
+</map>

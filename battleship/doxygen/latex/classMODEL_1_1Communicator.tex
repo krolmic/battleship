@@ -1,0 +1,157 @@
+\hypertarget{classMODEL_1_1Communicator}{}\section{Communicator Class Reference}
+\label{classMODEL_1_1Communicator}\index{Communicator@{Communicator}}
+
+
+A class that uses \hyperlink{classMODEL_1_1Connection}{Connection} to recieve/send encoded/decoded information stored in json objects.  
+
+
+
+
+{\ttfamily \#include $<$communicator.\+h$>$}
+
+
+
+Collaboration diagram for Communicator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classMODEL_1_1Communicator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMODEL_1_1Communicator_a2993409e2e41d9363c76e59b054df1ed}{Communicator} (\hyperlink{classMODEL_1_1Game}{M\+O\+D\+E\+L\+::\+Game} \&\hyperlink{classMODEL_1_1Communicator_a1018ef7ed7f7714ef648545d209b9ff4}{game}, const std\+::string \&address, int port, std\+::function$<$ void()$>$ callback\+On\+Connected)
+\item 
+\hyperlink{classMODEL_1_1Communicator_ad11952ffbf95dda14e718d936e26aa1c}{Communicator} (\hyperlink{classMODEL_1_1Game}{M\+O\+D\+E\+L\+::\+Game} \&\hyperlink{classMODEL_1_1Communicator_a1018ef7ed7f7714ef648545d209b9ff4}{game}, std\+::function$<$ void()$>$ callback\+On\+Connected)
+\item 
+\hyperlink{classMODEL_1_1Communicator_ae1ebbaf619b559917bb5d0508c604883}{Communicator} (\hyperlink{classMODEL_1_1Communicator}{Communicator} const \&)=delete
+\item 
+\hyperlink{classMODEL_1_1Communicator}{Communicator} \& \hyperlink{classMODEL_1_1Communicator_a92705f86fea309452a1da1eb027577e9}{operator=} (\hyperlink{classMODEL_1_1Communicator}{Communicator} const \&other)=delete
+\item 
+\hyperlink{classMODEL_1_1Communicator_a9354967a93e7ec6136a5c8ece2e755d2}{Communicator} (\hyperlink{classMODEL_1_1Communicator}{Communicator} \&\&other)=delete
+\item 
+\hyperlink{classMODEL_1_1Communicator}{Communicator} \& \hyperlink{classMODEL_1_1Communicator_ae0fb22dd825e3817b1a5d1846f916197}{operator=} (\hyperlink{classMODEL_1_1Communicator}{Communicator} \&\&other)=delete
+\item 
+void \hyperlink{classMODEL_1_1Communicator_addda61885a1ef23ed692f15ca56f43c3}{send\+User\+Info} (const \hyperlink{classUserInfo}{User\+Info} \&user\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMODEL_1_1Communicator_a7bf1372fe11b00605a91dccdf336e81d}{data\+Received} (const Q\+Byte\+Array \&data)
+\item 
+void \hyperlink{classMODEL_1_1Communicator_ab9ff7c65f14065e5bdad9cfc7e15ba27}{send\+Json} (const \hyperlink{namespaceMODEL_a2afce0a47a93eee73a314d53e4890153}{Command} \&command, const Q\+Json\+Object \&json)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMODEL_1_1Game}{Game} \& \hyperlink{classMODEL_1_1Communicator_a1018ef7ed7f7714ef648545d209b9ff4}{game}
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classMODEL_1_1Connection}{Connection} $>$ \hyperlink{classMODEL_1_1Communicator_a74211040c2e2fd8475ce5f579c906171}{conn}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that uses \hyperlink{classMODEL_1_1Connection}{Connection} to recieve/send encoded/decoded information stored in json objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!Communicator@{Communicator}}
+\index{Communicator@{Communicator}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{Communicator(\+M\+O\+D\+E\+L\+::\+Game \&game, const std\+::string \&address, int port, std\+::function$<$ void()$>$ callback\+On\+Connected)}{Communicator(MODEL::Game &game, const std::string &address, int port, std::function< void()> callbackOnConnected)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator} (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+O\+D\+E\+L\+::\+Game} \&}]{game, }
+\item[{const std\+::string \&}]{address, }
+\item[{int}]{port, }
+\item[{std\+::function$<$ void()$>$}]{callback\+On\+Connected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classMODEL_1_1Communicator_a2993409e2e41d9363c76e59b054df1ed}{}\label{classMODEL_1_1Communicator_a2993409e2e41d9363c76e59b054df1ed}
+creates commincator as guest
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback\+On\+Connected} & called when connection is established \\
+\hline
+\end{DoxyParams}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!Communicator@{Communicator}}
+\index{Communicator@{Communicator}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{Communicator(\+M\+O\+D\+E\+L\+::\+Game \&game, std\+::function$<$ void()$>$ callback\+On\+Connected)}{Communicator(MODEL::Game &game, std::function< void()> callbackOnConnected)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator} (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+O\+D\+E\+L\+::\+Game} \&}]{game, }
+\item[{std\+::function$<$ void()$>$}]{callback\+On\+Connected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classMODEL_1_1Communicator_ad11952ffbf95dda14e718d936e26aa1c}{}\label{classMODEL_1_1Communicator_ad11952ffbf95dda14e718d936e26aa1c}
+creates commincator as host
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback\+On\+Connected} & called when connection is established \\
+\hline
+\end{DoxyParams}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!Communicator@{Communicator}}
+\index{Communicator@{Communicator}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{Communicator(\+Communicator const \&)=delete}{Communicator(Communicator const &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator} (
+\begin{DoxyParamCaption}
+\item[{{\bf Communicator} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1Communicator_ae1ebbaf619b559917bb5d0508c604883}{}\label{classMODEL_1_1Communicator_ae1ebbaf619b559917bb5d0508c604883}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!Communicator@{Communicator}}
+\index{Communicator@{Communicator}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{Communicator(\+Communicator \&\&other)=delete}{Communicator(Communicator &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator} (
+\begin{DoxyParamCaption}
+\item[{{\bf Communicator} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1Communicator_a9354967a93e7ec6136a5c8ece2e755d2}{}\label{classMODEL_1_1Communicator_a9354967a93e7ec6136a5c8ece2e755d2}
+
+
+\subsection{Member Function Documentation}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!data\+Received@{data\+Received}}
+\index{data\+Received@{data\+Received}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{data\+Received(const Q\+Byte\+Array \&data)}{dataReceived(const QByteArray &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void data\+Received (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1Communicator_a7bf1372fe11b00605a91dccdf336e81d}{}\label{classMODEL_1_1Communicator_a7bf1372fe11b00605a91dccdf336e81d}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{operator=(\+Communicator const \&other)=delete}{operator=(Communicator const &other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Communicator} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1Communicator_a92705f86fea309452a1da1eb027577e9}{}\label{classMODEL_1_1Communicator_a92705f86fea309452a1da1eb027577e9}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{operator=(\+Communicator \&\&other)=delete}{operator=(Communicator &&other)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Communicator}\& operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Communicator} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classMODEL_1_1Communicator_ae0fb22dd825e3817b1a5d1846f916197}{}\label{classMODEL_1_1Communicator_ae0fb22dd825e3817b1a5d1846f916197}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!send\+Json@{send\+Json}}
+\index{send\+Json@{send\+Json}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{send\+Json(const Command \&command, const Q\+Json\+Object \&json)}{sendJson(const Command &command, const QJsonObject &json)}}]{\setlength{\rightskip}{0pt plus 5cm}void send\+Json (
+\begin{DoxyParamCaption}
+\item[{const {\bf Command} \&}]{command, }
+\item[{const Q\+Json\+Object \&}]{json}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1Communicator_ab9ff7c65f14065e5bdad9cfc7e15ba27}{}\label{classMODEL_1_1Communicator_ab9ff7c65f14065e5bdad9cfc7e15ba27}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!send\+User\+Info@{send\+User\+Info}}
+\index{send\+User\+Info@{send\+User\+Info}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{send\+User\+Info(const User\+Info \&user\+Info)}{sendUserInfo(const UserInfo &userInfo)}}]{\setlength{\rightskip}{0pt plus 5cm}void send\+User\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf User\+Info} \&}]{user\+Info}
+\end{DoxyParamCaption}
+)}\hypertarget{classMODEL_1_1Communicator_addda61885a1ef23ed692f15ca56f43c3}{}\label{classMODEL_1_1Communicator_addda61885a1ef23ed692f15ca56f43c3}
+
+
+\subsection{Member Data Documentation}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!conn@{conn}}
+\index{conn@{conn}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{conn}{conn}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Connection}$>$ conn\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1Communicator_a74211040c2e2fd8475ce5f579c906171}{}\label{classMODEL_1_1Communicator_a74211040c2e2fd8475ce5f579c906171}
+\index{M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}!game@{game}}
+\index{game@{game}!M\+O\+D\+E\+L\+::\+Communicator@{M\+O\+D\+E\+L\+::\+Communicator}}
+\subsubsection[{\texorpdfstring{game}{game}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}\& game\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMODEL_1_1Communicator_a1018ef7ed7f7714ef648545d209b9ff4}{}\label{classMODEL_1_1Communicator_a1018ef7ed7f7714ef648545d209b9ff4}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\hyperlink{communicator_8h}{communicator.\+h}\item 
+model/\hyperlink{communicator_8cpp}{communicator.\+cpp}\end{DoxyCompactItemize}

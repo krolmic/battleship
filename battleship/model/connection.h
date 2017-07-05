@@ -13,6 +13,7 @@ class ConnectionObserver;
 
  
 namespace MODEL {
+/// A base class that defines the basic functions for connection
 class Connection : public QObject
 {
     Q_OBJECT

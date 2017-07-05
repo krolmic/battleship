@@ -11,6 +11,7 @@ class ControllerInterface;
 
 namespace GUI {
 
+/// A simple class that defines graphical interface of the form in which players are able enter the name and age
 class PlayerForm : public QDialog
 {
     Q_OBJECT

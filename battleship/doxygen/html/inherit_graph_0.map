@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classBattleshipObserver.html" title="A base interface class, includes methods, which communicate with model and gui. " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node2" href="$classGUI_1_1BattleshipView.html" title="A simple class that defines and argument exception. " alt="" coords="187,5,296,32"/>
+</map>
