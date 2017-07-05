@@ -22,5 +22,12 @@ const UserInfo& MODEL::Player::getUserInfo()
     return userInfo;
 }
 
+MODEL::CoordinateSystem & MODEL::Player::getField()
+{
+    return field;
+}
+
+
+
 
 

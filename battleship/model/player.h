@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "common/user_info.h"
+#include "coordinate_system.h"
 
 namespace MODEL {
 
@@ -18,9 +19,11 @@ public:
     
     void setUserInfo(const UserInfo& userInfo);
     const UserInfo& getUserInfo();
+    CoordinateSystem& getField();
     
 private:
     UserInfo userInfo;
+    CoordinateSystem field;
 };
 
 } // end NS

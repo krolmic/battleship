@@ -6,10 +6,20 @@
 class BattleshipObserver;
 class UserInfo;
 
+namespace MODEL {
+    class Point;
+}
+
 class ModelInterface //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
 {
 public:
     virtual ~ModelInterface () { }
+    
+    /**
+     * Observer pattern as a part of MVC-Pattern
+     * @param observer is usally a gui, that reflects/shows state-changes of the model
+     */
+    virtual void registerObserver(BattleshipObserver& observer) = 0;
     
     /**
      * begin new game as host over the network. But first wat for guest  to join.
@@ -34,10 +44,12 @@ public:
     virtual void cancelHosting() = 0;
     
     /**
-     * Observer pattern as a part of MVC-Pattern
-     * @param observer is usally a gui, that reflects/shows state-changes of the model
+     * @throws std::length_error if ship count exceeds 5.
      */
-    virtual void registerObserver(BattleshipObserver& observer) = 0;
+    virtual void placeShip(MODEL::Point p1, MODEL::Point p2) = 0;
+    
+    
+    
 };
 
 #endif // MODELINTERFACE_H

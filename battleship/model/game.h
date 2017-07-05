@@ -8,10 +8,19 @@ class BattleshipObserver;
 class UserInfo;
 
 namespace MODEL {
+    
+class Point;
+    
 class Game
 {
 public:
     virtual ~Game();
+    
+    /**
+     * @see ModelInterface#placeShip(MODEL::Point, MODEL::Point)
+     */
+    void placeShip(Point p1, Point p2);
+    
     
 protected:
     /**

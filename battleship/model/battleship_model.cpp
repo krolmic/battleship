@@ -2,12 +2,18 @@
 #include "game_guest.h"
 #include "game_host.h"
 #include "common/user_info.h"
+#include "point.h"
 
 MODEL::BattleshipModel::BattleshipModel()
 {
 
 }
 
+
+void MODEL::BattleshipModel::registerObserver(BattleshipObserver& observer)
+{
+    observerList.emplace_back(observer);
+}
 
 void MODEL::BattleshipModel::startNewGameAsHost(UserInfo userInfo)
 {
@@ -25,12 +31,10 @@ void MODEL::BattleshipModel::cancelHosting()
     game.reset(nullptr);
 }
 
-void MODEL::BattleshipModel::registerObserver(BattleshipObserver& observer)
+void MODEL::BattleshipModel::placeShip(MODEL::Point p1, MODEL::Point p2)
 {
-    observerList.emplace_back(observer);
+    game->placeShip(p1, p2);
 }
-
-
 
 
 
