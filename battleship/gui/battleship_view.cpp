@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QWidget>
 #include "setshipsform.h"
+#include "gameform.h"
 
 #include <QDebug>
 
@@ -12,7 +13,7 @@
  * Application begins with PlayerForm Dialog asking user for his name
  */
 GUI::BattleshipView::BattleshipView(ModelInterface& model, ControllerInterface& ctrl)
-    : model{model}, ctrl {ctrl}
+    : model{model}, ctrl{ctrl}
 {
     auto* playerForm = new PlayerForm{ctrl};
     addWidget(playerForm);
@@ -89,6 +90,15 @@ void GUI::BattleshipView::showErrorMessage(const std::string& msg, const std::st
     msgBox->show();
 }
 
+void GUI::BattleshipView::onGameStart(const std::deque<MODEL::Ship>& me, const std::deque<MODEL::Ship>& enemy, bool myTurn)
+{
+    closeTopDialog();
+    closeAllCurrentWindows();
+    GameForm *gameForm = new GameForm(me, enemy, myTurn);
+//     gameForm->exec();
+    gameForm->show();
+}
+
 
 void GUI::BattleshipView::onRcvUserInfo(const UserInfo& me, const UserInfo& enemy)
 {
@@ -96,7 +106,7 @@ void GUI::BattleshipView::onRcvUserInfo(const UserInfo& me, const UserInfo& enem
     closeTopDialog();
     closeAllCurrentWindows();
     
-    SetShipsForm *setShipsForm = new SetShipsForm(me, enemy);
+    SetShipsForm *setShipsForm = new SetShipsForm(ctrl, me, enemy);
     addWidget(setShipsForm);
     setShipsForm->setAttribute(Qt::WA_DeleteOnClose); //prevent memory leak
     setShipsForm->show(); //with exec() setAttribute(Qt::WA_DeleteOnClose) doesn't work

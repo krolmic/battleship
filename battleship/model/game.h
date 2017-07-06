@@ -7,17 +7,21 @@
 
 class BattleshipObserver;
 class UserInfo;
+class QJsonArray;
 
 namespace MODEL {
     
-class Point;
+// class Point;
 /// A class representing game session that access both Player and Communicator
 class Game
 {
 public:
     virtual ~Game();
     
-
+    MODEL::Player& getPlayerMe();
+    MODEL::Player& getPlayerEnemy();
+    
+    
     
     /**
      * received UserInfo from enemy after players have connected
@@ -27,13 +31,15 @@ public:
     /**
      * received all ships of the enemy after placement,
      * now it's time to reconstruct the ships of the enemy locally
+     * and start the game if I am also ready with ship placement
      */
-    void onRcvShipPlacement(const std::vector<std::pair<Point, Point>> rawShipList);
+    virtual void onRcvShipPlacement(const QJsonValue& json) = 0;
     
     /**
      * @see ModelInterface#placeShip(MODEL::Point, MODEL::Point)
+     * behaviour is diffferent for Host and Guest, since Host decides whos next turn
      */
-    void placeShip(Point p1, Point p2);
+    virtual bool placeShip(Point p1, Point p2);
     
 protected:
     /**
@@ -59,17 +65,20 @@ protected:
     Game(Game&& other) = delete; //disable move-constructor
     Game& operator=(Game&& other) = delete; //disable move assign-operator
     
+    /**
+     * does not emit any events. Is used when received placed ships from enemy.
+     */
+    void addShipListToEnemy(const QJsonArray& json);
     
-    
-protected:
     void socketConnected();
-    std::vector<std::reference_wrapper<BattleshipObserver>>& observerList;
     
+    
+    std::vector<std::reference_wrapper<BattleshipObserver>>& observerList;
     MODEL::Player me;
     MODEL::Player enemy;
-    
-private:
+    bool myTurn{false};
     Communicator com;
+    
 };
 
 } // NS MODEL

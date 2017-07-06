@@ -5,8 +5,17 @@
 #include <QGraphicsSceneMouseEvent>
 #include <cmath>
 #include <QDebug>
+#include "common/controller_interface.h"
+// #include "model/game.h"
 
 using namespace GUI;
+
+GUI::SettingShipsCoordinateSystem::SettingShipsCoordinateSystem(ControllerInterface& ctrl)
+    : ctrl{ctrl}
+{
+    
+}
+
 
 SettingShipsCoordinateSystem::~SettingShipsCoordinateSystem()
 {
@@ -23,7 +32,7 @@ void SettingShipsCoordinateSystem::fillPointsList()
 
 QPoint SettingShipsCoordinateSystem::getNextPointFromVector(int x, int y, std::vector<QPoint>& v)
 {
-    qDebug() << "Starte" << Q_FUNC_INFO << "args:" << x << "," << y;
+//     qDebug() << "Starte" << Q_FUNC_INFO << "args:" << x << "," << y;
     int end_x{v.front().x()}, end_y{v.front().y()};
     int new_x_diff{}, best_x_diff{}, new_y_diff{}, best_y_diff{};
     for (auto grid_point : v)
@@ -37,7 +46,7 @@ QPoint SettingShipsCoordinateSystem::getNextPointFromVector(int x, int y, std::v
         if (new_y_diff < best_y_diff)
             end_y = grid_point.y();
     }
-    qDebug() << "Beendet" << Q_FUNC_INFO << "end_x:" << end_x << " end_y:" << end_y;
+//     qDebug() << "Beendet" << Q_FUNC_INFO << "end_x:" << end_x << " end_y:" << end_y;
     return QPoint(end_x, end_y);
 }
 
@@ -47,8 +56,8 @@ void SettingShipsCoordinateSystem::clearInvalidPossiblePoints()
     {
         if(it->x() < 0 || it->y() < 0 || it->x() > gamearea || it->y() > gamearea)
         {
-            qWarning() << Q_FUNC_INFO << "ein Punkt ausserhalb des Spielfelds wurde gefunden";
-            qWarning() << Q_FUNC_INFO << "Punkt: (x:" << it->x() << "y:" << it->y() << ")";
+//             qWarning() << Q_FUNC_INFO << "ein Punkt ausserhalb des Spielfelds wurde gefunden";
+//             qWarning() << Q_FUNC_INFO << "Punkt: (x:" << it->x() << "y:" << it->y() << ")";
             it = possible_points.erase(it);
         }
         else
@@ -108,7 +117,7 @@ bool SettingShipsCoordinateSystem::isValidPlacement(int x, int y, int dest_x, in
     // Wurden bereits andere Schiffe gesetzt?
     if(!ships.empty())
     {
-        qDebug() << "Ships are already placed. Continue with validation...";
+//         qDebug() << "Ships are already placed. Continue with validation...";
         // Schleife die jedes bereits platzierte Schiff durchläuft
         for(auto s : ships)
         {
@@ -163,16 +172,19 @@ void SettingShipsCoordinateSystem::mousePressEvent(QMouseEvent* event)
 {
     if(points.empty())
         fillPointsList();
-    qDebug() << Q_FUNC_INFO;
+//     qDebug() << Q_FUNC_INFO;
     mouse_pressed = true;
     QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), points);
     initial_x = p.x();
     initial_y = p.y();
-    qDebug() << Q_FUNC_INFO << "initial_x:" << initial_x << "initial_y:" << initial_y;
+//     qDebug() << Q_FUNC_INFO << "initial_x:" << initial_x << "initial_y:" << initial_y;
 }
 
 void SettingShipsCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
 {
+    if (forbiddenToPlaceShips) {
+        return;
+    }
 
     mouse_pressed = false;
     // TODO: vielleicht ueberfluessig
@@ -189,6 +201,14 @@ void SettingShipsCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
         }
         QLine l(initial_x, initial_y, final_x, final_y);
         ships.push_back(l);
+        
+        //add ship in model
+        if (ctrl.placeShip(
+            getCoordinates(initial_x, initial_y), 
+            getCoordinates(final_x, final_y)
+        )) { //if true, then all ship have been placed
+            forbiddenToPlaceShips = true;// stop setting ships
+        }
     }
     initial_x = -1;
     initial_y = -1;
@@ -199,8 +219,11 @@ void SettingShipsCoordinateSystem::mouseReleaseEvent(QMouseEvent *event)
 
 void SettingShipsCoordinateSystem::paintEvent(QPaintEvent *e)
 {
-
-    if(mouse_pressed && isValidPlacement(initial_x, initial_y, final_x, final_y) && initial_x != -1)
+//     if (forbiddenToPlaceShips) {
+//         return;
+//     }
+    
+    if(!forbiddenToPlaceShips && mouse_pressed && isValidPlacement(initial_x, initial_y, final_x, final_y) && initial_x != -1)
     {
         QPainter pixmap_painter(target_pixmap);
         QPen pen(ships_color);
@@ -235,19 +258,19 @@ void SettingShipsCoordinateSystem::mouseMoveEvent(QMouseEvent *event)
         possible_points.push_back(QPoint(initial_x - ship_length, initial_y));                  // x - l, y
         possible_points.push_back(QPoint(initial_x - ship_length, initial_y - ship_length));    // x - l, y - l
         clearInvalidPossiblePoints();
-        qDebug() << "possible_points:";
-        for(QPoint p : possible_points)
-        {
-            qDebug() << "x:" << p.x() << "y:" << p.y();
-
-            qDebug() << "is VALID!";
-        }
+//         qDebug() << "possible_points:";
+//         for(QPoint p : possible_points)
+//         {
+//             qDebug() << "x:" << p.x() << "y:" << p.y();
+// 
+//             qDebug() << "is VALID!";
+//         }
         QPoint p = getNextPointFromVector(event->pos().x(), event->pos().y(), possible_points);
 
         if (initial_x != -1)
         {
             final_x = p.x();
-            qDebug() << "initial_x:" << initial_x << "initial_y:" << initial_y;
+//             qDebug() << "initial_x:" << initial_x << "initial_y:" << initial_y;
             final_y = p.y();
         }
     }
@@ -263,7 +286,7 @@ void SettingShipsCoordinateSystem::clearField()
 {
     if(!ships.empty())
     {
-        qDebug() << Q_FUNC_INFO << "ships ist nicht leer";
+//         qDebug() << Q_FUNC_INFO << "ships ist nicht leer";
         QPainter pixmap_painter(target_pixmap);
         QPen pen(bg_color);
         pen.setWidth(3);

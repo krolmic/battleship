@@ -1,10 +1,11 @@
 #include "game.h"
-#include <QDebug>
 #include "common/battleship_observer.h"
 #include "common/user_info.h"
 #include "point.h"
-
 #include <QString>
+#include <QJsonArray>
+
+#include <QDebug>
 
 
 MODEL::Game::Game(
@@ -36,6 +37,18 @@ MODEL::Game::~Game()
 }
 
 
+MODEL::Player& MODEL::Game::getPlayerMe()
+{
+    return me;
+}
+
+MODEL::Player& MODEL::Game::getPlayerEnemy()
+{
+    return enemy;
+}
+
+
+
 void MODEL::Game::onRcvUserInfo(const UserInfo& userInfo)
 {
     qDebug() << "userInfo: " << QString::fromStdString(userInfo.getName()) << " age: " << userInfo.getAge();
@@ -47,29 +60,29 @@ void MODEL::Game::onRcvUserInfo(const UserInfo& userInfo)
 
 void MODEL::Game::socketConnected()
 {
-    qDebug() << "MODEL::Game::socketConnected() : me: " << QString::fromStdString(me.getUserInfo().getName());
-//     for (BattleshipObserver& observer : observerList) {
-//         observer.shipPlacementStarted();
-//     }
     com.sendUserInfo(me.getUserInfo());
 }
 
-void MODEL::Game::onRcvShipPlacement(const std::vector<std::pair<Point, Point> > rawShipList)
+void MODEL::Game::addShipListToEnemy(const QJsonArray& json)
 {
-    for (auto& e: rawShipList) {
-        enemy.getField().addShip(e.first, e.second); //reconstruct the ships of enemy (over network)
+    for (int i = 0; i < json.size(); ++i) {
+        QJsonObject ship = json[i].toObject();
+        enemy.getField().addShip(
+            MODEL::Point{ship["x1"].toDouble(), ship["y1"].toDouble()},
+            MODEL::Point{ship["x2"].toDouble(), ship["y2"].toDouble()}
+        );
     }
-    
-//     for (BattleshipObserver& observer : observerList) {
-//         observer.shipPlacementStarted();
-//     }
 }
 
-
-void MODEL::Game::placeShip(MODEL::Point p1, MODEL::Point p2)
+bool MODEL::Game::placeShip(MODEL::Point p1, MODEL::Point p2)
 {
-    if (me.getField().addShip(p1, p2)) {
-        //TODO fire event, all ships are placed
-    }
+    bool allShipSet = me.getField().addShip(p1, p2);
+//     if (allShipSet) {
+//         //gui is deactivated since it get return value
+//         //but here we send our command to enemy
+//         com.sendPlacedShipList(me.getField());
+//     }
+    
+    return allShipSet;
 }
 

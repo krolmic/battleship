@@ -7,17 +7,18 @@
 #include <QJsonDocument>
 #include "connection.h"
 
-
+class QJsonValue;
 class UserInfo;
 
 namespace MODEL {
     
 class Game;
+class CoordinateSystem;
 
 enum class Command
 { 
     USER_INFO,
-    SHIP_PLACEMENT
+    PLACED_SHIP_LIST
 };
 /// A class that uses Connection to recieve/send encoded/decoded information stored in json objects
 class Communicator
@@ -48,10 +49,21 @@ public:
     
 
     void sendUserInfo(const UserInfo& userInfo);
+    
+    /**
+     * sends my placed ships to the enemy as guest
+     */
+    void sendPlacedShipList(const MODEL::CoordinateSystem& myField);
+    
+    /**
+     * sends my placed ships to the enemy as host.
+     * We are the one who say who is next turn
+     */
+    void sendPlacedShipList(const MODEL::CoordinateSystem& myField, bool hostTurn);
 
 private:
     void dataReceived(const QByteArray& data);
-    void sendJson(const Command& command, const QJsonObject& json);
+    void sendJson(const Command& command, const QJsonValue& json);
 
     Game& game;
     std::unique_ptr<Connection> conn;

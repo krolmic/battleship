@@ -21,8 +21,8 @@ public:
     void setCriticalHit(bool criticalHit);
 
     int getId();
-    Point getP1();
-    Point getP2();
+    Point getP1() const;
+    Point getP2() const;
 
     /// Checks if the ship is already destroyed
     bool isDestroyed();

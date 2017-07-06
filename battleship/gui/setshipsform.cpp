@@ -5,8 +5,8 @@
 #include <QString>
 #include "common/user_info.h"
 
-GUI::SetShipsForm::SetShipsForm(const UserInfo& me, const UserInfo& enemy, QDialog* parent)
-    : QDialog{parent}, meUserInfo{me}, enemyUserInfo{enemy}, size{QSize(450, 680)}
+GUI::SetShipsForm::SetShipsForm(ControllerInterface& ctrl, const UserInfo& me, const UserInfo& enemy, QDialog* parent)
+    : QDialog{parent}, ctrl{ctrl}, meUserInfo{me}, enemyUserInfo{enemy}, size{QSize(450, 680)}
 {
     createMenu();
     createPlayerInformationGroupBox();
@@ -78,11 +78,11 @@ void GUI::SetShipsForm::createMenu()
 {
     menuBar = new QMenuBar;
     gameMenu = new QMenu(tr("&Game"), this);
-    deleteShipsAction = gameMenu->addAction(tr("Delete Ships"));
+//     deleteShipsAction = gameMenu->addAction(tr("Delete Ships"));
     exitAction = gameMenu->addAction(tr("E&xit"));
     menuBar->addMenu(gameMenu);
     connect(exitAction, SIGNAL(triggered()), this, SLOT(reject()));
-    connect(deleteShipsAction, SIGNAL(triggered()), this, SLOT(deleteShips()));
+//     connect(deleteShipsAction, SIGNAL(triggered()), this, SLOT(deleteShips()));
 }
 
 void GUI::SetShipsForm::createPlayerInformationGroupBox()
@@ -126,21 +126,21 @@ void GUI::SetShipsForm::createCoordinateSystemGroupBox()
 {
     coordinateSystemGroupBox = new QGroupBox(tr("Ships"));
     QVBoxLayout *layout = new QVBoxLayout;
-    field = new GUI::SettingShipsCoordinateSystem{};
+    field = new GUI::SettingShipsCoordinateSystem{ctrl};
     layout->addWidget(field);
     coordinateSystemGroupBox->setLayout(layout);
 }
 
-void GUI::SetShipsForm::accept()
-{
-    // TODO: zum spaeteren Zeitpunkt Ueberpruefung
-    // TODO: zum spaeteren Zeitpunkt Uebergabe des Spieler Objekts
-    close();
-    GameForm *setShipsForm = new GameForm();
-    setShipsForm->exec();
-}
+// void GUI::SetShipsForm::accept()
+// {
+//     // TODO: zum spaeteren Zeitpunkt Ueberpruefung
+//     // TODO: zum spaeteren Zeitpunkt Uebergabe des Spieler Objekts
+//     close();
+//     GameForm *setShipsForm = new GameForm();
+//     setShipsForm->exec();
+// }
 
-void GUI::SetShipsForm::deleteShips()
-{
-    field->clearField();
-}
+// void GUI::SetShipsForm::deleteShips()
+// {
+//     field->clearField();
+// }

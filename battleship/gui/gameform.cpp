@@ -3,12 +3,13 @@
 #include "digitalclock.h"
 #include "gamecoordinatesystem.h"
 
-GameForm::GameForm()
+GameForm::GameForm(const std::deque<MODEL::Ship>& me, const std::deque<MODEL::Ship>& enemy, bool myTurn, QDialog* parent)
+    : QDialog(parent)
 {
     QGridLayout *mainLayout = new QGridLayout;
 
     createMenus();
-    createCoordinateSystemGroupBoxOwn();
+    createCoordinateSystemGroupBoxOwn(me);
     createCoordinateSystemGroupBoxEnemy();
     createInformationGroupBox();
 
@@ -66,11 +67,13 @@ void GameForm::checkStraight()
     msgBox.exec();
 }
 
-void GameForm::createCoordinateSystemGroupBoxOwn()
+void GameForm::createCoordinateSystemGroupBoxOwn(const std::deque<MODEL::Ship>& me)
 {
     coordinateSystemGroupBoxOwn = new QGroupBox(tr("Own Field"));
     QVBoxLayout *layout = new QVBoxLayout;
     ownField = new GUI::GameCoordinateSystem;
+    ownField->addShipList(me);
+    
     layout->addWidget(ownField);
     coordinateSystemGroupBoxOwn->setLayout(layout);
 }

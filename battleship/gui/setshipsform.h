@@ -16,6 +16,7 @@ class QMenu;
 class QMenuBar;
 class QPushButton;
 class QTextEdit;
+class ControllerInterface;
 
 namespace GUI {
     
@@ -29,7 +30,7 @@ class SetShipsForm : public QDialog
 
 public:
     // TODO: Player Klasse statt QString benutzen, falls die Klasse notwendig
-    SetShipsForm(const UserInfo& me, const UserInfo& enemy, QDialog* parent = nullptr);
+    SetShipsForm(ControllerInterface& ctrl, const UserInfo& me, const UserInfo& enemy, QDialog* parent = nullptr);
 
 private:
     void createMenu();
@@ -37,8 +38,9 @@ private:
     void createCoordinateSystemGroupBox();
     void createFormGroupBox();
 
-    void accept();
+//     void accept();
 
+    ControllerInterface& ctrl;
     UserInfo meUserInfo;
     UserInfo enemyUserInfo;
     
@@ -61,7 +63,7 @@ private:
 
 private slots:
 
-    void deleteShips();
+//     void deleteShips();
 };
 
 } //end NS

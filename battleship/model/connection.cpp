@@ -83,26 +83,6 @@ void MODEL::Connection::sendData(const QByteArray& data)
     socket->write(block);
 }
 
-// void MODEL::Connection::registerObserver(ConnectionObserver& observer)
-// {
-//     observerList.emplace_back(observer);
-// }
-// void MODEL::Connection::addHandlerConnected(std::function<void()> callback)
-// {
-//     handlerConnectedList.emplace_back(callback);
-// }
-// void MODEL::Connection::emitEventConnected()
-// {
-//     qDebug() << "emitEventConnected !";
-//     
-// //     for (auto& observer : handlerConnectedList) {
-// //         observer();
-// //     }
-// //     for (ConnectionObserver& observer : observerList) {
-// //         observer.connectionEstablished();
-// //     }
-// }
-
 void MODEL::Connection::readData()
 {
     qDebug() << "MODEL::Connection::readData()";

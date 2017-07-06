@@ -24,13 +24,13 @@ class GameForm : public QDialog
     Q_OBJECT
 
 public:
-    GameForm();
+    GameForm(const std::deque<MODEL::Ship>& me, const std::deque<MODEL::Ship>& enemy, bool myTurn, QDialog* parent = nullptr);
     ~GameForm();
     QString statusBoxText = "";
 
 private:
     void createMenus();
-    void createCoordinateSystemGroupBoxOwn();
+    void createCoordinateSystemGroupBoxOwn(const std::deque<MODEL::Ship>& me);
     void createCoordinateSystemGroupBoxEnemy();
     void createInformationGroupBox();
 

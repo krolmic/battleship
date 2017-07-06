@@ -7,6 +7,12 @@
 #include <QGraphicsView>
 #include <memory>
 #include <QLine>
+#include <deque>
+
+namespace MODEL
+{
+class Ship;  
+}
 
 namespace GUI
 {
@@ -15,10 +21,13 @@ class GameCoordinateSystem : public CoordinateSystem
 {
 public:
     using CoordinateSystem::CoordinateSystem;
+    
+    GameCoordinateSystem(QWidget* parent = nullptr);
     ~GameCoordinateSystem();
 
     void paintShots();
     void clearField();
+    void addShipList(const std::deque<MODEL::Ship>& shipList);
 
     // Events
     void mousePressEvent(QMouseEvent* event);

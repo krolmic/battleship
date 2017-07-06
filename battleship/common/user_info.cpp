@@ -30,10 +30,10 @@ int UserInfo::getAge() const
 
 QJsonObject UserInfo::toJson() const
 {
-    QJsonObject json{};
-    json["name"] = QString::fromStdString(name);
-    json["age"] = age;
-    return json;
+    return QJsonObject {
+        {"name", QString::fromStdString(name)},
+        {"age", age}
+    };
 }
 
 
