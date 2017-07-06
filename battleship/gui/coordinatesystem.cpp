@@ -132,9 +132,25 @@ void CoordinateSystem::paintShips()
 
 QPoint CoordinateSystem::getCoordinates(int x, int y)
 {
-    qDebug() << Q_FUNC_INFO << "args:" << x << y;
-    float result_x = (((float)x/gamearea)*space_to_next_line)-10;
-    float result_y = (((float)y/gamearea)*space_to_next_line)-10;
-    qDebug() << Q_FUNC_INFO << "result:" << result_x << result_y;
+//     qDebug() << Q_FUNC_INFO << "args:" << x << y;
+    double result_x = (((double)x/gamearea)*space_to_next_line)-10;
+    double result_y = -( (((double)y/gamearea)*space_to_next_line)-10 );
+//     qDebug() << Q_FUNC_INFO << "result:" << result_x << result_y;
     return QPoint(result_x,result_y);
 }
+
+QPoint CoordinateSystem::logicalToGraphical(int x, int y)
+{
+    qDebug() << Q_FUNC_INFO << "args:" << x << y;
+    double resultX = x * (gamearea/space_to_next_line) + 10;
+    double resultY = -(y * (gamearea/space_to_next_line) + 10);
+    qDebug() << Q_FUNC_INFO << "result:" << resultX << resultY;
+    return QPoint(resultX, resultY);
+}
+
+
+
+
+
+
+

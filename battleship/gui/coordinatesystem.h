@@ -23,6 +23,9 @@ public:
     virtual void clearField() = 0;
     /// Rechnet die Pixel-Koordinaten eines QPoint in der GUI in die mathematisch richtige Werte um und gibt sie zurueck
     QPoint getCoordinates(int x, int y);
+    
+    /// converts logical/mathematical units of coordinate system into graphical pixels
+    QPoint logicalToGraphical(int x, int y);
 
     /// Schiffe
     std::vector<QLine> ships;

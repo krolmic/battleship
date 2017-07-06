@@ -15,7 +15,7 @@ namespace GUI {
 class BattleshipView : public BattleshipObserver
 {
 public:
-    explicit BattleshipView(ModelInterface& model, ControllerInterface& controller);
+    explicit BattleshipView(ModelInterface& model, ControllerInterface& ctrl);
     
     /**
      * @param msg actual error message message
@@ -44,21 +44,8 @@ public:
      */
     void addWidget(QWidget* widget);
     
-    
-//     /**
-//      * @see ViewInterface#showWaitingForGuestConnectingDialog()
-//      */
-//     void showWaitingForGuestConnectingDialog() override;
-//     
-//     /**
-//      * @see ViewInterface#closeTopDialog()
-//      */
-//     void closeTopDialog() override;
-//     
-//     /**
-//      * @see ViewInterface#showErrorMessage(const std::string&, const std::string&)
-//      */
-//     void showErrorMessage(const std::string& msg, const std::string& title) override;
+
+    void onGameStart(const std::deque<MODEL::Ship> & me, const std::deque<MODEL::Ship> & enemy, bool myTurn) override;
     
     /**
      * @see BattleshipObserver#onRcvUserInfo(const UserInfo&)

@@ -49,7 +49,7 @@ public:
     /**
      * @see ModelInterface#placeShip(MODEL::Point, MODEL::Point)
      */
-    void placeShip(MODEL::Point p1, MODEL::Point p2) override;
+    bool placeShip(MODEL::Point p1, MODEL::Point p2) override;
     
 private:
     std::unique_ptr<MODEL::Game> game = nullptr;

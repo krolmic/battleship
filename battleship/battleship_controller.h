@@ -15,6 +15,7 @@ class BattleshipController : public ControllerInterface
 public:
     explicit BattleshipController(ModelInterface& model);
     
+    bool placeShip(const QPoint& p1, const QPoint p2);
         
     /**
      * @see ModelInterface#startNewGameAsHost(const std::string&, int)

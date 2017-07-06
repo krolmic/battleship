@@ -3,7 +3,7 @@
 #include "connection_guest.h"
 #include "connection_host.h"
 #include <memory>
-#include <QJsonObject>
+#include <QJsonValue>
 #include <QJsonDocument>
 #include "common/user_info.h"
 
@@ -14,7 +14,7 @@ MODEL::Communicator::Communicator(   MODEL::Game& game,
     : game{game}, conn{ std::make_unique<MODEL::ConnectionGuest>( address, port, 
         [&](const QByteArray& data) {dataReceived(data); },callbackOnConnected) } //TODO std::bind doesn't work ?
 {
-    //std::bind(&MODEL::Communicator::dataReceived, this)
+
 }
 
 MODEL::Communicator::Communicator(   MODEL::Game& game,
@@ -22,13 +22,12 @@ MODEL::Communicator::Communicator(   MODEL::Game& game,
     : game{game}, conn{ std::make_unique<MODEL::ConnectionHost>( 
         [&](const QByteArray& data) {dataReceived(data); },callbackOnConnected) } //TODO std::bind doesn't work ?
 {
-    //std::bind(&MODEL::Communicator::dataReceived, this)
+
 }
 
-void MODEL::Communicator::sendJson(const MODEL::Command& command, const QJsonObject& json)
+void MODEL::Communicator::sendJson(const MODEL::Command& command, const QJsonValue& json)
 {
-//     QJsonObject resultJson{};
-//     resultJson[QString::number(static_cast<int>(command))] = json;
+
     QJsonObject resultJson{
         {"command", static_cast<int>(command)},
         {"value", json}
@@ -54,34 +53,44 @@ void MODEL::Communicator::dataReceived(const QByteArray& data)
     QJsonObject jsonTotal{ doc.object() };
 //     int command{ jsonTotal["command"].toInt() };
     Command command{ static_cast<Command>(jsonTotal["command"].toInt()) };
-    QJsonObject json{ jsonTotal["value"].toObject() };
+    QJsonValue jsonValue{ jsonTotal["value"] };
     qDebug() << "command enum as int: " << static_cast<int>(command);
-    qDebug() << "json received: " << json;
+    qDebug() << "json received: " << jsonValue;
     switch (command) {
         case Command::USER_INFO : 
         {
-            UserInfo enemyUserInfo{json};
+            UserInfo enemyUserInfo{jsonValue.toObject()};
             game.onRcvUserInfo(enemyUserInfo);
             break;
         }
-        case Command::SHIP_PLACEMENT :
+        case Command::PLACED_SHIP_LIST :
+            game.onRcvShipPlacement(jsonValue);
             break;
     }
     
 }
 
 
-
-
 void MODEL::Communicator::sendUserInfo(const UserInfo& userInfo)
 {
-    QJsonObject json{
-        {"name", QString::fromStdString(userInfo.getName())},
-        {"age", userInfo.getAge()}
-    };
-    qDebug() << "Communicator::sendUserInfo: " << json;
-    sendJson(MODEL::Command::USER_INFO, json);
+    sendJson(MODEL::Command::USER_INFO, userInfo.toJson());
 }
+
+void MODEL::Communicator::sendPlacedShipList(const MODEL::CoordinateSystem& myField)
+{
+    sendJson(MODEL::Command::PLACED_SHIP_LIST, myField.getShipListAsJson());
+}
+
+void MODEL::Communicator::sendPlacedShipList(const MODEL::CoordinateSystem& myField, bool hostTurn)
+{
+    QJsonObject json {
+        {"host_turn", hostTurn },
+        {"field", myField.getShipListAsJson()}
+    };
+    sendJson(MODEL::Command::PLACED_SHIP_LIST, json);
+}
+
+
 
 
 

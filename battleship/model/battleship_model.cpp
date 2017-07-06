@@ -3,6 +3,7 @@
 #include "game_host.h"
 #include "common/user_info.h"
 #include "point.h"
+#include <stdexcept>
 
 MODEL::BattleshipModel::BattleshipModel()
 {
@@ -14,6 +15,7 @@ void MODEL::BattleshipModel::registerObserver(BattleshipObserver& observer)
 {
     observerList.emplace_back(observer);
 }
+
 
 void MODEL::BattleshipModel::startNewGameAsHost(UserInfo userInfo)
 {
@@ -32,9 +34,9 @@ void MODEL::BattleshipModel::cancelHosting()
 }
 
 // void MODEL::BattleshipModel::placeShip(MODEL::Point p1, MODEL::Point p2)
-void MODEL::BattleshipModel::placeShip(MODEL::Point p1, MODEL::Point p2)
+bool MODEL::BattleshipModel::placeShip(MODEL::Point p1, MODEL::Point p2)
 {
-    game->placeShip(p1, p2);
+    return game->placeShip(p1, p2);
 }
 
 

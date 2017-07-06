@@ -19,12 +19,12 @@ int MODEL::Ship::getId()
     return(this->id);
 }
 
-MODEL::Point MODEL::Ship::getP1()
+MODEL::Point MODEL::Ship::getP1() const
 {
     return(this->p1);
 }
 
-MODEL::Point MODEL::Ship::getP2()
+MODEL::Point MODEL::Ship::getP2() const
 {
     return(this->p2);
 }

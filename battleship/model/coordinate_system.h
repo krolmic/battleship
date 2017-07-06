@@ -4,6 +4,8 @@
 #include <deque>
 #include "ship.h"
 
+class QJsonArray;
+
 namespace MODEL {
 
 class Point;
@@ -27,6 +29,10 @@ public:
      * @throws std::length_error on attempt to add more than 5 ships
      */
     bool addShip(MODEL::Point p1, MODEL::Point p2);
+    
+    QJsonArray getShipListAsJson() const;
+    const std::deque<MODEL::Ship>& getShipList() const;
+    bool isAllShipPlaced() const;
 
     ///calculate the hits of a given linear equation(gradient, y-axis constant) relating to the setted ships
     void calculateShot(double gradient, double y_axis_constant);

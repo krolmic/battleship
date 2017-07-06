@@ -8,6 +8,7 @@ class UserInfo;
 
 namespace MODEL {
     class Point;
+    class Game;
 }
 /// The base class that defines the model interface
 class ModelInterface //https://stackoverflow.com/questions/14323595/best-way-to-declare-an-interface-in-c11
@@ -44,9 +45,10 @@ public:
     virtual void cancelHosting() = 0;
     
     /**
+     * @return true if all ships have been set
      * @throws std::length_error if ship count exceeds 5.
      */
-    virtual void placeShip(MODEL::Point p1, MODEL::Point p2) = 0;
+    virtual bool placeShip(MODEL::Point p1, MODEL::Point p2) = 0;
     
     
     
