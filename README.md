@@ -1,6 +1,7 @@
 # battleship
-Implementation von Schiffe Versenken in C++
+Game based on battleship helping to understand linear equating, written in C++
 
+Scrum board:
 https://trello.com/battleship22
 
 UML:
